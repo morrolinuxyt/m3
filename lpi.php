@@ -213,7 +213,7 @@ AUTHOR: Riccardo Carissimi
                 Si rivolge ad un pubblico di utenti alle prime armi con Linux, ma anche a chi ha qualche lacuna da appianare.
                 Il programma completo del corso è diviso in 5 sezioni, e spazia su tutti gli aspetti generali di una distribuzione Linux.<br /><br>
                 <u>Acquista il corso cliccando sul bottone qui sotto: avrai accesso illimitato al corso al miglior prezzo disponibile!</u><br><br>
-        	<center><a title="Approfondisci" href="<?php echo $essentials; ?>" class="btn btn-primary mt-auto">Linux Essentials</a></center>
+        	<center><a title="Acquista" href="<?php echo $essentials; ?>" class="btn btn-primary mt-auto">Linux Essentials</a></center>
               </p>
             </div>
           </a>
@@ -236,8 +236,8 @@ AUTHOR: Riccardo Carissimi
                 <li>Sistemisti junior che vogliono conseguire la certificazione LPI di primo livello</li>
               </ul>
         	<center>
-		  <a title="Exam101" href="https://corsolinux.com/" class="btn btn-primary mt-auto">Exam 101</a>
-		  <a title="Exam102" href="https://corsolinux.com/" class="btn btn-primary mt-auto">Exam 102</a>
+		  <a title="Exam101" href="<?php echo $e101; ?>" class="btn btn-primary mt-auto">Exam 101</a>
+		  <a title="Exam102" href="<?php echo $e102; ?>" class="btn btn-primary mt-auto">Exam 102</a>
 		</center>
             </div>
           </a>
