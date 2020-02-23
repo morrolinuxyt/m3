@@ -202,7 +202,7 @@ AUTHOR: Riccardo Carissimi
         </div>
 
         <div class="col-md-6 col-lg-6">
-          <a class="invisible-link" href="https://www.youtube.com/watch?v=H9IvFkqy-rc" target="_blank">
+          <a class="invisible-link" href="https://www.youtube.com/watch?v=H9IvFkqy-rc&list=PL4L8OWDC99_dK0kkfVB0dvsVYV3Iz7qMQ" target="_blank">
             <div class="project">
               <img src="img/fluid/distributed.svg" alt="img">
               <h4>Olive distributed</h4>
