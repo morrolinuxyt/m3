@@ -101,7 +101,7 @@ AUTHOR: Riccardo Carissimi
            <iframe src="https://www.youtube-nocookie.com/embed?listType=user_uploads&list=morrolinux" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br /><br />
         </div>
         <?php if($show_promo){ ?>
-          <a class="js-scroll-trigger banner" href="#corsi"><div> Offerta a tempo limitato! Tutti i corsi in <b>offerta speciale</b> a 9,99€ anzichè <s>149€</s><br><img src="img/right-arrow.svg"/> Clicca qui <img src="img/left-arrow.svg"/></div></a>
+          <a class="js-scroll-trigger banner" href="#corsi"><div> Offerta a tempo limitato! Tutti i corsi in <b>offerta speciale</b> al 93% di sconto<br><img src="img/right-arrow.svg"/> Clicca qui <img src="img/left-arrow.svg"/></div></a>
         <?php } ?>
       </div>
 
