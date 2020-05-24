@@ -31,30 +31,8 @@ AUTHOR: Riccardo Carissimi
 
     if (file_exists('udemy_coupons.json')){
       $show_promo = true;
-
-      $json_data = file_get_contents('udemy_coupons.json');
-      $data = json_decode($json_data, true);
-
-      $essentials = $data["Essentials"];
-      $e101 = $data["EXAM 101"];
-      $e102 = $data["EXAM 102"];
-      $networking101 = $data["Networking 101"];
-
     } else {
       $show_promo = false;
-    }
-
-    if(empty($essentials)){
-      $essentials = "https://www.udemy.com/course/impara-linux-da-zero-lpi-linux-essentials/?referralCode=9F2C500B1DC009224ABD";
-    }
-    if(empty($e101)){
-      $e101 = "https://www.udemy.com/course/impara-linux-dalle-basi-alla-certificazione/?referralCode=51B7A99838177C89C187";
-    }
-    if(empty($e102)){
-      $e102 = "https://www.udemy.com/course/impara-linux-dalle-basi-alla-certificazione-lpi-exam-102/?referralCode=7018A3D9DC7C34281A3F";
-    }
-    if(empty($networking101)){
-      $networking101 = "https://www.udemy.com/course/networking-101-corso-di-reti-da-zero/?referralCode=B2B920B2090248291B6B";
     }
   ?>
 
@@ -101,7 +79,7 @@ AUTHOR: Riccardo Carissimi
            <iframe src="https://www.youtube-nocookie.com/embed?listType=user_uploads&list=morrolinux" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br /><br />
         </div>
         <?php if($show_promo){ ?>
-          <a class="js-scroll-trigger banner" href="#corsi"><div> Offerta a tempo limitato! Tutti i corsi in <b>offerta speciale</b> al 93% di sconto<br><img src="img/right-arrow.svg"/> Clicca qui <img src="img/left-arrow.svg"/></div></a>
+          <a class="js-scroll-trigger banner" href="#corsi"><div> Offerta a tempo limitato! Tutti i corsi in <b>offerta speciale</b> al 93% di sconto <br><img src="img/right-arrow.svg"/> Clicca qui <img src="img/left-arrow.svg"/></div></a>
         <?php } ?>
       </div>
 
@@ -139,7 +117,7 @@ AUTHOR: Riccardo Carissimi
             </div>
           </div>
         </a>
-        <a class="invisible-link" href="<?php echo $networking101; ?>">
+        <a class="invisible-link" href="https://corsoreti.it/">
           <div class="card">
             <img src="img/corso-networking.jpg" class="card-img-top" alt="Copertina corso networking" title="Copertina corso networking">
             <div class="card-body d-flex flex-column">
@@ -148,7 +126,7 @@ AUTHOR: Riccardo Carissimi
                 Che tu sia un appassionato o uno studente alle prese con <b>reti di calcolatori</b>, sei nel posto giusto per imparare!
                 <br />Ho ideato questo corso per guidarti in una panoramica sul mondo del Networking senza tralasciare, ove necessario, importanti cenni sulla <b>sicurezza informatica</b> troppo spesso "ignorati" nei corsi base di Networking.
   	          </p><br>
-              <a title="Corso networking" href="<?php echo $networking101; ?>" class="btn btn-primary mt-auto">Vai al corso</a>
+              <a title="Corso networking" href="https://corsoreti.it/" class="btn btn-primary mt-auto">Vai al corso</a>
             </div>
           </div>
         </a>
