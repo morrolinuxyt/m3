@@ -76,7 +76,7 @@ AUTHOR: Riccardo Carissimi
     <div class="container mt-5">
       <div class="row align-items-center">
         <div class="yt_video w-100">
-		<iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=UUnDDucQDLncrauOCmanCIgw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		<iframe src="https://www.youtube-nocookie.com/embed/videoseries?list=UUnDDucQDLncrauOCmanCIgw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 		<br /><br />
         </div>
         <?php if($show_promo){ ?>
