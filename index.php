@@ -363,7 +363,7 @@ AUTHOR: Riccardo Carissimi
     <div class="container footer">
       <p class="m-0 text-center text-white">
         Made with ❤️ by <a href="https://github.com/mrriky54" target="_blank">Riccardo Carissimi</a><br><br>
-        <a href="https://github.com/morrolinuxyt/m3" target="_blank"><i class="fa fa-github-square mx-2" aria-hidden="true"></i></a>
+        <a href="https://github.com/morrolinux" target="_blank"><i class="fa fa-github-square mx-2" aria-hidden="true"></i></a>
         <a href="https://www.facebook.com/MorrolinuxOfficial/" target="_blank"><i class="fa fa-facebook-square mx-2" aria-hidden="true"></i></a>
         <a href="https://twitter.com/morrolinux/" target="_blank"><i class="fa fa-twitter-square mx-2" aria-hidden="true"></i></a>
         <a href="https://www.youtube.com/user/morrolinux/" target="_blank"><i class="fa fa-youtube-square mx-2" aria-hidden="true"></i></a>
