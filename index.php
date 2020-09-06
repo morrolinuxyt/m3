@@ -76,7 +76,8 @@ AUTHOR: Riccardo Carissimi
     <div class="container mt-5">
       <div class="row align-items-center">
         <div class="yt_video w-100">
-           <iframe src="https://www.youtube-nocookie.com/embed?listType=user_uploads&list=morrolinux" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br /><br />
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=UUnDDucQDLncrauOCmanCIgw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		<br /><br />
         </div>
         <?php if($show_promo){ ?>
           <a class="js-scroll-trigger banner" href="#corsi"><div> Offerta a tempo limitato! Tutti i corsi in <b>offerta speciale</b> al 93% di sconto <br><img src="img/right-arrow.svg"/> Clicca qui <img src="img/left-arrow.svg"/></div></a>
