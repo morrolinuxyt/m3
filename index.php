@@ -338,14 +338,14 @@ AUTHOR: Riccardo Carissimi
           </h2>
           <img class="avatar float-left rounded-circle mr-4" src="img/moreno.jpg" alt="Moreno Razzoli" title="Moreno Razzoli">
           <p>
-            Mi chiamo <b>Moreno Razzoli</b>,<br>
-        	  Nella vita sono un Linux System Administrator sempre alla ricerca di nuove tecnologie,
-		        ho conseguito le certificazioni LPI, CompTIA Linux+ e Suse CLA, e sono attivo nell'ambito
-		        GNU/Linux dal 2008 con i miei corsi e tutorial su <a href="https://www.youtube.com/user/morrolinux/">YouTube</a> e sul
-		        mio <a href="https://morrolinux.it"> sito ufficiale.</a><br><br>
-            La divulgazione informatica di qualità è per me una priorità, assieme ad un continuo lavoro
-		        di ricerca per le opportunità del settore.
+                        Mi chiamo <b>Moreno Razzoli</b>,<br>
+                        Sono laureato in Scienze Informatiche, ho conseguito le certificazioni Linux <b>LPI</b>, <b>CompTIA Linux+</b> e <b>Suse CLA</b>,
+                        ho realizzato diversi <a href="https://morrolinux.it/progetti">progetti Open Source</a>,
+                        contribuito allo sviluppo di nuove funzionalità in altrettanti progetti già avviati su GitHub e
+                        realizzo <b>video didattici dal 2008</b> su <a href="https://www.youtube.com/user/morrolinux/">YouTube</a> e sul
+                        mio <a href="https://morrolinux.it"> sito ufficiale.</a><br><br>
           </p>
+
           <!-- <p>
           Effettivamente non avevo mai pensato a quanto potesse essere imbarazzante scriversi la propria pagina di “Chi sono”.<br /><br />
           Ebbene mi chiamo Moreno Razzoli, ho studiato Computer Science (Informatica) e sono appassionato di GNU/Linux e soluzioni Open Source, di cui parlo spesso sul mio canale YouTube
