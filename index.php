@@ -332,9 +332,9 @@ AUTHOR: Riccardo Carissimi
       <div class="row">
         <div class="col-lg-8 mx-auto">
           <h2 class="text-center my-5">ABOUT ME<br>
-            <a href="https://www.facebook.com/MorrolinuxOfficial/" target="_blank"><i class="fa fa-facebook-official mx-2" aria-hidden="true" style="color:#3c5a99;"></i></a>
-            <a href="https://twitter.com/morrolinux/" target="_blank"><i class="fa fa-twitter-square mx-2" aria-hidden="true" style="color:#00acee;"></i></a>
-            <a href="https://telegram.me/morrolinux_feed" target="_blank"><i class="fa fa-comment mx-2" aria-hidden="true" style="color:#0088cc;"></i></a>
+            <a class="mx-2" href="https://www.facebook.com/MorrolinuxOfficial/" target="_blank"><i class="fa fa-facebook-official" aria-hidden="true" style="color:#3c5a99;"></i></a>
+            <a class="mx-2" href="https://twitter.com/morrolinux/" target="_blank"><i class="fa fa-twitter-square" aria-hidden="true" style="color:#00acee;"></i></a>
+            <a class="mx-2" href="https://telegram.me/morrolinux_feed" target="_blank"><i class="fa fa-comment" aria-hidden="true" style="color:#0088cc;"></i></a>
           </h2>
           <img class="avatar float-left rounded-circle mr-4" src="img/moreno.jpg" alt="Moreno Razzoli" title="Moreno Razzoli">
           <p>
@@ -363,10 +363,10 @@ AUTHOR: Riccardo Carissimi
     <div class="container footer">
       <p class="m-0 text-center text-white">
         Made with ❤️ by <a href="https://github.com/mrriky54" target="_blank">Riccardo Carissimi</a><br><br>
-        <a href="https://github.com/morrolinux" target="_blank"><i class="fa fa-github-square mx-2" aria-hidden="true"></i></a>
-        <a href="https://www.facebook.com/MorrolinuxOfficial/" target="_blank"><i class="fa fa-facebook-square mx-2" aria-hidden="true"></i></a>
-        <a href="https://twitter.com/morrolinux/" target="_blank"><i class="fa fa-twitter-square mx-2" aria-hidden="true"></i></a>
-        <a href="https://www.youtube.com/user/morrolinux/" target="_blank"><i class="fa fa-youtube-square mx-2" aria-hidden="true"></i></a>
+        <a class="mx-2" href="https://github.com/morrolinux" target="_blank"><i class="fa fa-github-square" aria-hidden="true"></i></a>
+        <a class="mx-2" href="https://www.facebook.com/MorrolinuxOfficial/" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+        <a class="mx-2" href="https://twitter.com/morrolinux/" target="_blank"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
+        <a class="mx-2" href="https://www.youtube.com/user/morrolinux/" target="_blank"><i class="fa fa-youtube-square" aria-hidden="true"></i></a>
       </p>
 
     </div>
