@@ -165,7 +165,7 @@ AUTHOR: Riccardo Carissimi
             <div class="project">
               <img src="img/fluid/vpn.svg" alt="img">
               <h4>Airvpn + torrent</h4>
-              <p>Costruiamo un torrentbox dove scaricare torrent in anonimato tramite un servizio VPN ed un Raspberry Pi!</p>
+              <p>Costruisci un torrentbox dove scaricare torrent in anonimato tramite un servizio VPN ed un Raspberry Pi!</p>
             </div>
           </a>
         </div>
@@ -174,13 +174,13 @@ AUTHOR: Riccardo Carissimi
           <a class="invisible-link" href="https://docs.google.com/document/d/1vE-WSasdyKFwnLX1sT7bu4qXD4XalMyeOSEYIZw30Rg/edit" target="_blank">
             <div class="project">
               <img src="img/fluid/cctv.svg" alt="img">
-              <h4>Sorveglianza con Raspberry Pi</h4>
-              <p>Creiamo un sistema di sorveglianza minimale con motion detection su un Raspberry Pi</p>
+              <h4>Sorveglianza con Raspberry</h4>
+              <p>Realizza un sistema di sorveglianza minimale con motion detection su Raspberry Pi</p>
             </div>
           </a>
         </div>
 
-        <div class="col-md-6 col-lg-6">
+        <div class="col-md-6 col-lg-4">
           <a class="invisible-link" href="https://www.youtube.com/watch?v=H9IvFkqy-rc&list=PL4L8OWDC99_dK0kkfVB0dvsVYV3Iz7qMQ" target="_blank">
             <div class="project">
               <img src="img/fluid/distributed.svg" alt="img">
@@ -190,22 +190,36 @@ AUTHOR: Riccardo Carissimi
           </a>
         </div>
 
-        <div class="col-md-6 col-lg-6">
+        <div class="col-md-6 col-lg-4">
           <a class="invisible-link" href="https://www.youtube.com/watch?v=K1szAL6MKWc" target="_blank">
             <div class="project">
               <img src="img/fluid/remote.svg" alt="img">
               <h4>PIRemote</h4>
-              <p>Sostituiamo tutti i telecomandi a infrarossi (IR) con un singolo Raspberry Pi controllato da Google Assistant</p>
+              <p>Sostituisci tutti i telecomandi a infrarossi (IR) con un singolo Raspberry Pi controllato da Google Assistant</p>
             </div>
           </a>
         </div>
 
+        <div class="col-md-6 col-lg-4">
+          <a class="invisible-link" href="https://youtu.be/sacjogF_8ag?list=UUnDDucQDLncrauOCmanCIgw" target="_blank">
+            <div class="project">
+              <img src="img/fluid/sound.svg" alt="img">
+              <h4>Simple ehm</h4>
+              <p>Un semplice strumento per rimuovere automaticamente "ehm" e silenzi da video e discorsi pre-registrati</p>
+            </div>
+          </a>
+        </div>
+
+
       </div>
 
       <p class="mb-5 text-center">
-	       Vedi tutti i progetti sul mio <a href="https://github.com/morrolinux?tab=repositories">profilo GitHub</a>
       </p>
 
+      <p class="mb-5 text-center">
+	       Scopri tutti i progetti sulla <a href="https://www.youtube.com/watch?v=K1szAL6MKWc&list=PL4L8OWDC99_cgzlY5-vcWbC2LIqNmMbOo">playlist di YouTube</a><br>
+	       Esplora il codice sul mio <a href="https://github.com/morrolinux?tab=repositories">profilo GitHub</a>
+      </p>
     </div>
   </section>
 
@@ -258,7 +272,7 @@ AUTHOR: Riccardo Carissimi
     <div class="container">
       <h2 class="my-5 text-center">SOSTIENI</h2>
       <p class="mb-5 text-center">
-        "Morrolinux" è un progetto di <strong>divulgazione informatica libera</strong>, incentrata su soluzioni OpenSource e sicurezza.<br />
+        "Morrolinux" è un progetto di <strong>divulgazione informatica libera</strong>, incentrata su soluzioni OpenSource e creatività.<br />
           Per mantenere il progetto attivo e la divulgazione dei contenuti gratuita, servono aiuti e fondi.<br />
           Anche il sito “morrolinux.it” ha un costo mensile di affitto e manutenzione, per rimanere stabile, <strong>sicuro</strong> e veloce.
           Per offrire questi servizi, di cui tu stesso, proprio in questo momento stai usufruendo, ci affidiamo a soluzioni non sempre tradizionali.<br />
@@ -362,7 +376,9 @@ AUTHOR: Riccardo Carissimi
   <footer class="py-5 bg-dark">
     <div class="container footer">
       <p class="m-0 text-center text-white">
-        Made with ❤️ by <a href="https://github.com/mrriky54" target="_blank">Riccardo Carissimi</a><br><br>
+        Made with ❤️ by <a href="https://github.com/mrriky54" target="_blank">Riccardo Carissimi</a><br>
+      <a style="opacity:0.5;color:white;" href="http://www.freepik.com/" title="Freepik">Icons made by Freepik</a> <a style="opacity:0.5;color:white;" href="https://www.flaticon.com/" title="Flaticon">from www.flaticon.com</a><br>
+        <br>
         <a class="mx-2" href="https://github.com/morrolinux" target="_blank"><i class="fa fa-github-square" aria-hidden="true"></i></a>
         <a class="mx-2" href="https://www.facebook.com/MorrolinuxOfficial/" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
         <a class="mx-2" href="https://twitter.com/morrolinux/" target="_blank"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
