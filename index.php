@@ -114,7 +114,7 @@ AUTHOR: Riccardo Carissimi
                 <br />Imparerai tutto ciò che c'è da sapere su <i>GNU/Linux</i> ed il suo ecosistema, tramite <b>spiegazioni chiare</b> ed esempi concreti di utilizzo.
                 <br />Pronto per iniziare?
               </p><br>
-              <a title="Corso linux" href="https://corsolinux.com/" class="btn btn-primary mt-auto">Confronta</a>
+              <a title="Corso linux" href="https://corsolinux.com/" class="btn btn-primary mt-auto">Confronta i corsi Linux</a>
             </div>
           </div>
         </a>
@@ -127,7 +127,7 @@ AUTHOR: Riccardo Carissimi
                 Che tu sia un appassionato o uno studente alle prese con <b>reti di calcolatori</b>, sei nel posto giusto per imparare!
                 <br />Ho ideato questo corso per guidarti in una panoramica sul mondo del Networking senza tralasciare, ove necessario, importanti cenni sulla <b>sicurezza informatica</b> troppo spesso "ignorati" nei corsi base di Networking.
   	          </p><br>
-              <a title="Corso networking" href="https://corsoreti.it/" class="btn btn-primary mt-auto">Vai al corso</a>
+              <a title="Corso networking" href="https://corsoreti.it/" class="btn btn-primary mt-auto">Informazioni sul corso</a>
             </div>
           </div>
         </a>
@@ -216,10 +216,6 @@ AUTHOR: Riccardo Carissimi
       <p class="mb-5 text-center">
       </p>
 
-      <p class="mb-5 text-center">
-	       Scopri tutti i progetti sulla <a href="https://www.youtube.com/watch?v=K1szAL6MKWc&list=PL4L8OWDC99_cgzlY5-vcWbC2LIqNmMbOo">playlist di YouTube</a><br>
-	       Esplora il codice sul mio <a href="https://github.com/morrolinux?tab=repositories">profilo GitHub</a>
-      </p>
     </div>
   </section>
 
@@ -238,7 +234,7 @@ AUTHOR: Riccardo Carissimi
 
       <div class="row">
 
-        <div class="col-md-6 col-lg-6">
+        <div class="col-md-6 col-lg-4">
           <a class="invisible-link" href="https://www.youtube.com/watch?v=3MRYf2OKddc" target="_blank">
             <div class="project">
               <img src="img/fluid/clapperboard.svg" alt="img">
@@ -248,7 +244,7 @@ AUTHOR: Riccardo Carissimi
           </a>
         </div>
 
-        <div class="col-md-6 col-lg-6">
+        <div class="col-md-6 col-lg-4">
           <a class="invisible-link" href="https://www.youtube.com/watch?v=BB8LFZtSc1g" target="_blank">
             <div class="project">
               <img src="img/fluid/writing.svg" alt="img">
@@ -258,10 +254,27 @@ AUTHOR: Riccardo Carissimi
           </a>
         </div>
 
+        <div class="col-md-6 col-lg-4">
+          <a class="invisible-link" href="https://youtu.be/qJVSuxNIfI4?t=763" target="_blank">
+            <div class="project">
+              <img src="img/fluid/dash2.svg" alt="img">
+              <h4>i3expo-ng</h4>
+              <p>Un semplice tool per replicare l'effetto Exposé di MacOS su i3 WM (Linux). Questo fork introduce numerose funzionalità, come descritto sul repo github.</p>
+            </div>
+          </a>
+        </div>
+
       </div>
 
     </div>
+
+      <p class="mb-5 text-center">
+	       Scopri tutti i progetti sulla <a href="https://www.youtube.com/watch?v=K1szAL6MKWc&list=PL4L8OWDC99_cgzlY5-vcWbC2LIqNmMbOo">playlist di YouTube</a><br>
+	       Esplora il codice sul mio <a href="https://github.com/morrolinux?tab=repositories">profilo GitHub</a>
+      </p>
+
   </section>
+
 
   <div class="container">
     <div class="divider"></div>
@@ -355,7 +368,7 @@ AUTHOR: Riccardo Carissimi
                         Mi chiamo <b>Moreno Razzoli</b>,<br>
                         Sono laureato in Scienze Informatiche, ho conseguito le certificazioni Linux <b>LPI</b>, <b>CompTIA Linux+</b> e <b>Suse CLA</b>,
                         ho realizzato diversi <a href="https://morrolinux.it/progetti">progetti Open Source</a>,
-                        contribuito allo sviluppo di nuove funzionalità in altrettanti progetti già avviati su GitHub e
+                        contribuito allo sviluppo di nuove funzionalità in altrettanti progetti già avviati e
                         realizzo <b>video didattici dal 2008</b> su <a href="https://www.youtube.com/user/morrolinux/">YouTube</a> e sul
                         mio <a href="https://morrolinux.it"> sito ufficiale.</a><br><br>
           </p>
