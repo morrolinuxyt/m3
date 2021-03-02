@@ -34,6 +34,13 @@ AUTHOR: Riccardo Carissimi
     } else {
       $show_promo = false;
     }
+
+    $video_link = "https://www.youtube-nocookie.com/embed/videoseries?list=UUnDDucQDLncrauOCmanCIgw";
+    if (file_exists('embed-video.txt')) {
+      $file = fopen("embed-video.txt", "r") or die("Unable to open file!");
+      $video_link = fgets($file);
+      fclose($file);
+    }
   ?>
 
   <!-- Navigation -->
@@ -76,7 +83,7 @@ AUTHOR: Riccardo Carissimi
     <div class="container mt-5">
       <div class="row align-items-center">
         <div class="yt_video w-100">
-		<iframe src="https://www.youtube-nocookie.com/embed/videoseries?list=UUnDDucQDLncrauOCmanCIgw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		<iframe src="<?php echo $video_link; ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 		<br /><br />
         </div>
         <?php if($show_promo){ ?>
