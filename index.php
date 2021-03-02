@@ -150,7 +150,7 @@ AUTHOR: Riccardo Carissimi
 
       <div class="row">
 
-        <div class="col-md-6 col-lg-4">
+        <div class="col-md-6 col-lg-3">
           <a class="invisible-link" href="https://github.com/morrolinux/mpradio" target="_blank">
             <div class="project">
               <img src="img/fluid/radio.svg" alt="img">
@@ -160,27 +160,7 @@ AUTHOR: Riccardo Carissimi
           </a>
         </div>
 
-        <div class="col-md-6 col-lg-4">
-          <a class="invisible-link" href="https://docs.google.com/document/d/1m786WYmgYN5IQB2kkHipPjVVUkgzzNLGPNZ3tmmeon4/edit" target="_blank">
-            <div class="project">
-              <img src="img/fluid/vpn.svg" alt="img">
-              <h4>Airvpn + torrent</h4>
-              <p>Costruisci un torrentbox dove scaricare torrent in anonimato tramite un servizio VPN ed un Raspberry Pi!</p>
-            </div>
-          </a>
-        </div>
-
-        <div class="col-md-6 col-lg-4">
-          <a class="invisible-link" href="https://docs.google.com/document/d/1vE-WSasdyKFwnLX1sT7bu4qXD4XalMyeOSEYIZw30Rg/edit" target="_blank">
-            <div class="project">
-              <img src="img/fluid/cctv.svg" alt="img">
-              <h4>Sorveglianza con Raspberry</h4>
-              <p>Realizza un sistema di sorveglianza minimale con motion detection su Raspberry Pi</p>
-            </div>
-          </a>
-        </div>
-
-        <div class="col-md-6 col-lg-4">
+        <div class="col-md-6 col-lg-3">
           <a class="invisible-link" href="https://www.youtube.com/watch?v=H9IvFkqy-rc&list=PL4L8OWDC99_dK0kkfVB0dvsVYV3Iz7qMQ" target="_blank">
             <div class="project">
               <img src="img/fluid/distributed.svg" alt="img">
@@ -190,7 +170,7 @@ AUTHOR: Riccardo Carissimi
           </a>
         </div>
 
-        <div class="col-md-6 col-lg-4">
+        <div class="col-md-6 col-lg-3">
           <a class="invisible-link" href="https://www.youtube.com/watch?v=K1szAL6MKWc" target="_blank">
             <div class="project">
               <img src="img/fluid/remote.svg" alt="img">
@@ -200,7 +180,7 @@ AUTHOR: Riccardo Carissimi
           </a>
         </div>
 
-        <div class="col-md-6 col-lg-4">
+        <div class="col-md-6 col-lg-3">
           <a class="invisible-link" href="https://youtu.be/sacjogF_8ag?list=UUnDDucQDLncrauOCmanCIgw" target="_blank">
             <div class="project">
               <img src="img/fluid/sound.svg" alt="img">
