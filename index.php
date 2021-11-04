@@ -178,16 +178,6 @@ AUTHOR: Riccardo Carissimi
         </div>
 
         <div class="col-md-6 col-lg-3">
-          <a class="invisible-link" href="https://www.youtube.com/watch?v=K1szAL6MKWc" target="_blank">
-            <div class="project">
-              <img src="img/fluid/remote.svg" alt="img">
-              <h4>PIRemote</h4>
-              <p>Sostituisci tutti i telecomandi a infrarossi (IR) con un singolo Raspberry Pi controllato da Google Assistant</p>
-            </div>
-          </a>
-        </div>
-
-        <div class="col-md-6 col-lg-3">
           <a class="invisible-link" href="https://youtu.be/sacjogF_8ag?list=UUnDDucQDLncrauOCmanCIgw" target="_blank">
             <div class="project">
               <img src="img/fluid/sound.svg" alt="img">
@@ -197,6 +187,15 @@ AUTHOR: Riccardo Carissimi
           </a>
         </div>
 
+        <div class="col-md-6 col-lg-3">
+          <a class="invisible-link" href="https://www.youtube.com/watch?v=K1szAL6MKWc" target="_blank">
+            <div class="project">
+              <img src="img/fluid/ChimeraDesk.svg" alt="img">
+              <h4>ChimeraDesk</h4>
+              <p>Un software di desktop remoto ad alte prestazioni progettato per essere semplice e modulare.</p>
+            </div>
+          </a>
+        </div>
 
       </div>
 
