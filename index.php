@@ -188,7 +188,7 @@ AUTHOR: Riccardo Carissimi
         </div>
 
         <div class="col-md-6 col-lg-3">
-          <a class="invisible-link" href="https://www.youtube.com/watch?v=K1szAL6MKWc" target="_blank">
+          <a class="invisible-link" href="https://www.youtube.com/watch?v=Zt7O5WLnAYc" target="_blank">
             <div class="project">
               <img src="img/fluid/ChimeraDesk.svg" alt="img">
               <h4>ChimeraDesk</h4>
