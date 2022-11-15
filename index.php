@@ -103,9 +103,9 @@ AUTHOR: Riccardo Carissimi
     <div class="container">
       <h2 class="my-5 text-center">CORSI</h2>
       <p class="mb-5 text-center">
-      Pubblico video su Informatica e GNU/Linux dal 2008.
-      Nel corso di questi anni ho realizzato svariati tutorial e numerosi video didattici. <br>
-      Da alcuni anni a questa parte ho anche iniziato a realizzare corsi completi e ben strutturati. Ecco alcuni esempi:
+      Pubblico video su GNU/Linux ed il panorama del Free Software dal 2008. <br>
+      Negli ultimi <?php echo date('Y')-2008;?> anni ho realizzato <i>oltre 500 contenuti video a tema didattico</i> ed erogato numerosi corsi di formazione professionale.<br>
+      Dal 2018 realizzo anche <b>corsi online</b> consultabili <i>on-demand</i> per diversi livelli ed aree di competenza: 
       </p>
       <!-- <p class="mb-5 text-justify">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Et netus et malesuada fames.
