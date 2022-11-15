@@ -34,6 +34,7 @@ AUTHOR: Riccardo Carissimi
     } else {
       $show_promo = false;
     }
+      $show_promo = false; // TODO: decide weather or not to show the promo banner.
 
     $video_link = "https://www.youtube-nocookie.com/embed/videoseries?list=UUnDDucQDLncrauOCmanCIgw";
     if (file_exists('embed-video.txt')) {
@@ -86,9 +87,11 @@ AUTHOR: Riccardo Carissimi
 		<iframe src="<?php echo $video_link; ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 		<br /><br />
         </div>
+
         <?php if($show_promo){ ?>
-          <a class="js-scroll-trigger banner" href="#corsi"><div> Offerta a tempo limitato! Tutti i corsi in <b>offerta speciale</b> al 93% di sconto <br><img src="img/right-arrow.svg"/> Clicca qui <img src="img/left-arrow.svg"/></div></a>
+          <a id="promo" class="js-scroll-trigger banner" href="#corsi"><div> Offerta a tempo limitato!<br>Tutti i corsi in <b>offerta speciale</b> al 93% di sconto <br><img src="img/right-arrow.svg"/> Clicca qui <img src="img/left-arrow.svg"/></div></a>
         <?php } ?>
+          <a id="coupon" class="js-scroll-trigger banner" href="https://forms.gle/9vxTEVDftBzioDat8"><div><b>Mi segui su YouTube?</b> Grazie per il supporto!<br>Premi qui per richiedere uno <b>sconto immediato</b> sul costo di tutti gli esami LPI.</div></a>
       </div>
 
     </div>

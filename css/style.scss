@@ -1,5 +1,6 @@
 // ++ Variables ++
 $theme-color: #FEC224;
+$offer-color: #ff6f1c;
 $theme-font: 'Ubuntu', sans-serif;
 $theme-title-font: 'Ubuntu', sans-serif;
 $shadow: rgba(0, 0, 0, 0.3);
@@ -130,6 +131,9 @@ section {
 
   div{
     background-color: $theme-color;
+    .coupon {
+      background-color: "#ff6f1c";
+    }
     padding: 20px;
     border-radius: 10px;
     text-align: center;
