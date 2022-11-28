@@ -90,8 +90,15 @@ AUTHOR: Riccardo Carissimi
 
         <?php if($show_promo){ ?>
           <a id="promo" class="js-scroll-trigger banner" href="#corsi"><div> Offerta a tempo limitato!<br>Tutti i corsi in <b>offerta speciale</b> al 93% di sconto <br><img src="img/right-arrow.svg"/> Clicca qui <img src="img/left-arrow.svg"/></div></a>
-        <?php } ?>
-          <a id="coupon" class="js-scroll-trigger banner" href="https://forms.gle/9vxTEVDftBzioDat8"><div><b>Mi segui su YouTube?</b> Grazie per il supporto!<br>Premi qui per richiedere uno <b>sconto immediato</b> sul costo di tutti gli esami LPI.</div></a>
+	<?php } ?>
+
+        <div class="container">
+          <p class="mb-0 text-center">
+    	  <b>Mi segui su YouTube?</b><br>Grazie per il supporto!
+          </p>
+          <a id="coupon" class="js-scroll-trigger banner" href="https://forms.gle/9vxTEVDftBzioDat8"><div><b>Reclama il tuo COUPON </b><br>per ricevere uno sconto sul prezzo di tutti gli esami LPI.</div></a>
+        </div>
+
       </div>
 
     </div>
