@@ -395,7 +395,7 @@ AUTHOR: Riccardo Carissimi
       <br>
       <br>
       <a style="opacity:0.5;color:white;" >Moreno Razzoli<br>P.IVA IT04063670360</a> <br>
-      <a style="opacity:0.5;color:white;" target="_blank" href="http://morrolinux.it/privacy_policy/" title="Privacy Policy">Privacy Policy</a> 
+      <a style="opacity:0.5;color:white;" target="_blank" href="http://morrolinux.it/privacy_policy" title="Privacy Policy">Privacy Policy</a> 
       <br>
       </p>
 
