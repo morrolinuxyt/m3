@@ -36,7 +36,8 @@ AUTHOR: Riccardo Carissimi
     }
       $show_promo = false; // TODO: decide weather or not to show the promo banner.
 
-    $video_link = "https://www.youtube-nocookie.com/embed/videoseries?list=UUnDDucQDLncrauOCmanCIgw";
+    # $video_link = "https://www.youtube-nocookie.com/embed/videoseries?list=UUnDDucQDLncrauOCmanCIgw";
+    $video_link = "https://www.youtube-nocookie.com/embed/videoseries?list=PL4L8OWDC99_cNe6BI2u_irZTJdydA7GL8";
     if (file_exists('embed-video.txt')) {
       $file = fopen("embed-video.txt", "r") or die("Unable to open file!");
       $video_link = fgets($file);
