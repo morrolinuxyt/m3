@@ -282,10 +282,9 @@ AUTHOR: Riccardo Carissimi
     <div class="container">
       <h2 class="my-5 text-center">SOSTIENI</h2>
       <p class="mb-5 text-center">
-        "Morrolinux" è un progetto di <strong>divulgazione informatica libera</strong>, incentrata su soluzioni OpenSource e creatività.<br />
-          Per mantenere il progetto attivo e la divulgazione dei contenuti gratuita, servono aiuti e fondi.<br />
-          Anche il sito “morrolinux.it” ha un costo mensile di affitto e manutenzione, per rimanere stabile, <strong>sicuro</strong> e veloce.
-          Per offrire questi servizi, di cui tu stesso, proprio in questo momento stai usufruendo, ci affidiamo a soluzioni non sempre tradizionali.<br />
+        "Morrolinux" è un progetto di <strong>divulgazione del software libero</strong> da oltre 15 anni.<br />
+	  Realizzare contenuti didattici di qualità richiede un impegno costante e continuativo. <br>
+	Per mantenere il progetto attivo e la divulgazione dei contenuti gratuita, servono aiuti e fondi.<br />
           Ecco alcuni modi con cui puoi <strong>realmente</strong> contribuire al progetto
       </p>
 
@@ -298,8 +297,8 @@ AUTHOR: Riccardo Carissimi
             <p>
               - Iscrivendoti al canale<br />
               - Disattivando eventuali <strong>AdBlock</strong> sul mio canale<br />
-              - Lasciando like e/o commenti ai video<br />
-              - Condividendo il canale e i video<br />
+              - Lasciando like e commenti ai video<br />
+              - Condividendo i contenuti<br />
             </p>
           </div>
         </div>
@@ -323,7 +322,7 @@ AUTHOR: Riccardo Carissimi
             <img src="img/fluid/share.svg" alt="img">
             <h4>Sui social</h4>
             <p>
-              - Mipiacciandomi su <a href="https://www.facebook.com/MorrolinuxOfficial/" target="blank_">Facebook</a><br />
+              - Citandomi su <a href="https://www.linkedin.com/in/morenorazzoli" target="blank_">LinkedIn</a><br />
               - Seguendomi su <a href="https://twitter.com/morrolinux" target="blank_">Twitter</a><br />
               - Stellandomi su <a href="https://github.com/morrolinux" target="blank_">GitHub</a><br />
             </p>
@@ -332,12 +331,12 @@ AUTHOR: Riccardo Carissimi
 
         <div class="col-lg-3">
           <div class="text-column">
-            <img src="img/fluid/donation.svg" alt="img">
-            <h4>Donazioni</h4>
+            <img src="img/fluid/patreon.png" alt="img">
+            <h4>Su Patreon</h4>
             <p>
-              Anche se i video sono visibili gratuitamente, la loro realizzazione ha dei costi, sia economici che in termini di tempo.<br />Se ti va di contribuire ad ammortizzarli e credi anche tu nell'<strong>informazione libera</strong>, puoi fare una donazione qui. <b>Grazie.</b>
+ 		Qui potrai curiosare <b>dietro le quinte</b> con video in anteprima e aggiornamenti "in tempo reale" su quello che sto preparando. Inoltre avrai la possibilità di vedere <b>il tuo nome nella sigla</b> dei miei video, partecipare alle <b>votazioni</b> esclusive sui contenuti e accedere a <b>contenuti esclusivi</b> non pubblicabili su YouTube.
             </p>
-            <a title="Sostieni" href="https://paypal.me/MorenoRazzoli" class="btn btn-primary mt-auto" target="_blank">Sostieni</a>
+            <a title="Sostieni" href="https://www.patreon.com/Morrolinux" class="btn btn-primary mt-auto" target="_blank">Sostieni</a>
           </div>
         </div>
 
