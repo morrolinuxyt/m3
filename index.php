@@ -221,10 +221,10 @@ AUTHOR: Riccardo Carissimi
   </div>
 
 
-  <!-- #CONTRIBUZIONI -->
-  <section id="contribuzioni">
+  <!-- #CONTRIBUTI -->
+  <section id="contributi">
     <div class="container">
-      <h2 class="my-5 text-center">CONTRIBUZIONI A PROGETTI OPEN SOURCE</h2>
+      <h2 class="my-5 text-center">CONTRIBUTI A PROGETTI OPEN SOURCE</h2>
       <!-- <p class="mb-5 text-justify">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Et netus et malesuada fames.
       </p> -->
@@ -236,7 +236,7 @@ AUTHOR: Riccardo Carissimi
             <div class="project">
               <img src="img/fluid/clapperboard.svg" alt="img">
               <h4>Taglio automatico dei silenzi</h4>
-              <p>Tramite questa contribuzione ad Olive video editor, è ora possibile tagliare automaticamente i silenzi in una traccia.</p>
+              <p>Tramite questo contributo ad Olive video editor, è ora possibile tagliare automaticamente i silenzi in una traccia.</p>
             </div>
           </a>
         </div>
