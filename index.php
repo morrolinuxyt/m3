@@ -391,9 +391,9 @@ AUTHOR: Riccardo Carissimi
         <a class="mx-2" href="https://github.com/morrolinux" target="_blank"><i class="fa fa-github-square" aria-hidden="true"></i></a>
         <a class="mx-2" href="https://www.facebook.com/MorrolinuxOfficial/" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
         <a class="mx-2" href="https://twitter.com/morrolinux/" target="_blank"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
-	<a class="mx-2" rel="me" href="https://mastodon.uno/@morrolinux" target="_blank"><i class="fa fa-mastodon-square" aria-hidden="true"></i></a>
         <a class="mx-2" href="https://www.youtube.com/user/morrolinux/" target="_blank"><i class="fa fa-youtube-square" aria-hidden="true"></i></a>
       <br>
+      <a class="mx-2" rel="me" href="https://mastodon.uno/@morrolinux" target="_blank"></a> <!-- TODO: insert fa-mastodon-square icon -->
       <br>
       <a style="opacity:0.5;color:white;" >Moreno Razzoli<br>P.IVA IT04063670360</a> <br>
       <a style="opacity:0.5;color:white;" target="_blank" href="http://morrolinux.it/privacy_policy" title="Privacy Policy">Privacy Policy</a> 
