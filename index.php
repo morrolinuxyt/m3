@@ -84,9 +84,9 @@ AUTHOR: Riccardo Carissimi
   <section id="home">
     <div class="container mt-5">
       <div class="row align-items-center">
-        <div class="yt_video w-100">
-		<iframe src="<?php echo $video_link; ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-		<br /><br />
+        <div class="yt_video">
+          <iframe src="<?php echo $video_link; ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <br /><br />
         </div>
 
         <?php if($show_promo){ ?>
@@ -391,6 +391,7 @@ AUTHOR: Riccardo Carissimi
         <a class="mx-2" href="https://github.com/morrolinux" target="_blank"><i class="fa fa-github-square" aria-hidden="true"></i></a>
         <a class="mx-2" href="https://www.facebook.com/MorrolinuxOfficial/" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
         <a class="mx-2" href="https://twitter.com/morrolinux/" target="_blank"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
+	<a class="mx-2" rel="me" href="https://mastodon.uno/@morrolinux" target="_blank"><i class="fa fa-mastodon-square" aria-hidden="true"></i></a>
         <a class="mx-2" href="https://www.youtube.com/user/morrolinux/" target="_blank"><i class="fa fa-youtube-square" aria-hidden="true"></i></a>
       <br>
       <br>
