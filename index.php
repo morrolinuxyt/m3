@@ -84,7 +84,7 @@ AUTHOR: Riccardo Carissimi
   <section id="home">
     <div class="container mt-5">
       <div class="row align-items-center">
-        <div class="yt_video">
+        <div class="yt_video w-100">
           <iframe src="<?php echo $video_link; ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           <br /><br />
         </div>
