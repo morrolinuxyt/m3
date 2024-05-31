@@ -1,0 +1,957 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<div class="ARTICLE">
+<div class="TITLEPAGE">
+<h1 class="TITLE">
+<a name="INDEX">Come fare domande in modo intelligente</a></h1>
+<p class="COPYRIGHT">Copyright &copy; 2001 by Eric S. Raymond</p>
+<hr></div>
+<div class="TOC">
+<dl>
+<dt><b>Indice</b></dt>
+<dt><a href="#TRANSLATIONS">Traduzioni</a></dt>
+<dt><a href="#INTRO">Introduzione</a></dt>
+<dt><a href="#BEFORE">Prima di domandare</a></dt>
+<dt><a href="#ASKING">Quando si domanda</a></dt>
+<dt><a href="#ANSWERS">Come interpretare le risposte</a></dt>
+<dt><a href="#NOT_LOSING">Sul non reagire da sfigato</a></dt>
+<dt><a href="#CLASSIC">Domande da non fare</a></dt>
+<dt><a href="#EXAMPLES">Domande buone e domande cattive</a></dt>
+<dt><a href="#AEN413">Se nessuno ci risponde</a></dt>
+<dt><a href="#AEN421">Risorse collegate</a></dt>
+</dl></div>
+<div class="SECT1">
+<hr><h1 class="SECT1"><a name="TRANSLATIONS">Traduzioni</a></h1>
+<p>Quello che state leggendo è un re-upload della versione originariamente presente 
+  a <a href="https://wwwcdf.pd.infn.it/MLO/smart-questions.html">questo indirizzo</a> 
+  e tutt'ora consultabile sulla <a href="https://web.archive.org/web/20230329033725/https://wwwcdf.pd.infn.it/MLO/smart-questions.html">WayBackMachine</a> da cui è stato recuperato (grazie!).
+  <br><br>
+  La versione originale (in inglese) del documento &egrave; in
+<a href="http://www.catb.org/~esr/faqs/smart-questions.html">questa
+URL</a>; traduzioni di questo documento sono state fatte anche in
+<a href="https://github.com/selfteaching/How-To-Ask-Questions-The-Smart-Way?tab=readme-ov-file">altre lingue</a>, compreso il formato audiobook in inglese.
+
+<section id="help">
+  <blockquote style="display:inline-block; background:rgb(255, 192, 83);">
+    <h2 style="margin-top: 0em; text-align: center; padding: 0.3em; background:rgb(228, 145, 0);">HELP NEEDED</h2>
+    <p style="text-align: center; padding-left: 1em; padding-right: 1em; padding-bottom: 0.5em;">Questa traduzione <b>non è aggiornata</b> e non include tutte le informazioni presenti
+      nella <a href="http://www.catb.org/~esr/faqs/smart-questions.html">versione originale</a>.<br>
+      Se vuoi e puoi contribuire alla traduzione, apri una PR sul mio <a href="https://github.com/morrolinuxyt/m3">Repository GitHub</a>.
+      <br><br>
+      <cite><b>Grazie a nome dell'intera community!</b></cite>
+    </p> 
+  </blockquote>
+</section>
+
+</p><p><b>Nota bene:</b> alcuni termini in lingua inglese ma
+largamente compresi, come ad esempio <em>hacker</em> (qui usato nel
+significato originale, spiegato ad es. in <a href="http://www.tuxedo.org/~esr/faqs/hacker-howto.html">questa
+URL</a>, e non in quello, purtroppo diffuso tra i non addetti ai
+lavori, di <em>pirata informatico</em>) e
+<em>newsgroup</em> sono stati lasciati inalterati nella traduzione; di
+altri, meno diffusi, si &egrave; tentato di dare una traduzione in
+italiano &#8212; come ad esempio per <em>loser</em>, che si &egrave;
+reso con <em>sfigato</em>.
+</p></div>
+<div class="SECT1">
+<hr><h1 class="SECT1"><a name="INTRO">Introduzione</a></h1>
+<p>Nel mondo degli <a href="http://www.tuxedo.org/~esr/faqs/hacker-howto.html">hackers</a>,
+il tipo di repliche che ricevono le nostre domande tecniche dipende
+non solo dalla difficolt&agrave; di arrivare ad una risposta
+esauriente, ma anche da <em>come si &egrave; posta</em> la domanda
+stessa.  Questa guida cerca di spiegare come andrebbero formulate le
+domande in modo da aumentare la probabilit&agrave; che esse ricevano
+una risposta soddisfacente.
+</p><p> La prima cosa da capire &egrave; che agli hackers
+<em>piacciono</em> i problemi difficili, e le domande azzeccate e
+generatrici di riflessione che li riguardano; se cos&igrave; non
+fosse, non saremmo qui su Internet.  Quando qualcuno ci propone un
+interrogativo interessante su cui rimuginare gliene siamo grati; in
+effetti, le domande ben poste sono uno stimolo: e quindi un buon
+regalo che ci viene fatto.  Le belle domande ci aiutano a capire
+pi&ugrave; a fondo un problema, e spesso ce ne rivelano angoli oscuri
+di cui non ci eravamo accorti e cui non avremmo fatto caso altrimenti.
+Tra gli hackers, dire "questa &egrave; una buona domanda!" equivale a
+fare un complimento sincero ed importante.
+</p><p> A dispetto di quanto ora detto, per&ograve;, gli hackers sono
+ben noti per l'abitudine di rispondere, a quelle che sono in fondo
+domande semplici, con quella che appare ostilit&agrave; e arroganza.
+Ogni tanto sembra che noi si sia <em>studiatamente maleducati</em>
+verso gli inesperti ed i novizi; ma questo non &egrave; del tutto
+vero.
+</p><p> Si tratta dell'essere, e dichiaratamente, ostili a coloro che
+si presentano come non disposti n&eacute; a riflettere n&eacute; a
+fare un minimo di lavoro prima di domandare.  Persone cos&igrave; sono
+una perdita di tempo &#8212; prendono senza dare, e ci farebbero
+sprecare minuti che avremmo potuto dedicare a problemi pi&ugrave;
+interessanti o a persone pi&ugrave; meritevoli di una risposta.  A
+gente come questa ci riferiremo chiamandoli <em>sfigati</em>.
+</p><p> Noi ci rendiamo conto del fatto che esistono individui che
+vogliono solamente <em>utilizzare</em> il software, e che non hanno
+alcun interesse nei dettagli tecnici.  Per la maggior parte delle
+persone un computer &egrave; meramente un utensile, quindi un mezzo
+che consente di raggiungere un fine; hanno cose, nella vita, a cui
+pensare e da fare assai pi&ugrave; importanti di quei dettagli.  Lo
+sappiamo, e non ci aspettiamo che tutti provino interesse per le cose
+che ci affascinano.  Nonostante questo, rispondiamo con stile del
+tutto diverso a coloro che condividono questo stesso nostro interesse
+e che si propongono come partecipanti <em>attivi</em> al processo di
+soluzione dei problemi.  E sar&agrave; sempre cos&igrave;; se non lo
+fosse, in fondo faremmo con meno efficienza proprio le cose che
+sappiamo fare meglio.
+</p><p> Noi siamo, nella grande maggioranza, volontari: dedichiamo
+qualche minuto della nostra esistenza, oltre al tempo che dobbiamo
+dare al lavoro ed alla vita privata, per rispondere alle domande
+altrui; e, ogni tanto, siamo anche sopraffatti da questa occupazione
+"aggiuntiva".  Per questo motivo filtriamo inflessibilmente le
+domande.  In particolare saltiamo a pi&eacute; pari tutto quello che
+sembra provenire da un qualche sfigato, per spendere il nostro tempo a
+vantaggio di chi ci appare come una persona interessata.
+</p><p> Se trovate questo atteggiamento sgradevole, condiscendente o
+arrogante, pensateci un attimo.  Nessuno chiede che gli altri ci si
+prosternino davanti &#8212; in effetti la maggior parte di noi non
+chiederebbe di meglio che dialogare con tutti quanti da uguale e dar
+loro il benvenuto nel nostro universo culturale, se solo gli altri ci
+mettessero un piccolo sforzo per renderlo possibile.  Ma,
+semplicemente, non &egrave; remunerativo cercare di aiutare chi mostra
+di non saper fare lui stesso un piccolo sforzo.  Se non riuscite a
+sopportare questo atteggiamento forse discriminatorio, ebbene,
+<em>pagate</em> qualcuno per un aiuto prestato nei termini di un
+contratto commerciale invece di domandare agli hackers di
+<em>regalarvi</em> quello stesso aiuto per favore.
+</p><p> Se decidete di chiederci qualcosa, cercate di non comportarvi
+da sfigati; il modo migliore di ottenere risposte rapide e complete
+&egrave; di domandare <em>a modino</em> &#8212; domandare da persona
+furba, consapevole e che conosce la materia, e a cui solamente capita
+di aver bisogno di aiuto per un problema particolare.
+</p><p> (Suggerimenti per migliorare questa guida sono i benvenuti.
+Mandateli a <b>Eric S. Raymond</b>, <a href="mailto:esr@thyrsus.com">esr@thyrsus.com</a>; considerate
+per&ograve; che questo documento non vuole essere una guida generale
+alla <a href="http://www.dtcc.edu/cs/rfc1855.html">netiquette</a>, e
+che per questo non verranno considerati suggerimenti che non
+riguardino il come ottenere risposte utili da un'audience tecnica).
+</p></div>
+<div class="SECT1">
+<hr><h1 class="SECT1"><a name="BEFORE">Prima di domandare</a></h1>
+<p>Prima di presentare una domanda tecnica per email o in un
+newsgroup o su una chat qualificata, dovete:
+</p><div class="PROCEDURE">
+<p><ol>
+<li>Cercare di trovare una risposta su un manuale</li>
+<li>Cercare di trovare una risposta leggendo una FAQ</li>
+<li>Cercare di trovare una risposta usando un motore di ricerca</li>
+<li>Cercare di trovare una risposta chiedendo a un amico</li>
+</ol></div>
+<p>Quando formulate la domanda, fate presente che prima avete
+fatto tutto questo; questo ci aiuta a capire che non siete un pigrone
+o uno scroccone, e che non volete far sprecare tempo alla gente.
+Meglio ancora, fate capire <em>quello che avete imparato</em> tentando
+tutto questo; a noi <b>piace</b> rispondere a chi dimostra di aver
+imparato qualcosa da risposte ricevute in precedenza.
+</p><p>Pensate alla vostra domanda, e preparatela bene.  Domande fatte
+in tono irascibile ricevono risposte irascibili, o nessuna risposta
+del tutto.  Pi&ugrave; mostrerete di aver pensato e di esservi
+sforzati per trovare una soluzione al vostro problema prima di aver
+chiesto aiuto, pi&ugrave; sar&agrave; probabile che riceviate
+quell'aiuto.
+</p><p>Attenzione a non fare domande formulandole in modo poco
+corretto.  Se chiedete qualcosa non correttamente, l'hacker tipico
+(mentre pensa "Ma che domanda stupida") in genere replica con una
+risposta alla lettera della domanda e per questo volutamente inutile;
+sperando che l'aver ricevuto la risposta a quello che avete
+letteralmente chiesto piuttosto che a quello di cui avevate bisogno vi
+insegni una lezione.
+</p><p>Non assumete <b>mai</b> di avere <em>diritto</em> ad una
+risposta.  Non l'avete; non state mica pagando un servizio.  Noi vi
+dobbiamo una risposta, se ve la dobbiamo, per l'aver posto una domanda
+interessante, ricca di sostanza ed intellettualmente stimolante
+&#8212; una domanda che implicitamente dia un contributo alla
+comunit&agrave; invece di richiedere passivamente conoscenza dagli
+altri.
+</p><p>Inversamente, il sottolineare che siete capace e volete
+contribuire al processo dello sviluppo di una soluzione &egrave; un
+buon punto di partenza.  "Potete darmi uno spunto?", "Cosa non fa bene
+nel mio esempio?", "C'&egrave; un sito dove potrei guardare?" sono
+domande che ricevono risposta pi&ugrave; prontamente di "Per favore,
+spiegatemi passo passo cosa devo fare."; perch&egrave; chiarite che
+siete pronti ad arrivare da soli alla soluzione, se soltanto qualcuno
+vi da il giusto punto di partenza.
+</p></div>
+<div class="SECT1"><hr>
+<h1 class="SECT1"><a name="ASKING">Quando si domanda</a></h1>
+<div class="SECT2">
+<h2 class="SECT2"><a name="AEN143">Scegliete con cura a chi
+domandare</a></h2>
+<p>Siate giudiziosi nello scegliere <em>in che sede</em> proporre la
+vostra domanda; probabilmente sarete ignorati, o comunque catalogati
+come sfigati, se:
+<ul>
+<li>la inviate ad un newsgroup dove &egrave; <em>off-topic</em> (fuori
+tema);
+<li>la domanda &egrave; elementare ma la inviate ad un newsgroup dove
+si discutono argomenti tecnici avanzati (o viceversa);
+<li>la domanda &egrave; <em>cross-posted</em> (inviata
+contemporaneamente) a molti newsgroups differenti.
+</ul>
+(ovviamente quanto detto per un newsgroup vale anche in un contesto
+diverso, ad esempio una chat o una mailing list).
+<p>Gli hackers ignorano domande fatte in una sede inopportuna, e
+questo per cercare di impedire che i loro canali di comunicazione
+siano sepolti sotto una massa abnorme di comunicazioni irrilevanti.
+Voi <em>non volete</em> che questo accada anche a voi.
+</p><p>In generale, le domande rivolte ad un ambiente pubblico
+ricevono pi&ugrave; risposte utili di quelle rivolte ad un
+destinatario privato &#8212; e ci sono svariate ragioni per questo: la
+prima &egrave; semplicemente il maggior numero di potenziali lettori
+della domanda; un'altra &egrave; il maggior numero di potenziali
+lettori della risposta, visto che gli hackers esperti in un certo
+campo preferiscono frequentare un contesto dove le loro conoscenze
+possono interessare un maggior numero di persone (e stimolare una
+discussione pi&ugrave; lunga ed approfondita).
+</p></div>
+<div class="SECT2"><hr>
+<h2 class="SECT2"><a name="AEN155">
+Ogni volta che &egrave; possibile, usate una mailing list</a></h2>
+<p>Se un progetto software ha una mailing list, usatela: scrivete alla
+lista e <em>non</em> ad un particolare sviluppatore &#8212; anche se
+pensate di sapere chi sia colui che pu&ograve; rispondere nel migliore
+dei modi possibili alla vostra domanda.  Controllate la documentazione
+o la <em>home page</em> del progetto, guardate se viene citata una
+mailing list, e, se si, usatela.  Ci sono diverse buone ragioni per
+questo:
+</p><p><ul>
+<li>Ogni domanda che pu&ograve; essere interessante per un particolare
+sviluppatore lo &egrave; anche per l'intero gruppo.  O, al contrario,
+se pensate che la vostra domanda sia troppo terra-terra per la mailing
+list, a maggior ragione lo sar&agrave; per la singola persona.
+<li>Le domande inviate alla lista non aggravano il carico di lavoro
+individuale di una singola persona che (specialmente se &egrave; uno
+dei leaders del progetto) pu&ograve; essere troppo occupato per
+dedicarvi il suo tempo.
+<li>Quasi tutte le mailing lists sono archiviate, e gli archivi sono
+sia accessibili dal Web che schedati dai motori di ricerca.  Qualcuno
+potr&agrave; in futuro vedere la vostra domanda sul Web con la
+relativa risposta, e beneficiarne senza essere costretto a chiedere a
+sua volta la stessa cosa.
+<li>Se certe domande si presentano troppo spesso, gli sviluppatori
+possono utilizzare questa informazione per migliorare o la
+documentazione o il software; nel caso le domande venissero poste
+privatamente, mancherebbe una visuale globale dei problemi che gli
+utilizzatori del software si trovano ad affrontare.
+</ul>
+<p>Se riuscite a trovare solo l'indirizzo del responsabile del
+progetto software ma non quello di una mailing list, scrivete al
+responsabile; ma non assumete che una mailing list non esista.  Dite
+esplicitamente che non l'avete trovata, e che non avete obiezioni a
+che la vostra email venga forwardata ad altre persone (la maggioranza,
+su Internet, pensa che le email private debbano rimanere tali, anche
+se non vi &egrave; nulla di personale in esse; permettendo al vostro
+messaggio di essere girato ad altre persone, date al vostro
+corrispondente una maggior libert&agrave; di scelta su come trattare
+il vostro problema).
+</p></div>
+<div class="SECT2"><hr>
+<h2 class="SECT2"><a name="AEN168">Scrivete chiaramente,
+  correttamente e senza errori</a></h2>
+<p>L'esperienza suggerisce che chi scrive senza cura o sciattamente
+&egrave; anche trascurato e sciatto nel pensare e nello scrivere
+codice (o almeno lo &egrave; molto di frequente, potete scommetterci).
+E rispondere alle domande di persone sciatte e trascurate non &egrave;
+gratificante; l'hacker preferisce dedicare il suo tempo ad altri.
+</p><p>Ne consegue che esprimersi chiaramente e con precisione
+&egrave; importante; se voi non volete spendere un po' di tempo per
+rifinire il messaggio, non potete pretendere che altri spendano tempo
+per rispondere.  Sacrificate qualche minuto per controllare il testo;
+non importa che sia eccessivamente formale &#8212; in effetti la
+cultura degli hacker apprezza un linguaggio informale e popolaresco,
+purch&egrave; spiritoso ed usato con precisione e senza strafare.  Ma
+<b>deve</b> essere preciso e puntuale: questo vuol dire che state
+pensando e che siete vispi.
+</p><p>Controllate ortografia, punteggiatura e maiuscole.  Non
+confondete fischi con fiaschi.  Non scrivete <em>mai</em> IN TUTTE
+MAIUSCOLE, questo viene percepito come <em>urlare</em> e considerato
+maleducato.  (Scrivere in tutte minuscole &egrave; un poco meno
+fastidioso, ma comunque difficile da leggere &#8212; e per questo
+ancora considerato maleducazione).
+</p><p>Riassumendo, se scriverete come un babbuino illetterato verrete
+probabilmente ignorati.  Se scriverete in gergo (abbreviazioni spinte,
+k al posto del ch, e cos&igrave; via) vi farete ridere dietro (almeno
+in certi ambienti) e, piuttosto che silenzio totale, riceverete
+sarcasmo e mal celato disprezzo.  Considerate che in questo testo
+viene usato perfino il congiuntivo &#8212; imitatemi!
+</p><p>Se la domanda &egrave; in una lingua che non &egrave; la
+vostra, avete a disposizione un poco di tolleranza in pi&ugrave;; ma
+<em>per il linguaggio</em>, non per la trascuratezza (e, si, in genere
+gli hackers sanno cogliere la differenza).  A meno che non sappiate
+con precisione quale sia la lingua usata dai vostri
+corrispondenti, servitevi dell'inglese; la gente impegnata non perde
+tempo a decifrare domande che non capisce bene, e l'inglese &egrave;
+la
+<em>lingua franca</em> di Internet.  Scrivendo in inglese renderete
+minima la possibilit&agrave; che <em>tutti</em> scartino a pi&eacute;
+pari la vostra domanda senza leggerla.
+</p></div>
+<div class="SECT2"><hr>
+<h2 class="SECT2"><a name="AEN176">Mandate le domande in un formato
+  facilmente decifrabile</a></h2>
+<p>Se, magari senza rendervene conto, inviate le domande in modo che
+queste risultino difficili da leggere, &egrave; pi&ugrave; facile che
+vengano trascurate da chi le riceve.  Cos&igrave;:
+<ul>
+<li>Postate in puro testo, <em>non in HTML</em> (non &egrave;
+difficile <a href="http://expita.com/nomime.html">disabilitare
+l'HTML</a>).
+<li>Attachments MIME in genere sono accettati, ma <em>solo se hanno un
+contenuto reale</em> (come un file sorgente o un patch acclusi ad un
+messaggio di spiegazione) e non sono invece spazzatura generata dal
+vostro mailer (come una seconda copia del vostro messaggio).
+<li>Non spedite messaggi in cui ogni paragrafo &egrave; composto da
+una singola linea di testo senza a-capo: questo rende difficile
+rispondere a solo una parte del messaggio stesso.  Assumete che chi
+legge utilizzi un display capace di linee lunghe non pi&ugrave; di 80
+caratteri, e programmate il vostro mailer per una lunghezza delle
+linee di testo un poco inferiore.
+<li>Comunque, non spezzate <em>mai</em> linee lunghe <b>di dati</b>
+(come log files, core dumps o trascrizioni di un'intera sessione di
+lavoro).  <b>I dati</b> devono essere inclusi <em>esattamente come
+sono</em>, anche per rassicurare il corrispondente che nulla &egrave;
+andato perso nella formattazione.
+<li>Non mandate <em>mai</em> testo MIME Quoted-Printable ad un
+newsgroup, specialmente se in lingua inglese; questo encoding
+pu&ograve; essere necessario per un linguaggio non rappresentabile in
+puro ASCII (ossia per un linguaggio con lettere accentate), ma
+moltissimi mailers non lo accettano.  Quando ricevono un messaggio di
+questo tipo, lo mostrano infarcito di codici =20 disseminati nel testo
+&#8212; che sono brutti a vedere ed un'ostacolo ad una rapida lettura.
+<li>Mai, <b>mai</b>, <b>MAI</b> presupporre che un hacker debba essere
+in grado di leggere un attachment in un formato proprietario come, ad
+esempio, Microsoft Word.  L'hacker tipico reagisce a questo come ad un
+vero e proprio affronto, e si comporta esattamente come farebbe se
+qualcuno avesse nottetempo scaricato un camion di letame fumante sulla
+sua soglia di casa.
+<li>Se inviate il messaggio da una macchina Windows,
+<em>disabilitate</em> le "Smart Quotes" Microsoft; il cui scopo
+principale &egrave; quello di disseminare caratteri-spazzatura nel
+testo quando il messaggio &egrave; letto su una macchina non-Windows.
+<li>Se usate un mailer dotato di interfaccia grafica (come Netscape
+Messenger, Microsoft Outlook o simili), <em>attenzione</em>:
+pu&ograve; contravvenire silenziosamente a queste regole, se viene
+usato con le opzioni impostate di default.  La maggior parte di questi
+programmi ha un comando a menu tipo "View Source"; <em>usatelo</em>,
+per controllare che state realmente mandando a spasso per il mondo
+<em>puro testo</em> &#8212; senza nessun'altra aggiunta non voluta.
+</ul></div>
+<div class="SECT2"><hr>
+<h2 class="SECT2"><a name="AEN198">Specificate dei "Subject:" che
+  siano esplicativi</a></h2>
+<p>L'header "Subject:", nelle mailing lists o nei newsgroups, &egrave;
+un'occasione d'oro per attirare l'attenzione degli esperti qualificati
+a risolvere il vostro problema; il tutto per&ograve; in non pi&ugrave;
+di 50 caratteri.  Non sprecate quest'occasione con balbettii tipo "Per
+favore aiutatemi" (o, peggio, "PER FAVORE AIUTATEMI!!!!" &#8212;
+messaggi con questo soggetto vengono scartati quasi automaticamente).
+Non cercate di fare impressione con la profondit&agrave; della vostra
+sofferenza, ma usate lo spazio a disposizione per una descrizione,
+molto concisa ma precisa, del vostro problema.
+</p><p>Un buon metodo per scrivere i soggetti, usato da molte
+organizzazioni di supporto tecnico, &egrave; la convenzione "oggetto -
+malfunzionamento": la prima parte (<em>oggetto</em>) dice con che cosa
+avete dei problemi; e la seconda (<em>malfunzionamento</em>) descrive
+il comportamento anomalo che non vi aspettavate.
+</p><div class="VARIABLELIST"><dl>
+<dt><em>Sfigato:</em></dt><dd>AIUTO!  Il video del mio laptop non
+funziona!</dd>
+<dt><em>Furbo:</em></dt><dd>Il cursore del mouse vien fuori male
+sotto XFree86 4.1 con la scheda video Fooware MV1005</dd>
+<dt><em>Ancora meglio:</em></dt><dd>XFree86 4.1, scheda Fooware
+MV1005 - cursore del mouse errato</dd>
+</dl></div>
+<p>Se descrivete il problema secondo lo schema "oggetto -
+malfunzionamento", questo aiuta anche ad analizzare il problema in
+maggiore dettaglio.  Cosa non si comporta secondo le vostre
+aspettative?  Solo il cursore del mouse, o qualcosa d'altro?  Succede
+solo con XFree86?  E solo con la release 4.1?  &Egrave; specifico di
+tutte le schede video Fooware?  O del modello MV1005?  Un hacker che
+legge il soggetto ha gi&agrave; un'idea approssimata del sistema che
+si comporta male, <em>ed anche</em> del tipo di problema &#8212; e
+questo alla prima occhiata.
+</p><p>Se chiedete qualcosa di nuovo in una risposta che fa parte di
+un vecchio thread, <em>cambiate il soggetto</em> per indicarlo
+chiaramente.  Una "Subject line" come "Re: test" o "Re: new bug"
+difficilmente attrae qualcuno; e, inoltre, quotate dal vecchio thread
+solo il minimo che &egrave; necessario per introdurre il nuovo
+argomento.
+</p></div>
+<div class="SECT2"><hr>
+<h2 class="SECT2"><a name="AEN221">Siate precisi ed esaurienti sul
+  vostro problema</a></h2>
+<p></p>
+<ul>
+<li>Descrivete i sintomi del vostro problema con cura e chiarezza.
+<li>Dite in che ambiente si presentano (hardware, sistema operativo,
+applicazione, versione di sistema ed applicazione; e cos&igrave; via).
+<li>Parlate di quello che avete fatto per capire e risolvere il
+problema, prima di chiedere aiuto.
+<li>Descrivete tutto quello che &egrave; cambiato recentemente nella
+vostra configurazione (hardware e software), e che potrebbe essere
+collegato al problema.
+</ul>
+<p>Cercate, per quanto possibile, di anticipare le domande che un
+hacker esperto potrebbe farvi; e anche di dare le relative risposte.
+</p><p>Simon Tatham ha scritto un buon saggio dal titolo
+<a href="http://www.chiark.greenend.org.uk/~sgtatham/bugs.html">How to
+  Report Bugs Effectively</a>, del quale &egrave; fortemente
+consigliata la lettura.
+</p></div>
+<div class="SECT2"><hr>
+<h2 class="SECT2"><a name="AEN237">La quantit&agrave; non &egrave;
+  qualit&agrave;</a></h2>
+<p>Dovete essere precisi ed informativi.  Per riuscirci non basta
+semplicemente accludere quantit&agrave; immani di codice o di dati
+assieme ad una richiesta di aiuto; se avete un programma complicato e
+lungo che produce errori, cercate di eliminare qualcosa in modo da
+renderlo tanto piccolo quanto possibile.
+</p><p>Questo &egrave; utile per diverse ragioni: la prima &egrave;
+che dimostrare di esservi sforzati per semplificare il problema
+aumenta la probabilit&agrave; di una risposta; poi, l'aver
+circoscritto le cause del problema aumenta la probabilit&agrave; di
+trovare una soluzione utile; infine, nel processo di capire
+esattamente da cosa derivi l'errore, non &egrave; detto che non
+troviate l'errore stesso (o, quanto meno, una maniera di evitarne gli
+effetti) da soli.
+</div>
+<div class="SECT2"><hr>
+<h2 class="SECT2"><a name="AEN242">Descrivete i sintomi, non quello
+  che ne pensate</a></h2>
+<p>Non serve a nulla dire agli hackers cosa, secondo voi, causa il
+vostro problema &#8212; in fin dei conti, se le vostre teorie fossero
+cos&igrave; azzeccate, perch&egrave; vi rivolgereste ad altri per
+essere aiutati?  Quindi, assicuratevi di dire esattamente cosa non
+quadra, senza aggiungere interpretazioni e diagnosi.
+</p><p <div class="VARIABLELIST">
+<dl><dt><em>Sfigato:</em></dt><dd>Mi arrivano in continuazione errori
+di tipo SIG11 compilando il kernel.  Per me c'&egrave;
+un'interruzione, da qualche parte, nelle tracce dello stampato della
+motherboard; qual &egrave; il modo migliore per capire dove?</dd></dl>
+<dl><dt><em>Furbo:</em></dt><dd>Ho un computer K6/233 fatto in casa a
+partire da una motherboard FIC-PA2007 (con chipset VIA Apollo VP2 e
+256 MB di SDRAM Corsair PC133); mi arrivano continui errori di tipo
+SIG11, dopo una ventina di minuti dal bootstrap, compilando il kernel
+&#8212; ma i primi 20 minuti tutto &egrave; normale.  Un reboot
+immediato non cura il problema, ma lasciando il computer spento tutta
+la notte tutto torna tranquillo.  Togliendo uno dopo l'altro i banchi
+di RAM non cambia nulla.  Accludo la trascrizione della sessione, con
+i comandi che cerco di eseguire ed i diagnostici.</dd>
+</dl></div></div>
+<div class="SECT2"><hr>
+<h2 class="SECT2"><a name="AEN256">Descrivete i sintomi nell'ordine in
+  cui si presentano</a></h2>
+<p>Gli indizi pi&ugrave; utili per capire cosa non va spesso sono
+legati agli eventi immediatamente precedenti il disastro.  Quindi il
+vostro report dovrebbe descrivere con esattezza cosa avete fatto, voi
+e la macchina, fino al manifestarsi del problema; nel caso di sessioni
+guidate da comandi interattivi, un log dell'intera sessione o la
+descrizione degli ultimi comandi (una ventina al massimo) possono
+essere utilissimi.
+</p><p>Se l'applicativo che da errore ha opzioni diagnostiche (come un
+-v per ottenere output pi&ugrave; dettagliato), pensate un poco a
+quali di queste opzioni potrebbe aggiungere informazioni utili al
+vostro contesto.
+</p><p>Se la descrizione diventa troppo lunga (diciamo pi&ugrave; di
+quattro paragrafi), potrebbe essere utile riassumere brevemente il
+problema all'inizio; per poi proseguire passo passo con la cronologia
+di quanto &egrave; successo.  In questo modo un hacker esperto
+gi&agrave; capisce cosa andare a cercare pi&ugrave; avanti nel vostro
+messaggio.
+</p></div>
+<div class="SECT2"><hr>
+<h2 class="SECT2"><a name="AEN261">Non chiedete <em>mai</em> risposte
+  private</a></h2>
+<p>Gli hackers hanno la convinzione che il "problem solving" debba
+essere un processo pubblico e trasparente, durante il quale una prima
+risposta pu&ograve; (e <em>deve</em>) essere migliorata se qualcuno
+pi&ugrave; esperto si accorge che essa &egrave; sbagliata o
+incompleta.  Inoltre una risposta pubblica potrebbe essere utile ad
+altre persone; e, infine, gli hackers ricevono una sorta di ricompensa
+alla fatica di risolvere un problema &#8212; e la ricompensa viene
+dall'essere considerati competenti ed intelligenti dai loro
+"colleghi".
+</p><p>Chiedendo una risposta privata, si interferisce in questo
+processo; la risposta tipica &egrave;: "Se cerchi un servizio
+personalizzato, pagati un consulente".  Se mai &egrave; <em>chi
+risponde</em> che pu&ograve; decidere di farlo in modo privato &#8212;
+e, se questo accade, di solito &egrave; perch&egrave; pensa che la
+domanda sia posta in modo sbagliato o che sia troppo banale: e quindi
+non interessante per gli altri.
+</p><p>C'&egrave; per&ograve; una eccezione a questa regola: se
+pensate che la vostra domanda produrr&agrave; una valanga di risposte
+pi&ugrave; o meno uguali (esempio: "Chi si propone per tradurre un
+capitolo di <em>Thinking in C++</em> in italiano, e quale?"), la
+formula magica &egrave;: "rispondete per email, ed in un successivo
+messaggio riassumer&ograve; le risposte per voi".  &Egrave; infatti
+percepito come gentilezza il cercare di non far saturare una mailing
+list o un newsgroup da una gran mole di interventi sostanzialmente
+simili &#8212; ma <em>dovete mantenere la promessa fatta</em>, ed
+inviare il successivo sommario.
+</p></div>
+<div class="SECT2"><hr>
+<h2 class="SECT2"><a name="AEN267">Siate espliciti nel fare una
+  richiesta</a></h2>
+<p>Se esponete un problema ma non formulate una richiesta chiara, il
+vostro messaggio sar&agrave; percepito come una possibile trappola da
+evitare a tutti i costi.  Coloro che hanno sia l'esperienza che
+l'abilit&agrave; necessarie per aiutarvi sono probabilmente le persone
+pi&ugrave; occupate tra quelle che vi leggeranno: e gente come loro
+&egrave; allergica allo spreco di tempo, per cui eviter&agrave; di
+imbarcarsi in un lavoro che non sanno chiaramente inquadrare.
+</p><p>&Egrave; molto pi&ugrave; facile ottenere una risposta utile se
+si &egrave; espliciti nel dire cosa si vuole che i nostri
+interlocutori facciano (dare indicazioni, scrivere codice, controllare
+un patch o qualsiasi altra cosa).  Questo infatti focalizza il loro
+sforzo; e, soprattutto, implicitamente fissa un limite superiore allo
+sforzo ed al tempo che deve essere speso per aiutarvi: &egrave;,
+insomma, una <em>Buona Cosa</em>.
+</p><p>Per capire il mondo degli hackers, pensate alla competenza come
+ad una risorsa abbondante; ed al tempo come ad una risorsa rara e
+preziosa.  Meno tempo durer&agrave; fare quello che chiedete,
+pi&ugrave; sar&agrave; probabile che una persona molto capace, ma
+molto impegnata, sia invogliata a rispondere.
+</p><p>Cos&igrave;, in ultima analisi, &egrave; opportuno inquadrare
+la richiesta in modo da minimizzare l'impegno richiesto &#8212; e
+questo abbastanza spesso equivale a stare attenti a cosa domandare.
+Per esempio, "Dove posso trovare una spiegazione dell'uso dei
+puntatori in C" &egrave; una domanda pi&ugrave; furba da fare
+piuttosto che "Spiegatemi l'uso dei puntatori in C"; e, se avete un
+programmino che non funziona, &egrave; pi&ugrave; furbo chiedere di
+indicare cosa &egrave; sbagliato che domandare di postare un programma
+che funzioni.
+</p></div>
+<div class="SECT2"><hr>
+<h2 class="SECT2"><a name="AEN273">Non chiedete di farvi i
+compiti</a></h2>
+<p>Gli hackers sono bravissimi nel capire che una certa domanda
+&egrave; in realt&agrave; l'esercizio di un compito a casa; e parecchi
+di loro hanno svolto dei compiti simili in passato (e magari ora li
+danno da svolgere ai <em>loro</em> studenti).  A quelle domande
+<b>dovete rispondere voi</b>: vi sono state fatte perch&egrave; il
+risolvere l'esercizio vi insegner&agrave; qualcosa.  Va benissimo
+chiedere uno spunto, od esporre quanto avete gi&agrave; fatto e
+chiedere un giudizio; <em>non va bene</em> chiedere <em>l'intera
+soluzione</em>.
+</p></div><div class="SECT2"><hr>
+<h2 class="SECT2"><a name="AEN277">Eliminate le richieste
+  insensate</a></h2>
+<p>Resistete alla tentazione di concludere con domande semanticamente
+insignificanti come "Qualcuno mi pu&ograve; aiutare?" o "Qual &egrave;
+la risposta?".  Primo: se il problema &egrave; descritto in modo
+mediamente buono, una conclusione di quel genere &egrave; chiaramente
+superflua; secondo: gli hackers <em>odiano</em> le cose superflue
+&#8212; ed &egrave; possibilissimo che riceviate delle risposte dalla
+logica impeccabile, ma altrettanto superflue &#8212; tipo "Si, io
+potrei aiutarti".
+</p></div>
+<div class="SECT2"><hr>
+<h2 class="SECT2"><a name="AEN280">Non sottolineate che la vostra
+  domanda &egrave; <em>urgente</em>, nemmeno se per voi lo &egrave;
+  davvero</a></h2>
+<p>Quelli sono affari tuoi, non nostri.  Chiedere un aiuto
+<em>urgente</em> &egrave; controproducente: la maggior parte degli
+hackers semplicemente salta il messaggio, considerando maleducato il
+tentativo di ottenere un'attenzione speciale ed immediata nei
+confronti delle altre richieste.
+</p></div>
+<div class="SECT2"><hr>
+<h2 class="SECT2"><a name="AEN283">Essere educati non fa mai male, e
+  talvolta aiuta</a></h2>
+<p>Siate gentili; dite "per favore" e "grazie in anticipo".  Chiarite
+che apprezzate il fatto che qualcuno spenda il suo tempo per aiutarvi,
+e senza chiedere nulla in cambio.
+</p><p>Ad esser sinceri, questo non &egrave; importante come l'essere
+precisi e chiari, l'usare un linguaggio corretto e l'evitare i formati
+proprietari; in genere gli hackers preferiscono un bug report
+appropriato ed essenziale ma un po' ruvido ad una educatissima
+vaghezza (e, se questo vi intriga, ricordate che apprezziamo le
+domande perch&egrave; possono insegnare qualcosa anche a noi).
+</p><p>Comunque, una volta che avete messo le vostre cosine tecniche
+sull'attenti, allineate e coperte, la buona educazione aumenta
+abbastanza le speranze di ottenere una risposta utile.
+</p><p>(Notiamo, incidentalmente, che l'unica obiezione che abbiamo
+ricevuto a questo capitoletto da parte di hackers seri &egrave; stata
+all'uso di "grazie in anticipo"; qualcuno lo interpreta come
+l'intenzione di <em>non</em> ringraziare nessuno <em>dopo</em>...  Il
+nostro consiglio &egrave; di fare entrambe le cose).
+</p></div>
+<div class="SECT2"><hr>
+<h2 class="SECT2"><a name="AEN289">Terminate con una breve nota dopo
+  che tutto &egrave; stato risolto</a></h2>
+<p>Mandate una noticina a tutti quelli che vi hanno aiutato, dopo che
+il vostro problema &egrave; stato risolto; fate loro sapere cosa
+&egrave; successo, e ringraziateli.  Se il problema aveva suscitato un
+certo interesse nella mailing list o nel newsgroup, mandate la nota
+come followup; altrimenti usate l'email.
+</p><p>Non &egrave; necessario che la vostra nota sia lunga e
+dettagliata; un semplice "Ehil&agrave;!  Si trattava di una
+connessione di rete difettosa - grazie a tutti!" pu&ograve; essere
+sufficiente.  Come dato di fatto, un corto sommario &egrave;
+preferibile ad una lunga dissertazione &#8212; a meno che la soluzione
+non avesse inaspettate e profonde implicazioni tecniche.  Dite quale
+dei vari suggerimenti ha risolto il problema, senza scendere nei
+dettagli di tutta l'operazione di troubleshooting.
+</p><p>Oltre che come un fatto di cortesia, questo genere di
+conclusione aiuter&agrave; altre persone che consulteranno gli archivi
+della mailing list o del newsgroup in futuro, per sapere esattamente
+che cosa ha risolto il vostro problema (e che potrebbe risolvere il
+loro).
+</p><p>Per finire, una nota del genere comunica a tutti quelli che vi
+hanno aiutato una piacevole sensazione di chiusura del problema.  Se
+non siete un tecnico o un hacker, fidatevi di noi: questa sensazione
+&egrave; assai importante per i guru e gli esperti da cui avete
+sollecitato (ed ottenuto) aiuto.  Threads su problemi effettivi che
+alla fine terminano nel nulla lasciano invece un senso di
+frustrazione, una specie di prurito che tormenta ognuno degli hackers
+che hanno suggerito qualcosa.  Il karma positivo che vi
+procurer&agrave; l'aver posto fine a questi pruriti vi sar&agrave;
+molto, <em>molto</em> utile la prossima volta che avrete la
+necessit&agrave; di fare una domanda.
+</p></div></div>
+<div class="SECT1"><hr>
+<h1 class="SECT1"><a name="ANSWERS">Come interpretare le
+  risposte</a></h1>
+<div class="SECT2"><h2 class="SECT2"><a name="RTFM">RTFM e STFW:
+  quando vi dicono che avete seriamente rotto</a></h2>
+<p>Questa &egrave; un'antica e santa tradizione: se in una risposta
+leggete "RTFM", vuol dire che chi ve la manda pensa che avreste dovuto
+leggervi un fottutissimo manuale (RTFM = Read The Fucking Manual).  Ed
+in genere ha ragione.  Andatevelo a leggere.
+</p><p>RTFM ha come fratello minore un'altro, pi&ugrave; recente,
+acronimo: se nella risposta leggete "STFW", colui che ve la manda
+pensa che avreste fatto prima e meglio a consultare un fottutissimo
+motore di ricerca (STFW = Search The Fucking Web).  Ed in genere ha
+ragione.  Andatevelo a consultare.
+</p><p>Spesso, chi vi manda l'una o l'altra di queste risposte ha
+gi&agrave; sotto il naso il manuale (o la pagina Web) con
+l'informazione che vi serve &#8212; e le sta guardando intanto che usa
+la sua tastiera.  Le risposte vogliono semplicemente dire che lui pensa
+che l'informazione richiesta sarebbe stata facilissima da trovare se
+aveste avuto un minimo di buona volont&agrave; o di iniziativa; e che
+imparerete comunque di pi&ugrave; tentando di trovarla da soli
+piuttosto che trovandovela sotto il naso su un piatto d'argento.
+</p><p>RTFM pu&ograve; anche voler dire che la vostra domanda rivela
+un'ignoranza abissale delle tematiche che proponete; <em>non
+potete</em> chiedere un consiglio su un programma e nel contempo
+mostrare di non conoscere nemmeno le basi del linguaggio che state
+adoperando.  Studiatevelo, e riprovate dopo.
+</p><p>Non sentitevi offesi; secondo lo standard degli hackers vi
+&egrave; stata dimostrata una certa rude considerazione semplicemente
+non ignorandovi &#8212; dovreste invece rispondere ringraziando per la
+gentilezza usata dalla buona nonnina (l'hacker) verso il nipotino
+sfigato (voi <tt>:-)</tt>
+
+</p></div>
+<div class="SECT2"><hr>
+<h2 class="SECT2"><a name="LESSER">Se non capite...</a></h2>
+<p>Se non riuscite a capire la risposta, non saltatevene
+immediatamente fuori con una richiesta di spiegazioni: cercate invece
+di usare gli stessi metodi che avete usato per cercare di risolvere il
+vostro problema prima di chiedere (manuali, FAQ, il Web, gli amici
+esperti); questa volta, per&ograve;, per cercare di capire la risposta.
+Dopo, se avrete ancora dei dubbi, potrete chiederne il chiarimento;
+ma, nello stesso tempo, farete capire che qualcosa avete appreso.
+</p><p>Per esempio, supponiamo che la risposta dica "Sembra che tu
+abbia una supercazzola bloccata; devi sbloccarla".  E poi?  Un
+<em>cattivo</em> followup consiste nel domandare "Cos'&egrave; una
+supercazzola?"; un <em>buon</em> followup potrebbe contenere (dopo
+essersi documentati): "Va bene; ma, nella man page, di supercazzole si
+parla solo in relazione alle command options -z e -p.  Purtroppo,
+sotto nessuna delle due si chiarisce come si sblocca una supercazzola.
+Mi sono perso qualcosa, o puoi essere pi&ugrave; chiaro?"
+</p></div>
+<div class="SECT2"><hr>
+<h2 class="SECT2"><a name="KEEPCOOL">Come ci si comporta con i
+  maleducati</a></h2>
+<p>La maggioranza di quello che ad un neofita sembra maleducazione,
+nell'ambiente degli hackers non &egrave; pensato come linguaggio
+potenzialmente offensivo.  Piuttosto, si tratta dello stile di
+comunicazione diretta e senza abbellimenti n&eacute; fronzoli tipica
+di persone cui interessa risolvere problemi &#8212; non far sentire
+gli altri coccolati ed a loro agio.
+</p><p>Se percepite maleducazione in una risposta, cercate comunque di
+reagire con calma.  Se il vostro interlocutore per davvero &egrave;
+uscito fuori dai gangheri a torto, probabilmente qualcuno dei vecchi e
+rispettati frequentatori abituali della lista lo rimproverer&agrave;.
+<em>Se questo non accade</em>, assai probabilmente (nonostante quello
+che sembra <em>a voi</em>) chi vi ha risposto &egrave; rimasto entro i
+limiti delle norme della comunit&agrave;; e se voi aveste gi&agrave;
+risposto perdendo la calma, sareste <em>voi</em> ad essere considerato
+uno sfigato &#8212; e questo peggiorerebbe le vostre
+probabilit&agrave; di ottenere aiuto.
+</p><p>D'altra parte, di tanto in tanto succede di inciampare
+veramente nella maleducazione, o comunque in atteggiamenti rudi
+abbastanza gratuiti.  L'altro lato della medaglia consiste nel fatto
+che, in questi casi, &egrave; consentito prendere a ceffoni (verbali)
+chi vi ha offeso, anche andandoci pesante, e dissezionando il suo
+cattivo comportamento col bisturi della vostra lingua tagliente.
+Per&ograve; pensateci due volte; siate molto, <em>molto</em> sicuri di
+essere nel giusto; ed usate solo l'ironia e <b>mai</b> la
+volgarit&agrave;.  Il confine tra reagire ad un comportamento
+scorretto e l'iniziare una guerra verbale di insulti priva di scopo
+&egrave; cos&igrave; sottile che gli hackers stessi ogni tanto si
+trovano dalla parte sbagliata; se siete un novellino, le
+probabilit&agrave; per voi di rimanere sempre dalla parte giusta sono
+scarse.  Se quello che vi interessa sono le informazioni e non lo
+spettacolo, &egrave; meglio tenere le dita lontano dalla tastiera.
+</p><p>(C'&egrave; chi sostiene che parecchi hackers soffrano di una
+blanda forma di autismo, o "sindrome di Asperger", e che abbiano dei
+difetti in quelle connessioni cerebrali che sono preposte alle
+"normali" relazioni interpersonali.  Questo pu&ograve; essere vero, o
+falso; ma, se voi non siete hackers, potrebbe aiutarvi a sopportare le
+nostre eccentricit&agrave; pensare che siamo tutti un po' tocchi.
+Avanti, fatelo.  A noi non interessa; a noi <em>piace</em> essere come
+siamo, e comunque siamo moooolto scettici sia sull'etichettare in
+blocco un'intera categoria, che sulla psichiatria in generale).
+</p><p>Nel prossimo capitoletto, parleremo di qualcosa di assai
+differente: il genere di "maleducazione" che vedete quando <b>voi</b>
+vi comportate impropriamente.
+</p></div></div>
+<div class="SECT1"><hr>
+<h1 class="SECT1"><a name="NOT_LOSING">Sul non reagire da
+  sfigato</a></h1>
+<p>Le leggi della probabilit&agrave; garantiscono che, nelle prime
+uscite verso la comunit&agrave; degli hackers, ne combinerete qualcuna
+&#8212; o nei modi che abbiamo appena descritto, o in un modo nuovo
+inventato da voi stessi.  In questi casi, vi verr&agrave; rinfacciato
+esattamente quello in cui avete mancato, n&eacute; pi&ugrave;
+n&eacute; meno, e generalmente in modo colorito.  E pubblicamente.
+</p><p>Quando capita qualcosa di questo genere, la cosa peggiore che
+potete fare &egrave; piagnucolare su quanto vi &egrave; capitato,
+lamentarvi di essere stati assaliti verbalmente, domandare scusa,
+urlare, trattenere il fiato fino a diventare rossi in faccia,
+minacciare querele, lamentarvi con i capiufficio di chi vi ha trattato
+male, non abbassare il coperchio del water dopo averlo usato, e
+cos&igrave; via.  Invece, ecco cosa dovete fare:
+</p><p><big><b>Lasciar perdere. &Egrave; normale.  In effetti,
+&egrave; giusto e vi far&agrave; anche del bene.</b></big>
+</p><p>Le regole di una qualsiasi societ&agrave; non si mantengono da
+sole per vita propria; ma si mantengono perch&egrave; c'&egrave; una
+sostanziale parte di quella societ&agrave; che le applica e si cura
+del fatto che siano rispettate, <em>visibilmente e pubblicamente</em>.
+Non lamentatevi perch&egrave; le critiche non vi sono arrivate in modo
+riservato, per email: non &egrave; cos&igrave; che vanno le cose.
+N&eacute; &egrave; utile insistere sul fatto che siete stati insultati
+personalmente, se qualcuno ha asserito che qualcosa che avete detto
+&egrave; completamente sbagliato (o soltanto che lui la pensa
+diversamente).  Questi sono atteggiamenti da sfigato.
+</p><p>Sono esistiti dei luoghi di incontro di hackers, su Internet,
+dove (in nome di un malinteso senso di eccessiva cortesia) i
+partecipanti avevano come regola quella di non dire nulla che si
+potesse interpretare come un rimprovero o come il rinfacciare un
+errore a qualcuno; la regola era "rispondi alle domande; e, per il
+resto, stai zitto".  Il risultato &egrave; stato l'allontanarsi
+progressivo di tutti i partecipanti esperti, ed il decadere della
+lista in balbettii di partecipanti impreparati &#8212; fino a divenire
+inutilizzabile come luogo di consulenza tecnica.
+</p><p>Quindi: o troppo gentile, o utile.  Bisogna scegliere.
+</p><p>Ricordatevelo: se un hacker vi dice che vi siete comportati
+male, non importa affatto il modo (magari ruvidissimo) in cui ve lo
+dice; sappiate che lo fa a vantaggio sia <em>di voi</em>, che,
+soprattutto, <em>della sua intera comunit&agrave;</em>.  Sarebbe molto
+pi&ugrave; facile, per lui, ignorarvi; mettervi nel suo kill-file ed
+escludervi del tutto dalla sua vita.  Se non riuscite ad essergli
+grati, almeno comportatevi con dignit&agrave;, non piagnucolate, e non
+aspettatevi di essere trattati come una bamboletta solo perch&egrave;
+siete un nuovo venuto inesperto e dall'animo troppo sensibile per
+poter sopportare un insuccesso.
+</p></div>
+<div class="SECT1"><hr>
+<h1 class="SECT1"><a name="CLASSIC">Domande da <em>non</em> fare</a></h1>
+<p>Questa &egrave; una breve rassegna di (ben note) domande stupide; e
+di quello che pensano gli hackers intanto che <b>non</b> rispondono
+loro.
+</p><div class="QANDASET"><dl>
+<dt>Domanda: <a href="#AEN337">dove posso trovare il programma
+X?</a></dt>
+<dt>Domanda: <a href="#AEN343">il mio programma (o la mia
+configurazione, od il mio comando SQL, o ...) non funziona.</a></dt>
+<dt>Domanda: <a href="#AEN355">ho dei problemi con la mia macchina
+Windows.  Potete aiutarmi?</a></dt>
+<dt>Domanda: <a href="#AEN360">ho problemi nell'installare Linux (o il
+programma X, o ...).  Potete aiutarmi?</a></dt>
+<dt>Domanda: <a href="#AEN366">come posso rubare l'accesso alla
+password del system administrator (o infrangere la protezione del
+programma X, o trovare una copia sprotetta di Y, o leggere la posta di
+Z, o ...)?</a></dt>
+</dl>
+<div class="QANDAENTRY"><div class="QUESTION">
+<p><big><a name="AEN337"></a>
+<b>Domanda: dove posso trovare il programma X?</b></big></p></div>
+<div class="ANSWER"><p><b>Risposta:</b> nello stesso posto dove l'ho
+trovato io, deficiente &#8212; alla fine di una ricerca sul Web.
+Cacchio, non ha ancora sentito nominare <a href="http://www.google.com/">Google</a>, questo sfigato?
+</p></div></div>
+<div class="QANDAENTRY"><div class="QUESTION">
+<p><big><a name="AEN343"></a>
+<b>Domanda: il mio programma (o la mia configurazione, od il mio
+comando SQL, o ...) non funziona.</b></big></p></div>
+<div class="ANSWER"><p><b>Risposta:</b> questa non &egrave; una
+domanda, e non ho voglia di giocare agli indovinelli per farti sputar
+fuori quello che non ti quaglia &#8212; ho di meglio da fare.  Vedendo
+uno sfigato del genere, per&ograve;, qualcuno <em>potrebbe</em> aver
+voglia di rispondere &#8212; magari cos&igrave;:
+</p><ul>
+<li>Non hai qualcosa da aggiungere?
+<li>Oh, peccato.  Spero che tu metta tutto a posto.
+<li>E di questo cosa mi frega?
+</ul></div></div>
+<div class="QANDAENTRY"><div class="QUESTION">
+<p><big><a name="AEN355"></a>
+<b>Domanda: ho dei problemi con la mia macchina Windows.  Potete
+aiutarmi?</b></big></p></div>
+<div class="ANSWER"><p><b>Risposta:</b> si.  Butta nel cesso quella
+merda ed installa un sistema decente come Linux od
+OpenBSD.</p></div></div>
+<div class="QANDAENTRY"><div class="QUESTION">
+<p><big><a name="AEN360"></a>
+<b>Domanda: ho problemi nell'installare Linux (o il programma X, o
+...).  Potete aiutarmi?</b></big></p></div>
+<div class="ANSWER"><p><b>Risposta:</b> no.  Dovrei poter mettere le
+mani sulla tua macchina.  Rivolgiti ad uno strafottuto LUG (Local User
+Group) di Linux.  (Una lista degli user groups &egrave; <a href="http://www.linux.org/groups/index.html">sotto questa
+URL</a>).</p></div></div>
+<div class="QANDAENTRY"><div class="QUESTION">
+<p><big><a name="AEN366"></a>
+<b>Domanda: come posso rubare l'accesso alla password del system
+administrator (o infrangere la protezione del programma X, o trovare
+una copia sprotetta di Y, o leggere la posta di Z, o
+...)?</b></big></p></div>
+<div class="ANSWER"><p><b>Risposta:</b>sei uno str@#&amp;% a voler fare
+una cosa del genere, ed un cog&amp;@$&amp;# a domandarlo
+qui.</p></div></div></div></div>
+<div class="SECT1"><hr>
+<h1 class="SECT1"><a name="EXAMPLES">Domande buone e domande
+  cattive</a></h1>
+<p>E, per finire, qualche esempio di come porre le proprie domande:
+per ogni problema considerato, sono elencate due maniere di chiedere;
+il <em>modo stupido</em> ed il <em>modo furbo</em>.
+</p><p><div class="VARIABLELIST"><dl>
+<dt><em>Stupido:</em> dove posso trovare qualcosa sul Foonly
+Flurbamatic?</dt>
+<dd><p>Questa domanda &egrave; una vera e propria richiesta di "<a href="#RTFM">STFW</a>" come risposta.</p></dd>
+<dt><em>Furbo:</em> ho usato Google per cercare di trovare
+informazioni sul "Foonly Flurbamatic 2600", ma senza successo.
+Pu&ograve; qualcuno darmi una indicazione su dove guardare, per
+trovare informazioni sull'uso di questo device?</dt>
+<dd><p>Chi domanda ha gi&agrave; STFW-ato; ha solo delle
+difficolt&agrave; a trovare informazioni.</p></dd>
+</dl></div><div class="VARIABLELIST"><dl>
+<dt><em>Stupido:</em> non riesco a compilare il vostro programma
+"foo" sulla mia macchina.  C'&egrave; uno sbaglio nel vostro
+codice!</dt>
+<dd><p>Assume che siano gli altri a sbagliare.  &Egrave; un
+arrogante.</p></dd>
+<dt><em>Furbo:</em> il vostro programma "foo" versione y.z non
+compila in ambiente Nulix versione 6.2 col compilatore Gronk
+Professional versione w.x.  Ho letto le FAQ, ma non dicono nulla
+riguardo a questo problema.  Accludo di seguito una trascrizione della
+compilazione; potete darmi un suggerimento?</dt>
+<dd><p>Ha specificato l'ambiente, letto le FAQ e descritto l'errore;
+non assume che lo sbaglio sia degli altri; questo ragazzo merita un
+po' di attenzione.</p></dd>
+</dl></div><div class="VARIABLELIST"><dl>
+<dt><em>Stupido:</em> ho problemi con la mia scheda madre.  Chi mi
+pu&ograve; aiutare?</dt>
+<dd><p>La risposta potrebbe essere "Quali sono i problemi con la
+scheda madre?  Non ti allatta bene?  Non ti cambia i
+pannolini?"</p></dd>
+<dt><em>Furbo:</em> ho tentato di intervenire su X, Y e Z nella
+motherboard; e, dopo, ho provato a fare A, B e C.  Stranamente, dopo
+aver fatto C, ho osservato D.  La causa potrebbe essere E, ma
+l'effetto non dovrebbe essere differente?  Qualcuno ha un'idea di cosa
+posso tentare per capire da dove viene il problema?</dt>
+<dd><p>Costui sembra aver lavorato; ha cercato di capire con svariate
+prove cosa ha causato i suoi problemi &#8212; merita di essere
+aiutato.</p></dd>
+</dl></div>
+<p>Nell'ultima domanda, notate ancora la sottile ma importante
+differenza tra "Rispondetemi" e "Per favore, aiutatemi a capire che
+altre prove potrei fare per raggiungere la luce".
+</p><p>In effetti, l'ultima domanda (nella forma <em>furba</em>)
+&egrave; la parafrasi di un messaggio reale, inviato nell'agosto 2001
+alla mailing list "linux-kernel" da me (Eric).  Vedevo misteriosi
+lockups su una motherboard Tyan S2464; i frequentatori della lista mi
+hanno dato tutte le informazioni necessarie per venire a capo del
+problema.
+</p><p>Presentando la domanda in quella forma, ho dato ai lettori del
+messaggio qualcosa su cui rimuginare; ho stimolato, rendendo la cosa
+un attraente problema logico, la loro voglia di farsi coinvolgere nei
+miei guai.  Ho dimostrato rispetto per l'abilit&agrave; dei
+frequentatori della lista, e li ho invitati a discutere con me la
+situazione come con un loro pari; e, nello stesso tempo, ho dimostrato
+anche rispetto per il valore del loro tempo: segnalando tutti i vicoli
+ciechi in cui mi ero gi&agrave; cacciato.
+</p><p>Alla fine, quando ho ringraziato tutti per l'aiuto e
+sottolineato con quanta rapidit&agrave; si era arrivati alla
+soluzione, un altro membro della lista ha osservato che questo era
+successo non perch&egrave; io fossi gi&agrave; un "nome noto" della
+lista stessa &#8212; ma perch&egrave; la domanda era stimolante e ben
+posta.
+</p><p>Quella degli hackers &egrave;, in un certo senso, una spietata
+meritocrazia; sono certo che quella persona avesse ragione e che, se
+io avessi presentato la cosa malamente, sarei stato sbeffeggiato o
+ignorato nonostante fossi, appunto, un "nome noto".  Questa
+constatazione &egrave; stata la causa scatenante che ha portato alla
+scrittura di questa pagina.
+</p></div>
+<div class="SECT1"><hr>
+<h1 class="SECT1"><a name="AEN413">Se nessuno ci risponde</a></h1>
+<p>Se non arriva una risposta, non prendete come un affronto personale
+il fatto che nessuno vi abbia aiutato.  Ogni tanto i membri del
+gruppo, semplicemente, non conoscono la risposta; "nessuna risposta"
+non &egrave; lo stesso che "essere ignorato", nonostante io ammetta
+che non sia facile, dall'esterno, capire la differenza.
+</p><p>In generale, riproporre la domanda pari pari &egrave; una
+cattiva idea &#8212; che viene percepita come insistenza gratuita,
+seccante e molesta.
+</p><p>Ci sono altre fonti di aiuto, spesso pi&ugrave; adatte ad un
+novizio; e molti newsgroups differenti: forse avete scelto quello
+sbagliato per trovare esperti in grado di aiutarvi.
+</p><p>Ci sono anche parecchie societ&agrave; commerciali, grandi e
+piccole, che potete contattare per essere assistiti (Red Hat e
+Linuxcare sono due delle pi&ugrave; note, e ce ne sono diverse altre).
+Non spaventatevi all'idea di dover pagare per l'aiuto!  Dopo tutto, se
+il motore della vostra auto si rompe, assai probabilmente dovrete
+portarla in un'officina e <em>pagare</em> perch&egrave; venga
+riparata; anche se un certo software non vi &egrave; costato niente,
+questo non implica l'esistenza di una assistenza gratuita.
+</p><p>Per un software cos&igrave; diffuso come (ad esempio) Linux, ci
+sono circa 10000 utilizzatori per ogni sviluppatore; ricordatevi che,
+se anche dovrete pagare qualcosa per l'assistenza, sar&agrave;
+probabilmente assai meno di quello che avreste dovuto pagare per
+acquistare un software dello stesso pregio da uno sviluppatore
+commerciale (ed il servizio di supporto per il software commerciale
+&egrave; di solito <em>molto pi&ugrave; costoso</em> e soprattutto
+<em>molto meno competente</em> di quello a disposizione per il
+software open-source).
+</p></div>
+<div class="SECT1"><hr>
+<h1 class="SECT1"><a name="AEN421">Risorse collegate</a></h1>
+<p>Istruzioni di base su come funzionano i personal computers, Unix ed
+Internet: leggete <a href="http://linuxdoc.org/HOWTO/Unix-and-Internet-Fundamentals-HOWTO/">The
+Unix and Internet Fundamentals HOWTO</a>.
+</p><p>Se scrivete software o patches per il software, cercate di
+seguire le regole di massima delineate nel <a href="http://linuxdoc.org/HOWTO/Software-Release-Practice-HOWTO/index.html">Software
+Release Practice HOWTO</a>.
+</p></div></div>
+<p><hr><p>
+Versione originale: in <a href="http://www.catb.org/~esr/faqs/smart-questions.html">questa
+URL</a>, a cura di Eric S. Raymond (email <a href="mailto:esr@thyrsus.com">esr@thyrsus.com</a>).
+</p><p>Questa pagina &egrave; stata scritta con <a href="http://www.vim.org/"> <img src="http://www.pd.infn.it/~loreti/images/vim.gif" alt="[vim]"></a>
+
+<p style="margin-top: 0em; text-align: center; padding: 0.3em; background:rgb(228, 145, 0);">Ultima revisione: 17 Marzo 2002 
+  <br> MLO (<em>loreti at pd dot infn dot it</em>) 
+  <br> <a href="#help">Aiuto con le traduzioni</a>
+</p>
+</p><p><a href="mailto:loreti at pd dot infn dot it"><img src="http://www.pd.infn.it/~loreti/icons/mail-button.gif" alt="==>"></a> Commenti?  Cliccate <a href="mailto:loreti at pd dot infn dot it">qui</a>.
+</p><p><img src="http://www.pd.infn.it/~loreti/icons/valid-html401.png" alt="==>"> <a href="http://validator.w3.org/check/referer">Valido HTML
+4.01</a>; clicca <a href="http://validator.w3.org/check?uri=http://www.pd.infn.it/~loreti/smart-questions.html">qui</a>
+per rivalidare la pagina.
+</p>
+</body></html>
