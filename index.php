@@ -8,6 +8,8 @@ AUTHOR: Riccardo Carissimi
 
 <head>
 
+  <script defer src="https://analytics.morrolinux.it/script.js" data-website-id="46468131-1423-47fb-9d6d-2323b59902ed"></script>
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -122,7 +124,7 @@ AUTHOR: Riccardo Carissimi
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Et netus et malesuada fames.
       </p> -->
       <div class="card-deck">
-        <a class="invisible-link" href="https://corsolinux.com/">
+        <a data-umami-event="link_corsolinux_INVISIBLE" class="invisible-link" href="https://corsolinux.com/">
           <div class="card">
             <img src="img/corso-linux.jpg" class="card-img-top" alt="Copertina corso Linux" title="Copertina corso Linux">
             <div class="card-body d-flex flex-column">
@@ -132,11 +134,11 @@ AUTHOR: Riccardo Carissimi
                 <br />Imparerai tutto ciò che c'è da sapere su <i>GNU/Linux</i> ed il suo ecosistema, tramite <b>spiegazioni chiare</b> ed esempi concreti di utilizzo.
                 <br />Pronto per iniziare?
               </p><br>
-              <a title="Corso linux" href="https://corsolinux.com/" class="btn btn-primary mt-auto">Confronta i corsi Linux</a>
+              <a data-umami-event="link_corsolinux" title="Corso linux" href="https://corsolinux.com/" class="btn btn-primary mt-auto">Confronta i corsi Linux</a>
             </div>
           </div>
         </a>
-        <a class="invisible-link" href="https://corsoreti.it/">
+        <a data-umami-event="link_corsoreti_INVISIBLE" class="invisible-link" href="https://corsoreti.it/">
           <div class="card">
             <img src="img/corso-networking.jpg" class="card-img-top" alt="Copertina corso networking" title="Copertina corso networking">
             <div class="card-body d-flex flex-column">
@@ -145,7 +147,7 @@ AUTHOR: Riccardo Carissimi
                 Che tu sia un appassionato o uno studente alle prese con <b>reti di calcolatori</b>, sei nel posto giusto per imparare!
                 <br />Ho ideato questo corso per guidarti in una panoramica sul mondo del Networking senza tralasciare, ove necessario, importanti cenni sulla <b>sicurezza informatica</b> troppo spesso "ignorati" nei corsi base di Networking.
   	          </p><br>
-              <a title="Corso networking" href="https://corsoreti.it/" class="btn btn-primary mt-auto">Informazioni sul corso</a>
+              <a data-umami-event="link_corsoreti" title="Corso networking" href="https://corsoreti.it/" class="btn btn-primary mt-auto">Informazioni sul corso</a>
             </div>
           </div>
         </a>
