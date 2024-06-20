@@ -38,7 +38,7 @@ AUTHOR: Moreno Razzoli
 		Compila il modulo di richiesta e ricevi il tuo coupon entro 48 ore con il seguente link: </p>
 	<br>
         <div class="mb-5 text-center">
-        <a target="_blank" style="margin: 0 auto;" title="Arch Linux Per Comuni Mortali" href="https://forms.gle/9vxTEVDftBzioDat8" class="btn btn-primary mt-auto js-scroll-trigger">Richiedi il tuo COUPON</a>
+        <a target="_blank" style="margin: 0 auto;" title="Arch Linux Per Comuni Mortali" href="https://budibase.morrolinux.it/app/lpi-form" class="btn btn-primary mt-auto js-scroll-trigger">Richiedi il tuo COUPON</a>
 
 	<h2 class="my-5 text-center">Come si usa il COUPON LPI?</h2>
 
