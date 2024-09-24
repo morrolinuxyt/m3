@@ -29,7 +29,7 @@ AUTHOR: Riccardo Carissimi
 <body id="page-top">
 
   <?php
-    $essentials = $e101 = $e102 = $networking101 = "";
+    $DPCM = $essentials = $e101 = $e102 = $networking101 = "";
 
     if (file_exists('udemy_coupons.json')){
       $show_promo = true;
@@ -130,9 +130,8 @@ AUTHOR: Riccardo Carissimi
             <div class="card-body d-flex flex-column">
               <h3 class="card-title">Linux</h3>
               <p class="card-text">
-                Qualunque sia il tuo livello di partenza e il tuo obiettivo, qui troverai il corso che fa per te.
-                <br />Imparerai tutto ciò che c'è da sapere su <i>GNU/Linux</i> ed il suo ecosistema, tramite <b>spiegazioni chiare</b> ed esempi concreti di utilizzo.
-                <br />Pronto per iniziare?
+                Qui imparerai tutto ciò che c'è da sapere su <i>GNU/Linux</i> ed il suo ecosistema, tramite <b>spiegazioni chiare</b> ed esempi concreti di utilizzo.
+                <br> <br />Al termine, potrai anche <b>certificare le tue competenze</b> in ambito professionale. 
               </p><br>
               <a data-umami-event="link_corsolinux" title="Corso linux" href="https://corsolinux.com/" class="btn btn-primary mt-auto">Confronta i corsi Linux</a>
             </div>
@@ -144,10 +143,23 @@ AUTHOR: Riccardo Carissimi
             <div class="card-body d-flex flex-column">
               <h3 class="card-title">Networking</h3>
               <p class="card-text">
-                Che tu sia un appassionato o uno studente alle prese con <b>reti di calcolatori</b>, sei nel posto giusto per imparare!
-                <br />Ho ideato questo corso per guidarti in una panoramica sul mondo del Networking senza tralasciare, ove necessario, importanti cenni sulla <b>sicurezza informatica</b> troppo spesso "ignorati" nei corsi base di Networking.
+                Ho ideato questo corso introduttivo per guidarti in una panoramica sul mondo del Networking.<br><br>
+                Non mancheranno importanti cenni sulla <b>sicurezza informatica</b>, troppo spesso "ignorati" nei corsi base di Networking.
   	          </p><br>
               <a data-umami-event="link_corsoreti" title="Corso networking" href="https://corsoreti.it/" class="btn btn-primary mt-auto">Informazioni sul corso</a>
+            </div>
+          </div>
+        </a>
+        <a data-umami-event="link_docker_INVISIBLE" class="invisible-link" href="https://corsolinux.com/docker">
+          <div class="card">
+            <img src="https://corsolinux.com/assets/docker-per-comuni-mortali-notext.png" class="card-img-top" alt="Copertina corso networking" title="Copertina corso networking">
+            <div class="card-body d-flex flex-column">
+              <h3 class="card-title">Docker</h3>
+              <p class="card-text">
+                Questo corso si rivolge a chi ha <b>poca o nessuna esperienza</b> e vuole imparare con un approccio pratico e stimolante.
+                <br><br>Al termine, sarai in grado di <b>gestire i tuoi servizi su Docker</b>, risolvere problemi in autonomia e <b>containerizzare nuove App</b>.
+  	          </p><br>
+              <a data-umami-event="link_docker" title="Corso Docker" href="https://corsolinux.com/docker" class="btn btn-primary mt-auto">Informazioni sul corso</a>
             </div>
           </div>
         </a>
