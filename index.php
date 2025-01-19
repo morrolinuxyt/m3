@@ -152,7 +152,7 @@ AUTHOR: Riccardo Carissimi
         </a>
         <a data-umami-event="link_docker_INVISIBLE" class="invisible-link" href="https://corsolinux.com/docker">
           <div class="card">
-            <img src="https://corsolinux.com/assets/docker-per-comuni-mortali-notext.png" class="card-img-top" alt="Copertina corso networking" title="Copertina corso networking">
+            <img src="img/docker-per-comuni-mortali-notext.png" class="card-img-top" alt="Copertina corso docker" title="Copertina corso docker">
             <div class="card-body d-flex flex-column">
               <h3 class="card-title">Docker</h3>
               <p class="card-text">
