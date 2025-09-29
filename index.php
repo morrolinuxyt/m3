@@ -127,48 +127,75 @@ AUTHOR: Riccardo Carissimi
       <!-- <p class="mb-5 text-justify">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Et netus et malesuada fames.
       </p> -->
-      <div class="card-deck">
-        <a data-umami-event="link_corsolinux_INVISIBLE" class="invisible-link" href="https://corsolinux.com/">
-          <div class="card">
-            <img src="img/corso-linux.jpg" class="card-img-top" alt="Copertina corso Linux" title="Copertina corso Linux">
-            <div class="card-body d-flex flex-column">
-              <h3 class="card-title">Linux</h3>
-              <p class="card-text">
-                Qui imparerai tutto ciò che c'è da sapere su <i>GNU/Linux</i> ed il suo ecosistema, tramite <b>spiegazioni chiare</b> ed esempi concreti di utilizzo.
-                <br> <br />Al termine, potrai anche <b>certificare le tue competenze</b> in ambito professionale. 
-              </p><br>
-              <a data-umami-event="link_corsolinux" title="Corso linux" href="https://corsolinux.com/" class="btn btn-primary mt-auto">Confronta i corsi Linux</a>
-            </div>
-          </div>
-        </a>
-        <a data-umami-event="link_corsoreti_INVISIBLE" class="invisible-link" href="https://corsoreti.it/">
-          <div class="card">
-            <img src="img/corso-networking.jpg" class="card-img-top" alt="Copertina corso networking" title="Copertina corso networking">
-            <div class="card-body d-flex flex-column">
-              <h3 class="card-title">Networking</h3>
-              <p class="card-text">
-                Ho ideato questo corso introduttivo per guidarti in una panoramica sul mondo del Networking.<br><br>
-                Non mancheranno importanti cenni sulla <b>sicurezza informatica</b>, troppo spesso "ignorati" nei corsi base di Networking.
-  	          </p><br>
-              <a data-umami-event="link_corsoreti" title="Corso networking" href="https://corsoreti.it/" class="btn btn-primary mt-auto">Informazioni sul corso</a>
-            </div>
-          </div>
-        </a>
-        <a data-umami-event="link_docker_INVISIBLE" class="invisible-link" href="https://corsolinux.com/docker">
-          <div class="card">
-            <img src="img/docker-per-comuni-mortali-notext.png" class="card-img-top" alt="Copertina corso docker" title="Copertina corso docker">
-            <div class="card-body d-flex flex-column">
-              <h3 class="card-title">Docker</h3>
-              <p class="card-text">
-                Questo corso si rivolge a chi ha <b>poca o nessuna esperienza</b> e vuole imparare con un approccio pratico e stimolante.
-                <br><br>Al termine, sarai in grado di <b>gestire i tuoi servizi su Docker</b>, risolvere problemi in autonomia e <b>containerizzare nuove App</b>.
-  	          </p><br>
-              <a data-umami-event="link_docker" title="Corso Docker" href="https://corsolinux.com/docker" class="btn btn-primary mt-auto">Informazioni sul corso</a>
-            </div>
-          </div>
-        </a>
-      </div>
+      <div class="row">
 
+
+        <div class="col-sm-12 col-md-6 col-lg-3 mb-4 d-flex" >
+          <a data-umami-event="link_proxmox_INVISIBLE" class="invisible-link" href="https://corsolinux.com/proxmox">
+            <div class="card">
+              <img src="https://corsolinux.com/assets/proxmox-per-comuni-mortali-notext.png" class="card-img-top" alt="Copertina corso proxmox" title="Copertina corso proxmox">
+              <div class="card-body d-flex flex-column">
+                <h3 class="card-title">Proxmox</h3>
+                <p class="card-text">
+                  Questo corso adatto a tutti ti guiderà passo passo nella <b>gestione di una infrastruttura IT</b>, dal semplice <i>nodo singolo</i> al <i>cluster iperconvergente</i> in Alta Disponibilità.<br><br>
+                  Una risorsa indispensabile per mettere in produzione servizi in modo <b>sicuro e affidabile</b> sulla tua infrastruttura.<br><br>
+                </p><br>
+                <a data-umami-event="link_proxmox" title="Corso Proxmox" href="https://corsolinux.com/proxmox" class="btn btn-primary mt-auto">Informazioni sul corso</a>
+              </div>
+            </div>
+          </a>
+        </div>
+        
+        <div class="col-sm-12 col-md-6 col-lg-3 mb-4 d-flex">
+          <a data-umami-event="link_docker_INVISIBLE" class="invisible-link" href="https://corsolinux.com/docker">
+            <div class="card">
+              <img src="img/docker-per-comuni-mortali-notext.png" class="card-img-top" alt="Copertina corso docker" title="Copertina corso docker">
+              <div class="card-body d-flex flex-column">
+                <h3 class="card-title">Docker</h3>
+                <p class="card-text">
+                  Questo corso si rivolge a chi ha <b>poca o nessuna esperienza</b> e vuole imparare con un approccio pratico e stimolante.
+                  <br><br>Al termine, sarai in grado di <b>gestire i tuoi servizi su Docker</b>, risolvere problemi in autonomia e <b>containerizzare nuove App</b>.
+                </p><br>
+                <a data-umami-event="link_docker" title="Corso Docker" href="https://corsolinux.com/docker" class="btn btn-primary mt-auto">Informazioni sul corso</a>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-sm-12 col-md-6 col-lg-3 mb-4 d-flex">
+          <a data-umami-event="link_corsolinux_INVISIBLE" class="invisible-link" href="https://corsolinux.com/">
+            <div class="card">
+              <img src="img/corso-linux.jpg" class="card-img-top" alt="Copertina corso Linux" title="Copertina corso Linux">
+              <div class="card-body d-flex flex-column">
+                <h3 class="card-title">Linux</h3>
+                <p class="card-text">
+                  Qui imparerai tutto ciò che c'è da sapere su <i>GNU/Linux</i> ed il suo ecosistema, tramite <b>spiegazioni chiare</b> ed esempi concreti di utilizzo.
+                  <br><br>Al termine, potrai anche <b>certificare le tue competenze</b> in ambito professionale. 
+                </p><br>
+                <a data-umami-event="link_corsolinux" title="Corso linux" href="https://corsolinux.com/" class="btn btn-primary mt-auto">Confronta i corsi Linux</a>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-sm-12 col-md-6 col-lg-3 mb-4 d-flex"">
+          <a data-umami-event="link_corsoreti_INVISIBLE" class="invisible-link" href="https://corsoreti.it/">
+            <div class="card">
+              <img src="img/corso-networking.jpg" class="card-img-top" alt="Copertina corso networking" title="Copertina corso networking">
+              <div class="card-body d-flex flex-column">
+                <h3 class="card-title">Networking</h3>
+                <p class="card-text">
+                  Ho ideato questo corso introduttivo per guidarti in una panoramica sul mondo del Networking.<br><br>
+                  Non mancheranno importanti cenni sulla <b>sicurezza informatica</b>, troppo spesso "ignorati" nei corsi base di Networking.
+                </p><br>
+                <a data-umami-event="link_corsoreti" title="Corso networking" href="https://corsoreti.it/" class="btn btn-primary mt-auto">Informazioni sul corso</a>
+              </div>
+            </div>
+          </a>
+        </div>
+
+
+      </div>
     </div>
   </section>
 
