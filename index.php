@@ -408,7 +408,7 @@ AUTHOR: Riccardo Carissimi
           <p>
                         Mi chiamo <b>Moreno Razzoli</b>,<br>
                         Sono laureato in Scienze Informatiche, ho conseguito le certificazioni Linux <b>LPI</b>, <b>CompTIA Linux+</b> e <b>Suse CLA</b>,
-                        ho realizzato diversi <a href="https://morrolinux.it/progetti">progetti Open Source</a>,
+                        ho realizzato diversi <a href="https://morrolinux.it#progetti">progetti Open Source</a>,
                         contribuito allo sviluppo di nuove funzionalità in altrettanti progetti già avviati e
                         realizzo <b>video didattici dal 2008</b> su <a href="https://www.youtube.com/user/morrolinux/">YouTube</a> e sul
                         mio <a href="https://morrolinux.it"> sito ufficiale.</a><br><br>
