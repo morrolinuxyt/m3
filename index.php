@@ -8,7 +8,7 @@ AUTHOR: Riccardo Carissimi
 
 <head>
 
-  <script defer src="https://analytics.morrolinux.it/script.js" data-website-id="46468131-1423-47fb-9d6d-2323b59902ed"></script>
+  <script async defer data-website-id="c87c6f27-b4d2-42bd-ba3e-73c2a98f23ea" src="https://analytics.morrolinux.it/umami.js"></script>
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
