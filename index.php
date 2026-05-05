@@ -77,10 +77,11 @@ AUTHOR: Riccardo Carissimi
             <a class="nav-link js-scroll-trigger" href="#about">About</a>
           </li>
 
+<!--
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="https://jobs.morrolinux.it"><mark style="background-color: #FAB803; border-radius: 10%">Jobs</mark></a>
           </li>
-
+-->
         </ul>
       </div>
     </div>
