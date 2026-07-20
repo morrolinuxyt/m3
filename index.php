@@ -104,7 +104,7 @@ AUTHOR: Riccardo Carissimi
           <p class="mb-0 text-center">
     	  <b>Mi segui su YouTube?</b><br>Grazie per il supporto!
           </p>
-          <a id="coupon" class="js-scroll-trigger banner" href="https://budibase.morrolinux.it/app/lpi-form"><div><b>Reclama il tuo COUPON </b><br>per ricevere uno sconto sul prezzo di tutti gli esami LPI.</div></a>
+          <a id="coupon" class="js-scroll-trigger banner" href="https://requests.morrolinux.it/form/lpi-coupon"><div><b>Reclama il tuo COUPON </b><br>per ricevere uno sconto sul prezzo di tutti gli esami LPI.</div></a>
         </div>
 
       </div>
