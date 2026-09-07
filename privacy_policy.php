@@ -4,7 +4,7 @@ NAME: Morrolinux.it Website
 AUTHOR: Moreno Razzoli
 -->
 
-<html lang="it">
+<html lang="it" class="theme-auto">
 
 <head>
 
@@ -17,14 +17,18 @@ AUTHOR: Moreno Razzoli
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Custom styles for this template -->
-  <link href="css/style.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
 
   <!-- <meta name="description" content=""> -->
 
   <title>Morrolinux.it</title>
+
+<?php include 'snippets/theme-init.php';?>
 </head>
 
 <body id="page-top">
+
+<?php include 'snippets/theme-toggle.php';?>
 
   <div class="container">
     <div class="divider"></div>
@@ -101,6 +105,9 @@ AUTHOR: Moreno Razzoli
       </p>
     </div>
   </section>
+
+  <!-- Custom JavaScript -->
+  <script src="js/theme.js"></script>
 
 </body>
 

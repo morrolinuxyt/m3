@@ -1,0 +1,746 @@
+/*!
+ * Morrolinux.it
+ * Stile allineato a corsolinux.com: stessa tavolozza a token, stesse schede,
+ * stesso selettore di tema. Chi passa da un sito all'altro deve riconoscere
+ * la stessa mano.
+ *
+ * Il foglio era generato da style.scss e serviva minificato: senza un build
+ * step in giro (né Docker né la GitHub Action compilano nulla) le due copie
+ * finivano regolarmente disallineate. Ora è CSS a mano, come su CorsoLinux.
+ */
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css);
+
+/* ============================================================
+   Tavolozza
+   I token sono gli stessi di corsolinux.com, con l'accento giallo
+   del canale al posto dell'arancio. Sono dichiarati su :root per il
+   tema chiaro e ridichiarati più sotto per quello scuro.
+   ============================================================ */
+
+:root {
+  /* Giallo Morrolinux: è l'identità del canale, non un colore d'interfaccia.
+     Serve a segnare (bordo delle schede al passaggio, evidenziatore, icone),
+     mai a portare testo bianco sopra. */
+  --accent: #FEC224;
+
+  /* Colonna di lettura per il testo corrente, e colonna larga per gli elenchi
+     di schede: due misure in tutta la pagina, non tre. */
+  --measure: 780px;
+  --measure-wide: 960px;
+
+  /* La CTA è la stessa di corsolinux.com: il pulsante d'azione è un elemento
+     dell'interfaccia condivisa fra i due siti, non dell'identità del singolo. */
+  --cta: #326ce5;
+  --cta-hover: #2757b8;
+  --cta-ink: #ffffff;
+
+  /* L'arancio della promo resta distinto dalla CTA e dall'accento. */
+  --promo: #ff651c;
+  --promo-hover: #ff5100;
+  --promo-ink: #ffffff;
+
+  --ink: #2f3437;
+  --ink-muted: #6b7378;
+  --surface: #f6f8fa;
+  --panel: #ffffff;
+  --hairline: #e3e6ea;
+
+  --page-bg: #ffffff;
+  --nav-bg: #ffffff;
+  --nav-ink: #2f3437;
+  --nav-border: #e3e6ea;
+  --footer-bg: #343a40;
+  --link: #007bff;
+  --link-hover: #0056b3;
+  --shadow-md: 0 8px 18px rgba(0, 0, 0, .07);
+  --shadow-lg: 0 10px 20px rgba(0, 0, 0, .18);
+
+  /* le icone dei progetti sono disegni scuri su fondo trasparente: su pagina
+     scura vanno schiarite, altrimenti spariscono */
+  --icon-filter: none;
+
+  --accent-soft: rgba(0, 0, 0, .06);                                /* ripiego */
+  --accent-soft: color-mix(in srgb, var(--accent) 16%, transparent);
+}
+
+/* --- tavolozza scura: segue la preferenza di sistema --- */
+@media (prefers-color-scheme: dark) {
+  html.theme-auto body {
+    --ink: #e7eaed;
+    --ink-muted: #98a2ab;
+    --surface: #161c22;
+    --panel: #222a32;
+    --hairline: #333c45;
+
+    --page-bg: #0e1216;
+    --nav-bg: #222a32;
+    --nav-ink: #e7eaed;
+    --nav-border: #333c45;
+    --footer-bg: #222a32;
+    --link: #74aaff;
+    --link-hover: #a3c8ff;
+    --shadow-md: 0 10px 22px rgba(0, 0, 0, .5);
+    --shadow-lg: 0 12px 26px rgba(0, 0, 0, .55);
+
+    --icon-filter: invert(1) hue-rotate(180deg) brightness(1.1);
+
+    --accent-soft: rgba(255, 255, 255, .08);                        /* ripiego */
+    --accent-soft: color-mix(in srgb, var(--accent) 26%, transparent);
+  }
+}
+
+/* --- tavolozza scura: forzata, a prescindere dal sistema ---
+   Se modifichi un token qui sopra, allinea l'altro blocco. */
+html.theme-dark body {
+  --ink: #e7eaed;
+  --ink-muted: #98a2ab;
+  --surface: #161c22;
+  --panel: #222a32;
+  --hairline: #333c45;
+
+  --page-bg: #0e1216;
+  --nav-bg: #222a32;
+  --nav-ink: #e7eaed;
+  --nav-border: #333c45;
+  --footer-bg: #222a32;
+  --link: #74aaff;
+  --link-hover: #a3c8ff;
+  --shadow-md: 0 10px 22px rgba(0, 0, 0, .5);
+  --shadow-lg: 0 12px 26px rgba(0, 0, 0, .55);
+
+  --icon-filter: invert(1) hue-rotate(180deg) brightness(1.1);
+
+  --accent-soft: rgba(255, 255, 255, .08);                          /* ripiego */
+  --accent-soft: color-mix(in srgb, var(--accent) 26%, transparent);
+}
+
+/* ============================================================
+   Base
+   ============================================================ */
+
+body {
+  font-family: 'Ubuntu', sans-serif;
+  background-color: var(--page-bg);
+  color: var(--ink);
+}
+
+h1, h2, h3, h4, .navbar-brand {
+  font-family: 'Ubuntu', sans-serif;
+}
+
+/* Le sezioni erano a 25px: due blocchi di contenuto diversi si toccavano
+   quasi. Il respiro è quello di corsolinux.com, un filo più contenuto perché
+   qui le sezioni sono separate anche da un divisorio. */
+section {
+  padding: 4.5rem 0;
+}
+
+#home {
+  padding-top: 5rem;
+}
+
+.container p {
+  font-size: 1.1em;
+}
+
+/* Container annidati: Bootstrap dà a ognuno 15px di padding e un max-width
+   proprio, quindi il secondo livello rientra e si disallinea rispetto ai
+   blocchi al primo. */
+.container .container {
+  max-width: none;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* solo i link nel corpo del testo: non i pulsanti, non la navbar */
+section p a:not(.btn),
+section li a:not(.btn),
+.footer a {
+  color: var(--link);
+}
+
+section p a:not(.btn):hover,
+section li a:not(.btn):hover,
+.footer a:hover {
+  color: var(--link-hover);
+}
+
+/* ============================================================
+   Titoli di sezione
+   ============================================================ */
+
+.section-title {
+  text-align: center;
+  font-size: 2.6rem;
+  margin-bottom: 2.5rem;
+}
+
+.section-note,
+.section-lead {
+  max-width: var(--measure);
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--ink);
+}
+
+.container .section-note,
+.container .section-lead {
+  font-size: 1.09375rem;                                            /* 17,5px */
+  line-height: 1.75;
+}
+
+.section-note b,
+.section-note strong,
+.section-lead b,
+.section-lead strong {
+  font-weight: 600;
+}
+
+.section-note i,
+.section-note em {
+  color: var(--ink-muted);
+}
+
+/* Aria fra il testo che introduce un blocco e il blocco stesso. */
+.section-note + .card-list,
+.section-lead + .card-list,
+.section-note + .row,
+.section-lead + .row {
+  margin-top: 3rem;
+}
+
+/* Evidenziatore: un segno tirato a mano, storto e che sborda dalle lettere.
+   Sta in un ::before dietro al testo e non in un background, perché gli
+   elementi inline non si possono ruotare. Il prezzo è che la spanna non può
+   andare a capo, quindi va usata su poche parole. */
+.marker {
+  position: relative;
+  display: inline-block;
+  z-index: 0;
+  padding: 0 .1em;
+  margin: 0 .45em 0 .4em;
+  color: #1a1d20;
+}
+
+.marker::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: -.35em;
+  right: -.4em;
+  top: .21em;
+  bottom: .16em;
+  background: var(--accent);
+  border-radius: .16em .24em .14em .22em / .22em .14em .24em .16em;
+  transform: rotate(-1.2deg) skewX(-4deg);
+  transform-origin: left center;
+}
+
+/* Il tratto si disegna quando la frase entra in campo: la classe la mette lo
+   script. Senza JS il segno è semplicemente già disegnato. */
+.marker.is-inview::before {
+  animation: marker-in .8s cubic-bezier(.2, .75, .3, 1) both;
+}
+
+@keyframes marker-in {
+  from { transform: rotate(-1.2deg) skewX(-4deg) scaleX(0); }
+  to   { transform: rotate(-1.2deg) skewX(-4deg) scaleX(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marker.is-inview::before {
+    animation: none;
+  }
+}
+
+/* ============================================================
+   Navbar
+   Era bianca cablata: in tema scuro restava una fascia bianca in cima
+   con sopra il testo chiaro di Bootstrap.
+   ============================================================ */
+
+#mainNav.navbar {
+  background-color: var(--nav-bg) !important;
+  border-bottom: 1px solid transparent;
+}
+
+#mainNav .navbar-brand,
+#mainNav .navbar-nav .nav-link {
+  color: var(--nav-ink);
+}
+
+#mainNav .navbar-nav .nav-link:hover,
+#mainNav .navbar-nav .nav-link:focus,
+#mainNav .navbar-nav .nav-item.active .nav-link {
+  color: var(--accent);
+}
+
+/* Il bordo compare con l'ombra, allo scroll: in cima alla pagina la navbar
+   non ha niente da cui staccarsi. */
+.scroll-header {
+  border-bottom-color: var(--nav-border) !important;
+  box-shadow: var(--shadow-md);
+}
+
+/* L'hamburger di navbar-light è un'icona nera in un SVG cablato: in tema
+   scuro sparisce. Qui si prende il colore dell'inchiostro della navbar. */
+#mainNav .navbar-toggler {
+  border-color: var(--hairline);
+}
+
+html.theme-dark #mainNav .navbar-toggler-icon {
+  filter: invert(1);
+}
+
+@media (prefers-color-scheme: dark) {
+  html.theme-auto #mainNav .navbar-toggler-icon {
+    filter: invert(1);
+  }
+}
+
+.navbar-brand {
+  font-size: 1.5em;
+}
+
+.navbar-brand p {
+  display: inline-block;
+  font-size: 1rem;
+  margin-left: 5px;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 400;
+}
+
+.navbar-brand * {
+  margin: 0;
+}
+
+/* ============================================================
+   Schede
+   Stesso raggio, stessa hairline e stessa reazione al passaggio del
+   mouse di .project e .text-column: un'unica famiglia di riquadri.
+   ============================================================ */
+
+.card {
+  background-color: var(--panel);
+  border: 1px solid var(--hairline);
+  border-radius: 10px;
+  color: var(--ink);
+  overflow: hidden;                 /* la copertina segue gli angoli tondi */
+  transition: transform .2s ease-in-out, border-color .2s ease-in-out, box-shadow .2s ease-in-out;
+}
+
+.card:hover, .card:focus, .card:focus-within {
+  transform: translateY(-2px);
+  border-color: var(--accent);
+  box-shadow: var(--shadow-md);
+}
+
+.card-body {
+  padding: 1.75rem;
+  text-align: left;
+}
+
+.card-title {
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.card-text {
+  color: var(--ink-muted);
+  line-height: 1.75;
+}
+
+.card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+}
+
+.card-actions .btn {
+  flex: 1 1 7rem;
+}
+
+/* Pastiglia "Novità": appoggiata sull'angolo della copertina. Accanto al
+   titolo finiva a capo da sola e sembrava un pezzo di testo smarrito. */
+.card-badge {
+  position: absolute;
+  top: .75rem;
+  left: .75rem;
+  z-index: 2;
+  padding: .3em .75em;
+  border-radius: 999px;
+  background-color: var(--promo);
+  color: var(--promo-ink);
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, .25);
+}
+
+/* --- Elenco di schede orizzontali ---
+   Il catalogo è passato da quattro corsi a cinque: in verticale la quinta
+   colonna sarebbe stata larga un francobollo. In orizzontale l'elenco cresce
+   verso il basso, e ogni scheda ha spazio per una descrizione vera.
+   L'elenco è più largo della colonna di lettura ma non a filo del
+   contenitore: sporge dal testo di un margine riconoscibile. */
+.card-list {
+  max-width: var(--measure-wide);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card-list .card-h {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.card-h .card-body {
+  padding: 1.5rem 1.75rem;
+}
+
+/* L'h3 di Bootstrap vale 1.75rem in grassetto: troppo per una voce d'elenco
+   ripetuta cinque volte. */
+.card-h .card-title {
+  margin-bottom: 1.1rem;
+  font-size: 1.35rem;
+}
+
+.card-h .card-text {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Il mt-auto del pulsante non spingerebbe niente: la colonna del testo è un
+   blocco, quindi .card-body si fermerebbe all'altezza del suo contenuto e lo
+   spazio libero resterebbe sotto, fuori dal flex. Resa flex la colonna, il
+   corpo si allunga fino in fondo e il pulsante scende con lui. */
+.card-h .row.no-gutters > [class^="col-"] {
+  display: flex;
+}
+
+.card-h .row.no-gutters .card-body {
+  flex: 1 1 auto;
+}
+
+/* La copertina tiene il proprio rapporto (sono tutte 16/9) invece di riempire
+   la colonna: con height:100% l'altezza gliela detterebbe il testo accanto e
+   object-fit:cover ne mangerebbe i lati. Lo spazio che avanza quando il testo
+   è più alto si divide sopra e sotto. */
+.card-h .card-img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  align-self: center;
+  object-fit: cover;
+  border-radius: 0;
+}
+
+/* Impila prima di quanto farebbe Bootstrap: sotto i 992px il .container
+   scende da 960 a 720, la copertina passa di colpo a 229px e il testo va a
+   capo cinque volte. Impilata, la copertina va a piena larghezza. */
+@media (max-width: 991.98px) {
+  .card-h .row.no-gutters > [class^="col-"] {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+/* ============================================================
+   Pulsanti
+   ============================================================ */
+
+.btn-primary,
+.btn-primary:not(:disabled):not(.disabled):active {
+  background-color: var(--cta);
+  border-color: var(--cta);
+  color: var(--cta-ink);
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:not(:disabled):not(.disabled):active {
+  background-color: var(--cta-hover);
+  border-color: var(--cta-hover);
+  color: var(--cta-ink);
+}
+
+.btn-primary:focus {
+  box-shadow: 0 0 0 .2rem rgba(50, 108, 229, .4);
+}
+
+.btn-special-offer,
+.btn-special-offer:hover,
+.btn-special-offer:focus,
+.btn-special-offer:not(:disabled):not(.disabled):active {
+  color: var(--promo-ink);
+  font-weight: bold;
+  background-color: var(--promo);
+  border-color: var(--promo);
+}
+
+.btn-special-offer:hover,
+.btn-special-offer:focus,
+.btn-special-offer:not(:disabled):not(.disabled):active {
+  background-color: var(--promo-hover);
+  border-color: var(--promo-hover);
+}
+
+.btn-special-offer:focus {
+  box-shadow: 0 0 0 .2rem rgba(255, 101, 28, .4);
+}
+
+/* ============================================================
+   Progetti, contributi e modi per sostenere
+   Tre griglie di riquadri con icona: stesso trattamento delle schede,
+   così la pagina ha una sola famiglia di superfici.
+   ============================================================ */
+
+.project,
+.text-column {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin-bottom: 1.5rem;
+  padding: 1.75rem 1.5rem;
+  background-color: var(--panel);
+  border: 1px solid var(--hairline);
+  border-radius: 10px;
+  color: var(--ink);
+  text-align: center;
+  transition: transform .2s ease-in-out, border-color .2s ease-in-out, box-shadow .2s ease-in-out;
+}
+
+.project:hover,
+.project:focus,
+.text-column:hover,
+.text-column:focus {
+  transform: translateY(-2px);
+  border-color: var(--accent);
+  box-shadow: var(--shadow-md);
+}
+
+/* .text-column raccoglie elenchi e link: centrare il testo lo rendeva
+   illeggibile, l'icona e il titolo restano al centro. */
+.text-column p {
+  text-align: left;
+}
+
+.project h4,
+.text-column h4 {
+  margin-bottom: 1.25rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+/* Il paragrafo si prende lo spazio che avanza: così il pulsante in fondo
+   (Patreon) resta incollato alla base e i riquadri di una riga chiudono
+   tutti allo stesso modo. */
+.project p,
+.text-column p {
+  flex: 1 1 auto;
+  margin-bottom: 1.25rem;
+  color: var(--ink-muted);
+  line-height: 1.7;
+}
+
+.project .btn,
+.text-column .btn {
+  align-self: center;
+}
+
+/* Le icone stanno in una pastiglia dell'accento, come le tessere di
+   corsolinux.com: senza, erano disegni sospesi nel vuoto. */
+.project img,
+.text-column img {
+  align-self: center;
+  flex: 0 0 auto;
+  width: 64px;
+  height: 64px;
+  padding: 12px;
+  margin-bottom: 1.5rem;
+  border-radius: 50%;
+  background-color: var(--accent-soft);
+  filter: var(--icon-filter);
+}
+
+/* Riquadri di una riga tutti alti quanto il più alto: la colonna diventa
+   flex e il riquadro ci si stira dentro. Dove il riquadro è avvolto da un
+   link, il link fa da tramite e deve stirarsi a sua volta. */
+.row.tiles > [class^="col-"],
+.row.tiles > [class*=" col-"] {
+  display: flex;
+}
+
+.row.tiles > [class^="col-"] > *,
+.row.tiles > [class*=" col-"] > * {
+  display: flex;
+  width: 100%;
+}
+
+/* il riquadro dentro al link: senza questo resterebbe largo quanto il suo
+   contenuto invece di riempire la colonna */
+.row.tiles > [class^="col-"] > .invisible-link > *,
+.row.tiles > [class*=" col-"] > .invisible-link > * {
+  flex: 1 1 auto;
+  width: 100%;
+}
+
+/* ============================================================
+   Blocchi vari
+   ============================================================ */
+
+.invisible-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.invisible-link:hover {
+  color: inherit;
+  text-decoration: none;
+}
+
+.avatar {
+  border-radius: 50%;
+  box-shadow: var(--shadow-lg);
+}
+
+.divider {
+  height: 1px;
+  width: 80%;
+  margin: 0 auto;
+  background-color: var(--hairline);
+}
+
+.yt_video {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.yt_video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Richiami a tutta larghezza (promo, coupon LPI) */
+.banner {
+  display: block;
+  margin: 0 auto;
+  padding: 10px;
+  max-width: var(--measure);
+}
+
+.banner:hover {
+  text-decoration: none;
+}
+
+.banner div {
+  background-color: var(--accent);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  /* il giallo porta solo inchiostro scuro: col bianco arriva a malapena
+     a 1.7:1 */
+  color: #212529;
+  font-size: 1.1em;
+  transition: transform .2s ease-in-out, box-shadow .2s ease-in-out;
+}
+
+.banner div:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+#promo div {
+  background-color: var(--promo);
+  color: var(--promo-ink);
+}
+
+.banner img {
+  animation: blinker 1s linear infinite;
+  width: 15px;
+  height: 15px;
+  margin-top: -3px;
+}
+
+@keyframes blinker {
+  from, 49.9% { opacity: 0; }
+  50%, to     { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .banner img {
+    animation: none;
+  }
+}
+
+/* ============================================================
+   Footer
+   ============================================================ */
+
+footer.bg-dark {
+  background-color: var(--footer-bg) !important;
+  border-top: 1px solid var(--nav-border);
+}
+
+.footer i {
+  color: white;
+  font-size: 2rem;
+  opacity: 0.5;
+}
+
+.footer i:hover {
+  opacity: 1;
+}
+
+/* ============================================================
+   Selettore del tema: pastiglia discreta in basso a destra, fuori dal
+   flusso. Usa i token, quindi segue il tema che imposta.
+   ============================================================ */
+
+.theme-toggle {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 1040;
+  /* 44px è anche la misura minima comoda per un bersaglio da toccare */
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid var(--hairline);
+  border-radius: 50%;
+  background-color: var(--panel);
+  color: var(--ink);
+  font-size: 1.15rem;
+  line-height: 1;
+  opacity: .92;
+  box-shadow: var(--shadow-md);
+  cursor: pointer;
+  transition: opacity .25s ease-in-out, color .2s ease-in-out,
+              box-shadow .2s ease-in-out, transform .25s ease-in-out;
+}
+
+.theme-toggle:hover,
+.theme-toggle:focus {
+  opacity: 1;
+  color: var(--accent);
+  border-color: var(--accent);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+  outline: none;
+}
+
+@media (min-width: 992px) {
+  .theme-toggle {
+    right: 2rem;
+    bottom: 2rem;
+  }
+}
