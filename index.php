@@ -134,7 +134,7 @@ AUTHOR: Riccardo Carissimi
         <div class="col-sm-12 col-md-6 col-lg-3 mb-4 d-flex" >
           <a data-umami-event="link_proxmox_INVISIBLE" class="invisible-link" href="https://corsolinux.com/proxmox">
             <div class="card">
-              <img src="https://corsolinux.com/assets/proxmox-per-comuni-mortali-notext.png" class="card-img-top" alt="Copertina corso proxmox" title="Copertina corso proxmox">
+              <img src="img/proxmox-per-comuni-mortali-notext.png" class="card-img-top" alt="Copertina corso proxmox" title="Copertina corso proxmox">
               <div class="card-body d-flex flex-column">
                 <h3 class="card-title">Proxmox</h3>
                 <p class="card-text">
