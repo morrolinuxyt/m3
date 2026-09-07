@@ -127,7 +127,7 @@ AUTHOR: Riccardo Carissimi
       <p class="section-lead text-center">
         Pubblico video su GNU/Linux ed il panorama del Free Software dal 2008.
         Negli ultimi <?php echo date('Y')-2008;?> anni ho realizzato <i>oltre 500 contenuti video a tema didattico</i>
-        ed erogato numerosi corsi di formazione professionale.<br>
+        ed erogato numerosi corsi di formazione professionale.
         Dal 2018 realizzo anche <b>corsi online</b> consultabili <i>on-demand</i>, per diversi livelli ed aree di competenza:
       </p>
 
@@ -389,12 +389,12 @@ AUTHOR: Riccardo Carissimi
           <div class="text-column">
             <img src="img/fluid/youtube.svg" alt="img">
             <h4>Su YouTube</h4>
-            <p>
-              - Iscrivendoti al canale<br />
-              - Disattivando eventuali <strong>AdBlock</strong> sul mio canale<br />
-              - Lasciando like e commenti ai video<br />
-              - Condividendo i contenuti<br />
-            </p>
+            <ul class="bullet-list">
+              <li>Iscrivendoti al canale</li>
+              <li>Disattivando eventuali <strong>AdBlock</strong> sul mio canale</li>
+              <li>Lasciando like e commenti ai video</li>
+              <li>Condividendo i contenuti</li>
+            </ul>
           </div>
         </div>
 
@@ -402,13 +402,13 @@ AUTHOR: Riccardo Carissimi
           <div class="text-column">
             <img src="img/fluid/amazon.svg" alt="img">
             <h4>Su Amazon</h4>
-            <p>
-          		Accedendo al sito tramite <a href="http://amzn.to/2AC0a6Q" target="_blank">il mio link</a>:<br />
-          		- Amazon mi devolve il 5% del suo ricavato<br />
-          		- Zero costi aggiuntivi per te<br />
-          		- Stessa sicurezza e tutela negli acquisti<br /><br />
-          		<a href="https://programma-affiliazione.amazon.it" target="_blank">Come funziona l'affiliazione</a><br />
-        	  </p>
+            <p>Accedendo al sito tramite <a href="http://amzn.to/2AC0a6Q" target="_blank">il mio link</a>:</p>
+            <ul class="bullet-list">
+              <li>Amazon mi devolve il 5% del suo ricavato</li>
+              <li>Zero costi aggiuntivi per te</li>
+              <li>Stessa sicurezza e tutela negli acquisti</li>
+            </ul>
+            <p><a href="https://programma-affiliazione.amazon.it" target="_blank">Come funziona l'affiliazione</a></p>
           </div>
         </div>
 
@@ -416,11 +416,11 @@ AUTHOR: Riccardo Carissimi
           <div class="text-column">
             <img src="img/fluid/share.svg" alt="img">
             <h4>Sui social</h4>
-            <p>
-              - Citandomi su <a href="https://www.linkedin.com/in/morenorazzoli" target="blank_">LinkedIn</a><br />
-              - Seguendomi su <a href="https://twitter.com/morrolinux" target="blank_">Twitter</a><br />
-              - Stellandomi su <a href="https://github.com/morrolinux" target="blank_">GitHub</a><br />
-            </p>
+            <ul class="bullet-list">
+              <li>Citandomi su <a href="https://www.linkedin.com/in/morenorazzoli" target="blank_">LinkedIn</a></li>
+              <li>Seguendomi su <a href="https://twitter.com/morrolinux" target="blank_">Twitter</a></li>
+              <li>Stellandomi su <a href="https://github.com/morrolinux" target="blank_">GitHub</a></li>
+            </ul>
           </div>
         </div>
 
