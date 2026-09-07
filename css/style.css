@@ -572,6 +572,47 @@ html.theme-dark #mainNav .navbar-toggler-icon {
   margin-top: 1.25rem;
 }
 
+/* Elenchi dentro ai riquadri: erano trattini a inizio riga dentro a un <p>
+   separati da <br>. Oltre a essere brutti, le voci che andavano a capo
+   rientravano sotto al trattino invece di allinearsi al testo sopra. Qui sono
+   <ul> veri, con un segno dell'accento e il rientro appeso.
+   Il segno è un punto e non la spunta di corsolinux.com: lì marca cosa impari
+   a corso finito, qui sono cose ancora da fare. */
+.bullet-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+  color: var(--ink-muted);
+  line-height: 1.6;
+}
+
+.bullet-list li {
+  position: relative;
+  padding-left: 1.1rem;
+  margin-bottom: .5rem;
+}
+
+.bullet-list li:last-child {
+  margin-bottom: 0;
+}
+
+.bullet-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: .58em;
+  width: .38rem;
+  height: .38rem;
+  border-radius: 50%;
+  background-color: var(--accent);
+}
+
+.text-column p + .bullet-list,
+.text-column .bullet-list + p {
+  margin-top: .85rem;
+}
+
 .project .btn,
 .text-column .btn {
   align-self: center;
