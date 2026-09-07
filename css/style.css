@@ -396,13 +396,13 @@ html.theme-dark #mainNav .navbar-toggler-icon {
 }
 
 .card-h .card-body {
-  padding: 1.5rem 1.75rem;
+  padding: 1.25rem 1.75rem;
 }
 
 /* L'h3 di Bootstrap vale 1.75rem in grassetto: troppo per una voce d'elenco
    ripetuta cinque volte. */
 .card-h .card-title {
-  margin-bottom: 1.1rem;
+  margin-bottom: .75rem;
   font-size: 1.35rem;
 }
 
@@ -424,17 +424,34 @@ html.theme-dark #mainNav .navbar-toggler-icon {
   flex: 1 1 auto;
 }
 
-/* La copertina tiene il proprio rapporto (sono tutte 16/9) invece di riempire
-   la colonna: con height:100% l'altezza gliela detterebbe il testo accanto e
-   object-fit:cover ne mangerebbe i lati. Lo spazio che avanza quando il testo
-   è più alto si divide sopra e sotto. */
+/* Il rapporto 16/9 delle copertine sta sulla COLONNA, non sull'immagine: così
+   è la copertina a dare l'altezza alla scheda (il testo è corto apposta), e
+   l'immagine la riempie sempre tutta.
+   Se il testo dovesse comunque risultare più alto — traduzioni, schermi
+   stretti — la colonna si stira e l'immagine ritaglia i lati invece di
+   lasciare le bande nere sopra e sotto che aveva con align-self: center. */
+.card-h .card-cover {
+  aspect-ratio: 16 / 9;
+}
+
 .card-h .card-img {
   width: 100%;
-  height: auto;
-  aspect-ratio: 16 / 9;
-  align-self: center;
+  height: 100%;
   object-fit: cover;
   border-radius: 0;
+}
+
+/* Il testo è più corto della copertina: lo spazio che avanza si divide sopra
+   e sotto invece di accumularsi sotto al pulsante. */
+.card-h .card-body {
+  justify-content: center;
+}
+
+/* Nella scheda orizzontale il pulsante non deve attraversare tutta la colonna:
+   a piena larghezza pesava più del titolo. Si prende la larghezza del suo
+   testo, come una voce d'azione in fondo a un paragrafo. */
+.card-h .card-actions .btn {
+  flex: 0 0 auto;
 }
 
 /* Impila prima di quanto farebbe Bootstrap: sotto i 992px il .container
@@ -497,13 +514,18 @@ html.theme-dark #mainNav .navbar-toggler-icon {
    così la pagina ha una sola famiglia di superfici.
    ============================================================ */
 
+/* I riquadri di una riga restano alti quanto il più alto, e il contenuto si
+   appoggia in cima: centrandolo, icone e titoli di riquadri con testi di
+   lunghezza diversa finivano ognuno a una quota sua e la riga perdeva la
+   linea di base comune. Il fondo vuoto si toglie pareggiando i testi, non
+   spostando il contenuto. */
 .project,
 .text-column {
   display: flex;
   flex-direction: column;
   height: 100%;
   margin-bottom: 1.5rem;
-  padding: 1.75rem 1.5rem;
+  padding: 1.5rem 1.25rem;
   background-color: var(--panel);
   border: 1px solid var(--hairline);
   border-radius: 10px;
@@ -529,20 +551,25 @@ html.theme-dark #mainNav .navbar-toggler-icon {
 
 .project h4,
 .text-column h4 {
-  margin-bottom: 1.25rem;
+  margin-bottom: 1rem;
   font-size: 1.25rem;
   font-weight: 700;
 }
 
-/* Il paragrafo si prende lo spazio che avanza: così il pulsante in fondo
-   (Patreon) resta incollato alla base e i riquadri di una riga chiudono
-   tutti allo stesso modo. */
+/* Il paragrafo NON si allarga a riempire il riquadro: crescendo teneva il
+   testo incollato in cima e lasciava sotto un vuoto alto quanto la differenza
+   con il riquadro più lungo della riga. Lo spazio lo distribuisce il
+   justify-content qui sopra. */
 .project p,
 .text-column p {
-  flex: 1 1 auto;
-  margin-bottom: 1.25rem;
+  flex: 0 1 auto;
+  margin-bottom: 0;
   color: var(--ink-muted);
-  line-height: 1.7;
+  line-height: 1.6;
+}
+
+.text-column p + .btn {
+  margin-top: 1.25rem;
 }
 
 .project .btn,
@@ -556,10 +583,10 @@ html.theme-dark #mainNav .navbar-toggler-icon {
 .text-column img {
   align-self: center;
   flex: 0 0 auto;
-  width: 64px;
-  height: 64px;
-  padding: 12px;
-  margin-bottom: 1.5rem;
+  width: 56px;
+  height: 56px;
+  padding: 11px;
+  margin-bottom: 1rem;
   border-radius: 50%;
   background-color: var(--accent-soft);
   filter: var(--icon-filter);

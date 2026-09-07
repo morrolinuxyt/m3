@@ -147,7 +147,7 @@ AUTHOR: Riccardo Carissimi
         <div class="card card-h">
           <span class="card-badge">Novità</span>
           <div class="row no-gutters">
-            <div class="col-md-4">
+            <div class="col-md-4 card-cover">
               <img src="img/kubernetes-per-comuni-mortali-notext.png" class="card-img" alt="Copertina corso Kubernetes Per Comuni Mortali" title="Kubernetes Per Comuni Mortali">
             </div>
             <div class="col-md-8">
@@ -155,9 +155,7 @@ AUTHOR: Riccardo Carissimi
                 <h3 class="card-title">Kubernetes</h3>
                 <p class="card-text">
                   Per chi conosce già <b>Docker</b> e vuole fare il salto all'<b>orchestrazione</b>: dal primo <i>Pod</i>
-                  al cluster <i>k3s</i>, con TLS automatico, storage persistente e Helm.<br><br>
-                  Ogni lezione è costruita intorno a un <b>mini progetto funzionante</b> che potrai replicare nel tuo
-                  <i>homelab</i> o in azienda.
+                  al cluster <i>k3s</i>, un <b>mini progetto funzionante</b> alla volta.
                 </p>
                 <div class="card-actions mt-auto">
                   <a data-umami-event="link_kubernetes" title="Corso Kubernetes" href="https://corsolinux.com/kubernetes" class="btn btn-primary">Informazioni sul corso</a>
@@ -169,17 +167,15 @@ AUTHOR: Riccardo Carissimi
 
         <div class="card card-h">
           <div class="row no-gutters">
-            <div class="col-md-4">
+            <div class="col-md-4 card-cover">
               <img src="img/proxmox-per-comuni-mortali-notext.png" class="card-img" alt="Copertina corso Proxmox Per Comuni Mortali" title="Proxmox Per Comuni Mortali">
             </div>
             <div class="col-md-8">
               <div class="card-body d-flex flex-column">
                 <h3 class="card-title">Proxmox</h3>
                 <p class="card-text">
-                  Questo corso adatto a tutti ti guiderà passo passo nella <b>gestione di una infrastruttura IT</b>,
-                  dal semplice <i>nodo singolo</i> al <i>cluster iperconvergente</i> in Alta Disponibilità.<br><br>
-                  Una risorsa indispensabile per mettere in produzione servizi in modo <b>sicuro e affidabile</b>
-                  sulla tua infrastruttura.
+                  Dal semplice <i>nodo singolo</i> al <i>cluster iperconvergente</i> in Alta Disponibilità: la
+                  <b>gestione di una infrastruttura IT</b> alla portata di tutti.
                 </p>
                 <div class="card-actions mt-auto">
                   <a data-umami-event="link_proxmox" title="Corso Proxmox" href="https://corsolinux.com/proxmox" class="btn btn-primary">Informazioni sul corso</a>
@@ -191,17 +187,15 @@ AUTHOR: Riccardo Carissimi
 
         <div class="card card-h">
           <div class="row no-gutters">
-            <div class="col-md-4">
+            <div class="col-md-4 card-cover">
               <img src="img/docker-per-comuni-mortali-notext.png" class="card-img" alt="Copertina corso Docker Per Comuni Mortali" title="Docker Per Comuni Mortali">
             </div>
             <div class="col-md-8">
               <div class="card-body d-flex flex-column">
                 <h3 class="card-title">Docker</h3>
                 <p class="card-text">
-                  Questo corso si rivolge a chi ha <b>poca o nessuna esperienza</b> e vuole imparare con un approccio
-                  pratico e stimolante.<br><br>
-                  Al termine, sarai in grado di <b>gestire i tuoi servizi su Docker</b>, risolvere problemi in autonomia
-                  e <b>containerizzare nuove App</b>.
+                  Per chi ha <b>poca o nessuna esperienza</b>: al termine saprai <b>gestire i tuoi servizi su
+                  Docker</b> e containerizzare nuove App in autonomia.
                 </p>
                 <div class="card-actions mt-auto">
                   <a data-umami-event="link_docker" title="Corso Docker" href="https://corsolinux.com/docker" class="btn btn-primary">Informazioni sul corso</a>
@@ -213,17 +207,15 @@ AUTHOR: Riccardo Carissimi
 
         <div class="card card-h">
           <div class="row no-gutters">
-            <div class="col-md-4">
+            <div class="col-md-4 card-cover">
               <img src="img/corso-linux.jpg" class="card-img" alt="Copertina corsi Linux" title="Corsi Linux e certificazioni LPI">
             </div>
             <div class="col-md-8">
               <div class="card-body d-flex flex-column">
                 <h3 class="card-title">Linux</h3>
                 <p class="card-text">
-                  Qui imparerai tutto ciò che c'è da sapere su <i>GNU/Linux</i> ed il suo ecosistema, tramite
-                  <b>spiegazioni chiare</b> ed esempi concreti di utilizzo.<br><br>
-                  Al termine, potrai anche <b>certificare le tue competenze</b> in ambito professionale con il
-                  percorso LPI.
+                  Tutto ciò che c'è da sapere su <i>GNU/Linux</i> e il suo ecosistema, fino a <b>certificare le
+                  tue competenze</b> con il percorso LPI.
                 </p>
                 <div class="card-actions mt-auto">
                   <a data-umami-event="link_corsolinux" title="Corso linux" href="https://corsolinux.com/" class="btn btn-primary">Confronta i corsi Linux</a>
@@ -235,16 +227,15 @@ AUTHOR: Riccardo Carissimi
 
         <div class="card card-h">
           <div class="row no-gutters">
-            <div class="col-md-4">
+            <div class="col-md-4 card-cover">
               <img src="img/corso-networking.jpg" class="card-img" alt="Copertina corso Networking" title="Corso Networking">
             </div>
             <div class="col-md-8">
               <div class="card-body d-flex flex-column">
                 <h3 class="card-title">Networking</h3>
                 <p class="card-text">
-                  Ho ideato questo corso introduttivo per guidarti in una panoramica sul mondo del Networking.<br><br>
-                  Non mancheranno importanti cenni sulla <b>sicurezza informatica</b>, troppo spesso "ignorati" nei
-                  corsi base di Networking.
+                  Una panoramica sul mondo del Networking, con quei cenni di <b>sicurezza informatica</b>
+                  troppo spesso "ignorati" nei corsi base.
                 </p>
                 <div class="card-actions mt-auto">
                   <a data-umami-event="link_corsoreti" title="Corso networking" href="https://corsoreti.it/" class="btn btn-primary">Informazioni sul corso</a>
@@ -277,7 +268,7 @@ AUTHOR: Riccardo Carissimi
             <div class="project">
               <img src="img/fluid/radio.svg" alt="img">
               <h4>Mpradio</h4>
-              <p>Trasforma il tuo Raspberry Pi in una emittente radio FM in grado di trasmettere musica dallo smartphone via Bluetooth!</p>
+              <p>Trasforma il tuo Raspberry Pi in una emittente radio FM, con la musica in streaming via Bluetooth.</p>
             </div>
           </a>
         </div>
@@ -287,7 +278,7 @@ AUTHOR: Riccardo Carissimi
             <div class="project">
               <img src="img/fluid/distributed.svg" alt="img">
               <h4>Olive distributed</h4>
-              <p>Olive è un video editor Open Source per GNU/Linux. Ho realizzato una render farm per l'esportazione distribuita dei video.</p>
+              <p>Una render farm per l'esportazione distribuita dei video con Olive, il video editor Open Source.</p>
             </div>
           </a>
         </div>
@@ -297,7 +288,7 @@ AUTHOR: Riccardo Carissimi
             <div class="project">
               <img src="img/fluid/sound.svg" alt="img">
               <h4>Simple ehm</h4>
-              <p>Un semplice strumento per rimuovere automaticamente "ehm" e silenzi da video e discorsi pre-registrati</p>
+              <p>Rimuove automaticamente "ehm" e silenzi da video e discorsi pre-registrati.</p>
             </div>
           </a>
         </div>
@@ -307,7 +298,7 @@ AUTHOR: Riccardo Carissimi
             <div class="project">
               <img src="img/fluid/ChimeraDesk.svg" alt="img">
               <h4>ChimeraDesk</h4>
-              <p>Un software di desktop remoto ad alte prestazioni progettato per essere semplice e modulare.</p>
+              <p>Un software di desktop remoto ad alte prestazioni, semplice e modulare.</p>
             </div>
           </a>
         </div>
@@ -340,7 +331,7 @@ AUTHOR: Riccardo Carissimi
             <div class="project">
               <img src="img/fluid/clapperboard.svg" alt="img">
               <h4>Taglio automatico dei silenzi</h4>
-              <p>Tramite questo contributo ad Olive video editor, è ora possibile tagliare automaticamente i silenzi in una traccia.</p>
+              <p>Un contributo a Olive video editor: ora i silenzi di una traccia si tagliano da soli.</p>
             </div>
           </a>
         </div>
@@ -350,7 +341,7 @@ AUTHOR: Riccardo Carissimi
             <div class="project">
               <img src="img/fluid/writing.svg" alt="img">
               <h4>Appunti riascoltabili</h4>
-              <p>5 novembre 2018: Pubblicato il primo prototipo della celebre funzionalità di OneNote ora integrata nel software GPL Xournal++</p>
+              <p>Il primo prototipo (2018) della celebre funzionalità di OneNote, oggi integrata in Xournal++.</p>
             </div>
           </a>
         </div>
@@ -360,7 +351,7 @@ AUTHOR: Riccardo Carissimi
             <div class="project">
               <img src="img/fluid/dash2.svg" alt="img">
               <h4>i3expo-ng</h4>
-              <p>Un semplice tool per replicare l'effetto Exposé di MacOS su i3 WM (Linux). Questo fork introduce numerose funzionalità, come descritto sul repo github.</p>
+              <p>L'effetto Exposé di macOS su i3 WM: questo fork introduce numerose funzionalità in più.</p>
             </div>
           </a>
         </div>
@@ -412,11 +403,11 @@ AUTHOR: Riccardo Carissimi
             <img src="img/fluid/amazon.svg" alt="img">
             <h4>Su Amazon</h4>
             <p>
-          		Accedendo al sito tramite il mio link: <a href="http://amzn.to/2AC0a6Q" target="_blank">http://amzn.to/2AC0a6Q</a><br />
-          		- Amazon mi devolverà il 5% del suo ricavato sulla tua spesa<br />
+          		Accedendo al sito tramite <a href="http://amzn.to/2AC0a6Q" target="_blank">il mio link</a>:<br />
+          		- Amazon mi devolve il 5% del suo ricavato<br />
           		- Zero costi aggiuntivi per te<br />
-          		- Totale sicurezza negli acquisti e tutela della tua privacy<br /><br />
-          		Per sapere di più: <a href="https://programma-affiliazione.amazon.it" target="_blank">programma di affiliazione Amazon</a><br />
+          		- Stessa sicurezza e tutela negli acquisti<br /><br />
+          		<a href="https://programma-affiliazione.amazon.it" target="_blank">Come funziona l'affiliazione</a><br />
         	  </p>
           </div>
         </div>
@@ -438,7 +429,7 @@ AUTHOR: Riccardo Carissimi
             <img src="img/fluid/patreon.png" alt="img">
             <h4>Su Patreon</h4>
             <p>
- 		Qui potrai curiosare <b>dietro le quinte</b> con video in anteprima e aggiornamenti "in tempo reale" su quello che sto preparando. Inoltre avrai la possibilità di vedere <b>il tuo nome nella sigla</b> dei miei video, partecipare alle <b>votazioni</b> esclusive sui contenuti e accedere a <b>contenuti esclusivi</b> non pubblicabili su YouTube.
+ 		Curiosa <b>dietro le quinte</b> con i video in anteprima, partecipa alle <b>votazioni</b> sui prossimi contenuti, vedi <b>il tuo nome nella sigla</b> e accedi a <b>contenuti esclusivi</b> non pubblicabili su YouTube.
             </p>
             <a title="Sostieni" href="https://www.patreon.com/Morrolinux" class="btn btn-primary mt-auto" target="_blank">Sostieni</a>
           </div>
