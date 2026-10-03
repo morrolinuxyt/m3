@@ -34,7 +34,7 @@ AUTHOR: Riccardo Carissimi
       <div class="wrap">
         <div class="hero-grid">
           <div>
-            <h1>GNU/Linux e Software Libero, <span class="marker">spiegati bene</span>.</h1>
+            <h1>GNU/Linux e Software Libero, <span class="marker">spiegati bene</span></h1>
             <p>
               Pubblico video su GNU/Linux ed il panorama del Free Software dal 2008.
               Negli ultimi <?= $years ?> anni ho realizzato <b>oltre 500 contenuti video</b> a tema didattico
@@ -133,25 +133,38 @@ AUTHOR: Riccardo Carissimi
             ['dash2', 'i3expo-ng', 'L\'effetto Exposé di macOS su i3 WM: questo fork introduce numerose funzionalità in più.', 'https://youtu.be/qJVSuxNIfI4?t=763'],
           ];
 
-          function projects($items) {
-            echo '<div class="tiles">';
-            foreach ($items as [$icon, $title, $text, $url]) {
-              // in fondo alla scheda si legge dove porta: codice o video
-              $github = strpos($url, 'github.com') !== false;
-              echo '<a class="card project" href="'.htmlspecialchars($url).'" target="_blank" rel="noopener">';
-              echo '<div class="project-head"><img src="img/fluid/'.$icon.'.svg" alt="" width="40" height="40" loading="lazy">';
-              echo '<h4>'.$title.'</h4></div><p>'.$text.'</p>';
-              echo '<span class="project-dest">'.($github ? icon('github', 16).' Codice su GitHub' : icon('youtube', 16).' Guarda il video').icon('arrow', 16).'</span></a>';
-            }
-            echo '</div>';
+          // in fondo a ogni voce si legge dove porta: codice o video
+          function dest($url) {
+            return strpos($url, 'github.com') !== false
+              ? icon('github', 16).' Codice su GitHub'.icon('arrow', 16)
+              : icon('youtube', 16).' Guarda il video'.icon('arrow', 16);
           }
         ?>
 
-        <?php projects($projects); ?>
+        <div class="projects">
+          <?php foreach ($projects as [$icon, $title, $text, $url]) { ?>
+          <a class="card project" href="<?= htmlspecialchars($url) ?>" target="_blank" rel="noopener">
+            <img src="img/fluid/<?= $icon ?>.svg" alt="" width="64" height="64" loading="lazy">
+            <h4><?= $title ?></h4>
+            <p><?= $text ?></p>
+            <span class="project-dest"><?= dest($url) ?></span>
+          </a>
+          <?php } ?>
+        </div>
 
         <h3 class="sub">Contributi a progetti Open Source</h3>
 
-        <?php projects($contributions); ?>
+        <ul class="contribs">
+          <?php foreach ($contributions as [$icon, $title, $text, $url]) { ?>
+          <li>
+            <a href="<?= htmlspecialchars($url) ?>" target="_blank" rel="noopener">
+              <img src="img/fluid/<?= $icon ?>.svg" alt="" width="36" height="36" loading="lazy">
+              <div><h4><?= $title ?></h4><p><?= $text ?></p></div>
+              <span class="project-dest"><?= dest($url) ?></span>
+            </a>
+          </li>
+          <?php } ?>
+        </ul>
 
         <p class="more">
           Scopri tutti i progetti sulla <a href="https://www.youtube.com/watch?v=K1szAL6MKWc&list=PL4L8OWDC99_cgzlY5-vcWbC2LIqNmMbOo" target="_blank" rel="noopener">playlist di YouTube</a>
@@ -172,6 +185,19 @@ AUTHOR: Riccardo Carissimi
         </p>
 
         <div class="support">
+          <div class="card way way--patreon way--featured">
+            <div class="way-body">
+              <div class="way-head"><img src="img/fluid/patreon.png" alt="" width="44" height="44" loading="lazy"><h4>Su Patreon</h4></div>
+              <p>
+                Curiosa <b>dietro le quinte</b> con i video in anteprima, partecipa alle <b>votazioni</b> sui prossimi contenuti,
+                vedi <b>il tuo nome nella sigla</b> e accedi a <b>contenuti esclusivi</b> non pubblicabili su YouTube.
+              </p>
+              <div class="way-action">
+                <a class="btn btn-patreon" href="https://www.patreon.com/Morrolinux" target="_blank" rel="noopener" data-umami-event="patreon"><?= icon('heart', 18) ?> Sostienimi su Patreon</a>
+              </div>
+            </div>
+          </div>
+
           <div class="card way way--youtube">
             <div class="way-body">
               <div class="way-head"><img src="img/fluid/youtube.svg" alt="" width="32" height="32" loading="lazy"><h4>Su YouTube</h4></div>
@@ -217,18 +243,6 @@ AUTHOR: Riccardo Carissimi
             </div>
           </div>
 
-          <div class="card way way--patreon">
-            <div class="way-body">
-              <div class="way-head"><img src="img/fluid/patreon.png" alt="" width="32" height="32" loading="lazy"><h4>Su Patreon</h4></div>
-              <p>
-                Curiosa <b>dietro le quinte</b> con i video in anteprima, partecipa alle <b>votazioni</b> sui prossimi contenuti,
-                vedi <b>il tuo nome nella sigla</b> e accedi a <b>contenuti esclusivi</b> non pubblicabili su YouTube.
-              </p>
-              <div class="way-action">
-                <a class="btn btn-primary" href="https://www.patreon.com/Morrolinux" target="_blank" rel="noopener" data-umami-event="patreon">Sostieni</a>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>
@@ -236,16 +250,36 @@ AUTHOR: Riccardo Carissimi
     <!-- #ABOUT -->
     <section id="about" class="section">
       <div class="wrap">
-        <h2>About me</h2>
         <div class="about">
-          <img class="avatar" src="img/moreno.webp" alt="Moreno Razzoli" width="140" height="140" loading="lazy">
-          <p>
-            Mi chiamo <b>Moreno Razzoli</b>.
-            Sono laureato in Scienze Informatiche, ho conseguito le certificazioni Linux <b>LPI</b>, <b>CompTIA Linux+</b> e <b>Suse CLA</b>,
-            ho realizzato diversi <a href="#progetti">progetti Open Source</a>,
-            contribuito allo sviluppo di nuove funzionalità in altrettanti progetti già avviati e
-            realizzo <b>video didattici dal 2008</b> su <a href="https://www.youtube.com/user/morrolinux/" target="_blank" rel="noopener">YouTube</a>.
-          </p>
+          <figure class="portrait">
+            <img src="img/moreno.webp" alt="Moreno Razzoli" width="280" height="280" loading="lazy">
+          </figure>
+
+          <div>
+            <h2>About me</h2>
+            <p class="about-text">
+              Mi chiamo <b>Moreno Razzoli</b>. Ho realizzato diversi <a href="#progetti">progetti Open Source</a>,
+              contribuito allo sviluppo di nuove funzionalità in altrettanti progetti già avviati e
+              realizzo <b>video didattici dal 2008</b> su <a href="https://www.youtube.com/user/morrolinux/" target="_blank" rel="noopener">YouTube</a>.
+            </p>
+
+            <dl class="facts">
+              <dt>Studi</dt>
+              <dd>Laurea in Scienze Informatiche</dd>
+              <dt>Certificazioni</dt>
+              <dd>LPI · CompTIA Linux+ · SUSE CLA</dd>
+              <dt>Su YouTube</dt>
+              <dd>dal 2008, oltre 500 video didattici</dd>
+              <dt>Formazione</dt>
+              <dd>corsi on-demand dal 2018 e corsi professionali</dd>
+            </dl>
+
+            <div class="about-links">
+              <a class="btn btn-ghost" href="https://www.youtube.com/user/morrolinux/" target="_blank" rel="noopener"><?= icon('youtube', 18) ?> YouTube</a>
+              <a class="btn btn-ghost" href="https://github.com/morrolinux" target="_blank" rel="noopener"><?= icon('github', 18) ?> GitHub</a>
+              <a class="btn btn-ghost" href="https://www.linkedin.com/in/morenorazzoli" target="_blank" rel="noopener"><?= icon('linkedin', 18) ?> LinkedIn</a>
+            </div>
+          </div>
         </div>
       </div>
     </section>

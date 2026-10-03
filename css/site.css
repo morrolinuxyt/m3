@@ -317,35 +317,42 @@ section[id] { scroll-margin-top: var(--nav-h); }
   .hero-grid { grid-template-columns: 1fr; gap: 2rem; }
 }
 
-/* Evidenziatore tirato a mano: sta in un ::before perché gli elementi
-   inline non si ruotano. La spanna non può andare a capo: poche parole. */
+/* Evidenziatore: lo stesso tratto di corsolinux.com ("farlo come si
+   deve"), con gli stessi valori. Un segno tirato a mano, storto e che
+   sborda dalle lettere: sta in un ::before perché gli elementi inline non
+   si ruotano, quindi la spanna non può andare a capo. Poche parole. */
 .marker {
   position: relative;
   display: inline-block;
   z-index: 0;
-  color: var(--accent-ink);
-  padding: 0 .08em;
+  padding: 0 .1em;
+  /* il segno sborda: senza margini finirebbe addosso alle parole vicine */
+  margin: 0 .45em 0 .4em;
+  color: #1a1d20;
 }
 
 .marker::before {
   content: "";
   position: absolute;
   z-index: -1;
-  left: -.12em;
-  right: -.16em;
-  top: .14em;
-  bottom: .06em;
+  left: -.35em;
+  right: -.4em;
+  /* stringe il testo sopra e sotto: una passata, non un riquadro */
+  top: .21em;
+  bottom: .16em;
   background: var(--accent);
   border-radius: .16em .24em .14em .22em / .22em .14em .24em .16em;
-  transform: rotate(-1.4deg) skewX(-4deg);
+  transform: rotate(-1.2deg) skewX(-4deg);
   transform-origin: left center;
 }
 
+/* Il tratto si disegna quando la frase entra in campo. Senza JS il segno è
+   già disegnato: lo stato di riposo è quello finito. */
 .marker.is-inview::before { animation: marker-in .8s cubic-bezier(.2, .75, .3, 1) both; }
 
 @keyframes marker-in {
-  from { transform: rotate(-1.4deg) skewX(-4deg) scaleX(0); }
-  to   { transform: rotate(-1.4deg) skewX(-4deg) scaleX(1); }
+  from { transform: rotate(-1.2deg) skewX(-4deg) scaleX(0); }
+  to   { transform: rotate(-1.2deg) skewX(-4deg) scaleX(1); }
 }
 
 /* ============================================================
@@ -444,7 +451,7 @@ section[id] { scroll-margin-top: var(--nav-h); }
 }
 
 a.card { color: var(--ink); text-decoration: none; }
-a.card:hover, .card:focus-within, .course:hover, .tile:hover {
+a.card:hover, .card:focus-within, .course:hover {
   transform: translateY(-3px);
   border-color: var(--accent);
   box-shadow: var(--shadow);
@@ -510,34 +517,40 @@ a.card:hover, .card:focus-within, .course:hover, .tile:hover {
   .courses { grid-template-columns: 1fr; }
 }
 
-/* --- Progetti: icona e titolo in riga, in fondo dove porta il link --- */
+/* --- Progetti: i miei in schede 2x2, orizzontali, con l'icona grande a
+   sinistra; i contributi, secondari, in un unico pannello a righe. --- */
 
-.tiles {
+.projects {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1.25rem;
 }
 
-.project { padding: 1.25rem 1.35rem 0; }
-
-.project-head {
-  display: flex;
-  align-items: center;
-  gap: .8rem;
-  margin-bottom: .7rem;
+.project {
+  display: grid;
+  grid-template-columns: 64px minmax(0, 1fr);
+  gap: 0 1.25rem;
+  padding: 1.5rem 1.5rem 0;
 }
 
-.project-head img { flex: none; width: 40px; height: 40px; filter: var(--icon-filter); }
-.project h4 { font-size: 1.08rem; margin: 0; }
-.project p { flex: 1; color: var(--ink-muted); font-size: .97rem; margin-bottom: 1.1rem; }
+.project > img {
+  grid-row: 1 / 3;
+  width: 64px;
+  height: 64px;
+  filter: var(--icon-filter);
+}
+
+.project h4 { font-size: 1.15rem; margin: .1rem 0 .35rem; }
+.project p { color: var(--ink-muted); font-size: .97rem; margin-bottom: 1.25rem; }
 
 /* Dove porta la scheda: codice o video. Al passaggio diventa un invito. */
 .project-dest {
+  grid-column: 1 / -1;
   display: flex;
   align-items: center;
   gap: .45rem;
-  margin: 0 -1.35rem;
-  padding: .7rem 1.35rem;
+  margin: auto -1.5rem 0;
+  padding: .7rem 1.5rem;
   border-top: 1px dashed var(--hairline);
   color: var(--ink-muted);
   font-size: .88rem;
@@ -550,16 +563,61 @@ a.card:hover, .card:focus-within, .course:hover, .tile:hover {
 a.project:hover .project-dest { color: var(--ink); background: var(--surface); }
 a.project:hover .project-dest .ico-arrow { opacity: 1; transform: none; }
 
-/* --- Sostieni: ogni modo ha il colore del suo servizio, in una fascia in
-   cima; in fondo l'azione, sempre alla stessa altezza. --- */
+.contribs {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius);
+  background: var(--panel);
+  overflow: hidden;
+}
+
+.contribs li + li { border-top: 1px dashed var(--hairline); }
+
+.contribs a {
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 1.1rem;
+  padding: .95rem 1.35rem;
+  color: var(--ink);
+  text-decoration: none;
+  transition: background-color .2s;
+}
+
+.contribs a:hover { background: var(--surface); }
+.contribs img { width: 36px; height: 36px; filter: var(--icon-filter); }
+.contribs h4 { font-size: 1.02rem; margin: 0 0 .1rem; }
+.contribs p { margin: 0; color: var(--ink-muted); font-size: .95rem; }
+
+.contribs .project-dest { grid-column: auto; margin: 0; padding: 0; border: 0; background: none !important; white-space: nowrap; }
+.contribs a:hover .project-dest { color: var(--ink); }
+.contribs a:hover .project-dest .ico-arrow { opacity: 1; transform: none; }
+
+@media (max-width: 799.98px) {
+  .projects { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 599.98px) {
+  .project { grid-template-columns: 48px minmax(0, 1fr); gap: 0 1rem; padding: 1.25rem 1.25rem 0; }
+  .project > img { width: 48px; height: 48px; }
+  .project-dest { margin: auto -1.25rem 0; padding: .7rem 1.25rem; }
+  .contribs a { grid-template-columns: 32px minmax(0, 1fr); padding: .9rem 1.1rem; }
+  .contribs .project-dest { grid-column: 2; }
+}
+
+/* --- Sostieni: Patreon in evidenza a tutta riga, gli altri tre modi sotto.
+   Ogni modo porta il colore del suo servizio in una fascia in cima; in
+   fondo l'azione, sempre alla stessa altezza. --- */
 
 .support {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1.25rem;
 }
 
-.way { padding: 0; border-top: 0; }
+.way { padding: 0; }
 .way::before { content: ""; height: 5px; background: var(--brand, var(--accent)); }
 
 .way-body { flex: 1; display: flex; flex-direction: column; padding: 1.25rem 1.35rem 1.35rem; }
@@ -582,8 +640,39 @@ a.project:hover .project-dest .ico-arrow { opacity: 1; transform: none; }
 .way--social  { --brand: #6364ff; }
 .way--patreon { --brand: #ff424d; }
 
-@media (max-width: 959.98px) { .support { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (max-width: 559.98px) { .support { grid-template-columns: 1fr; } }
+/* Patreon: la fascia diventa un lato intero, il testo è più grande e
+   l'azione sta a destra invece che in fondo. */
+.way--featured {
+  grid-column: 1 / -1;
+  flex-direction: row;
+  border-color: color-mix(in srgb, var(--brand) 45%, var(--hairline));
+  background: color-mix(in srgb, var(--brand) 5%, var(--panel));
+}
+
+.way--featured::before { width: 6px; height: auto; }
+
+.way--featured .way-body {
+  flex-direction: row;
+  align-items: center;
+  gap: 2rem;
+  padding: 1.75rem 2rem;
+}
+
+.way--featured .way-head { flex: none; margin: 0; white-space: nowrap; }
+.way--featured .way-head img { width: 44px; height: 44px; }
+.way--featured h4 { font-size: 1.4rem; }
+.way--featured p { color: var(--ink); font-size: 1.05rem; margin: 0; max-width: 46rem; }
+.way--featured .way-action { margin: 0 0 0 auto; padding: 0; border: 0; flex: none; }
+.way--featured .btn { padding: .75rem 1.4rem; font-size: 1.02rem; }
+
+.btn-patreon { background: #ff424d; color: #fff; }
+.btn-patreon:hover { background: #e3343f; color: #fff; }
+
+@media (max-width: 899.98px) {
+  .support { grid-template-columns: 1fr; }
+  .way--featured .way-body { flex-direction: column; align-items: flex-start; gap: 1rem; padding: 1.5rem; }
+  .way--featured .way-action { margin: 0; }
+}
 
 .bullet-list { margin: 0 0 1em; padding-left: 1.1rem; }
 .bullet-list:last-child { margin-bottom: 0; }
@@ -591,23 +680,67 @@ a.project:hover .project-dest .ico-arrow { opacity: 1; transform: none; }
 .bullet-list li::marker { color: var(--accent); }
 
 /* ============================================================
-   About
+   About: foto grande con dietro un foglio giallo storto (lo stesso gesto
+   dell'evidenziatore), il racconto e una scheda di fatti.
    ============================================================ */
 
-.about { max-width: var(--measure); }
-.about::after { content: ""; display: table; clear: both; }
-
-.avatar {
-  float: left;
-  width: 140px;
-  height: 140px;
-  margin: .3rem 1.75rem 1rem 0;
-  border-radius: 50%;
-  object-fit: cover;
+.about {
+  display: grid;
+  grid-template-columns: 280px minmax(0, 1fr);
+  gap: 3.5rem;
+  align-items: start;
 }
 
-.about p { color: var(--ink-muted); }
-.about p b { color: var(--ink); }
+.portrait { position: relative; margin: .5rem 0 0; }
+
+.portrait::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--accent);
+  border-radius: .5em .8em .45em .7em / .7em .45em .8em .5em;
+  transform: rotate(-3.5deg) translate(-10px, 8px);
+}
+
+.portrait img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: var(--radius);
+  transform: rotate(1.2deg);
+}
+
+.about h2 { margin-bottom: .75rem; }
+.about-text { max-width: var(--measure); color: var(--ink-muted); font-size: 1.08rem; }
+.about-text b { color: var(--ink); }
+
+.facts {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  gap: .55rem 1.5rem;
+  margin: 1.5rem 0 1.75rem;
+  padding: 1.1rem 1.35rem;
+  border-left: 4px solid var(--accent);
+  background: var(--surface);
+  border-radius: 0 var(--radius) var(--radius) 0;
+}
+
+.facts dt { color: var(--ink-muted); font-size: .9rem; padding-top: .1rem; }
+.facts dd { margin: 0; font-weight: 500; }
+
+.about-links { display: flex; flex-wrap: wrap; gap: .6rem; }
+
+@media (max-width: 799.98px) {
+  .about { grid-template-columns: 1fr; gap: 2.5rem; }
+  .portrait { max-width: 220px; margin-left: 10px; }
+}
+
+@media (max-width: 479.98px) {
+  .facts { grid-template-columns: 1fr; gap: .1rem; }
+  .facts dd + dt { margin-top: .6rem; }
+}
 
 .socials { display: flex; flex-wrap: wrap; gap: .25rem; margin: 0; padding: 0; list-style: none; }
 
@@ -622,10 +755,6 @@ a.project:hover .project-dest .ico-arrow { opacity: 1; transform: none; }
 
 .socials a:hover { color: var(--ink); background: var(--surface); }
 .socials svg { width: 20px; height: 20px; }
-
-@media (max-width: 539.98px) {
-  .avatar { float: none; margin: 0 0 1.25rem; width: 120px; height: 120px; }
-}
 
 /* ============================================================
    Footer
