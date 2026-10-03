@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--
 NAME: Morrolinux.it Website
-AUTHOR: Riccardo Carissimi
+AUTHOR: Moreno Razzoli
 -->
 <?php
   // Banner promo: TODO decidere se mostrarlo quando esiste udemy_coupons.json
