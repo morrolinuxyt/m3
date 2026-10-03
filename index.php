@@ -41,8 +41,8 @@ AUTHOR: Riccardo Carissimi
               ed erogato numerosi corsi di formazione professionale.
             </p>
             <div class="hero-actions">
-              <a class="btn btn-primary" href="https://www.youtube.com/user/morrolinux/?sub_confirmation=1" target="_blank" rel="noopener" data-umami-event="hero_youtube"><?= icon('youtube', 18) ?> Iscriviti al canale</a>
-              <a href="#corsi">Oppure guarda i corsi</a>
+              <a class="btn btn-youtube" href="https://www.youtube.com/user/morrolinux/?sub_confirmation=1" target="_blank" rel="noopener" data-umami-event="hero_youtube"><?= icon('youtube', 18) ?> Iscriviti al canale</a>
+              <a class="btn btn-primary" href="#corsi" data-umami-event="hero_corsi">Scopri i corsi <?= icon('arrow', 18) ?></a>
             </div>
           </div>
 
@@ -258,16 +258,15 @@ AUTHOR: Riccardo Carissimi
           <div>
             <h2>Moreno Razzoli</h2>
             <p>
-              Sono laureato in Scienze Informatiche e realizzo <b>video didattici dal 2008</b> su
-              <a href="https://www.youtube.com/user/morrolinux/" target="_blank" rel="noopener">YouTube</a>.
-              Ho sviluppato diversi <a href="#progetti">progetti Open Source</a> e contribuito con nuove
-              funzionalità ad altrettanti progetti già avviati.
+              Mi chiamo Moreno Razzoli e dal 2008 condivido su YouTube entusiasmo e scoperte su
+              <b>GNU/Linux e il Software Libero</b> con una comunità, sempre in crescita, di appassionati
+              e professionisti del settore.
             </p>
-            <ul class="chips" aria-label="Certificazioni">
-              <li>LPI</li>
-              <li>CompTIA Linux+</li>
-              <li>SUSE CLA</li>
-            </ul>
+            <p>
+              Sono laureato in Scienze Informatiche, ho conseguito le certificazioni <b>LPI</b>,
+              <b>CompTIA Linux+</b> e <b>SUSE CLA</b> e sono <b>Training Partner autorizzato</b>
+              del Linux Professional Institute.
+            </p>
             <?= socials($SOCIALS) ?>
           </div>
         </div>

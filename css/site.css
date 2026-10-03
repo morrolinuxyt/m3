@@ -278,6 +278,11 @@ section[id] { scroll-margin-top: var(--nav-h); }
 .btn-primary { background: var(--cta); color: var(--cta-ink); }
 .btn-primary:hover { background: var(--cta-hover); color: var(--cta-ink); }
 
+/* rosso YouTube: solo per l'iscrizione al canale, dove il colore del
+   servizio dice da solo dove porta il pulsante */
+.btn-youtube { background: #e62117; color: #fff; }
+.btn-youtube:hover { background: #c81b12; color: #fff; }
+
 .btn-ghost { border-color: var(--hairline); color: var(--ink); }
 .btn-ghost:hover { border-color: var(--ink-muted); color: var(--ink); }
 
@@ -783,6 +788,7 @@ a.project:hover .project-dest .ico-arrow { opacity: 1; transform: none; }
 
 .about h2 { font-size: clamp(1.9rem, 3.2vw, 2.4rem); text-align: left; }
 .about p { color: var(--ink-muted); font-size: 1.1rem; }
+.about p:last-of-type { margin-bottom: 1.5rem; }
 .about p b { color: var(--ink); font-weight: 600; }
 
 .chips { display: flex; flex-wrap: wrap; gap: .5rem; margin: 0 0 1.5rem; padding: 0; list-style: none; }
