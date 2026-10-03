@@ -258,14 +258,12 @@ AUTHOR: Riccardo Carissimi
           <div>
             <h2>Moreno Razzoli</h2>
             <p>
-              Mi chiamo Moreno Razzoli e dal 2008 condivido su YouTube entusiasmo e scoperte su
-              <b>GNU/Linux e il Software Libero</b> con una comunità, sempre in crescita, di appassionati
-              e professionisti del settore.
+              Mi chiamo Moreno Razzoli e dal 2008 parlo di <b>GNU/Linux e Software Libero</b>
+              con una comunità di appassionati e professionisti sempre in crescita.
             </p>
             <p>
-              Sono laureato in Scienze Informatiche, ho conseguito le certificazioni <b>LPI</b>,
-              <b>CompTIA Linux+</b> e <b>SUSE CLA</b> e sono <b>Training Partner autorizzato</b>
-              del Linux Professional Institute.
+              Sono laureato in Scienze Informatiche, certificato <b>LPI</b>, <b>CompTIA Linux+</b> e <b>SUSE CLA</b>,
+              e <b>Training Partner autorizzato</b> del Linux Professional Institute.
             </p>
             <?= socials($SOCIALS) ?>
           </div>
