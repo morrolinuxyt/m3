@@ -41,6 +41,7 @@
 
 
   /* le icone dei progetti sono disegni scuri: in tema scuro vanno schiarite */
+  --shadow: 0 6px 16px -8px rgba(16, 24, 40, .18);
   --icon-filter: none;
 
   --radius: 8px;
@@ -65,6 +66,7 @@
     --hairline: #2a333d;
     --link: #7fb0ff;
     --link-hover: #a9caff;
+    --shadow: 0 6px 16px -8px rgba(0, 0, 0, .6);
     --icon-filter: invert(1) hue-rotate(180deg) brightness(1.1);
   }
 }
@@ -80,6 +82,7 @@
   --hairline: #2a333d;
   --link: #7fb0ff;
   --link-hover: #a9caff;
+  --shadow: 0 6px 16px -8px rgba(0, 0, 0, .6);
   --icon-filter: invert(1) hue-rotate(180deg) brightness(1.1);
 }
 
@@ -339,24 +342,32 @@ section[id] { scroll-margin-top: var(--nav-h); }
 }
 
 /* ============================================================
-   Richiami (coupon LPI, promo): il blocco giallo del sito originale
+   Richiami (coupon LPI, promo)
    ============================================================ */
 
-.banner {
-  display: block;
+.callout {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
   margin-top: 2.5rem;
   padding: 1rem 1.25rem;
   border-radius: var(--radius);
   background: var(--accent);
   color: var(--accent-ink);
   text-decoration: none;
+  transition: background-color .15s;
 }
 
-.banner:hover { color: var(--accent-ink); background: color-mix(in srgb, var(--accent) 88%, #000); }
-.banner u { text-underline-offset: .15em; }
+.callout:hover { color: var(--accent-ink); background: color-mix(in srgb, var(--accent) 90%, #000); }
 
-.banner--promo { background: var(--promo); color: var(--promo-ink); }
-.banner--promo:hover { color: var(--promo-ink); background: color-mix(in srgb, var(--promo) 88%, #000); }
+.callout-icon { flex: none; }
+.callout-text { flex: 1; line-height: 1.45; }
+.callout-text strong { display: block; font-size: 1.05rem; }
+.callout-arrow { flex: none; transition: transform .15s; }
+.callout:hover .callout-arrow { transform: translateX(3px); }
+
+.callout--promo { background: var(--promo); color: var(--promo-ink); }
+.callout--promo:hover { color: var(--promo-ink); background: color-mix(in srgb, var(--promo) 90%, #000); }
 
 /* ============================================================
    Sezioni
@@ -392,43 +403,57 @@ section[id] { scroll-margin-top: var(--nav-h); }
 }
 
 /* ============================================================
-   Corsi: righe orizzontali, copertina a sinistra
+   Schede: un'unica famiglia per corsi, progetti e modi di sostenere.
+   Al passaggio cambia solo il bordo, niente salti né zoom.
    ============================================================ */
 
-.courses { display: grid; gap: 1.25rem; }
-
-.course {
+.card {
   position: relative;
-  display: grid;
-  grid-template-columns: 300px minmax(0, 1fr);
+  display: flex;
+  flex-direction: column;
   border: 1px solid var(--hairline);
   border-radius: var(--radius);
   background: var(--panel);
   overflow: hidden;
-  transition: border-color .15s;
+  transition: border-color .15s, box-shadow .15s;
 }
 
-.course:hover, .course:focus-within { border-color: var(--accent); }
+a.card { color: var(--ink); text-decoration: none; }
+a.card:hover, .card:focus-within, .course:hover { border-color: var(--accent); box-shadow: var(--shadow); }
+
+/* --- Corsi: due colonne, la novità a tutta riga in orizzontale --- */
+
+.courses {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+}
 
 .course-cover { aspect-ratio: 16 / 9; background: var(--surface); }
 .course-cover img { width: 100%; height: 100%; object-fit: cover; }
 
 .course-body {
+  flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: flex-start;
-  padding: 1rem 1.5rem;
+  padding: 1.25rem 1.5rem 1.5rem;
 }
 
-.course h3 { font-size: 1.25rem; margin-bottom: .35rem; }
-.course p { color: var(--ink-muted); font-size: 1rem; margin-bottom: .75rem; }
+.course h3 { font-size: 1.25rem; margin-bottom: .4rem; }
+.course p { color: var(--ink-muted); font-size: 1rem; }
 .course p b { color: var(--ink); }
+.course .btn { margin-top: auto; }
 
-/* Tutta la riga è cliccabile: il link si stende sopra con un ::after,
-   senza annidare ancore. */
-.course-link { font-weight: 500; }
-.course-link::after { content: ""; position: absolute; inset: 0; }
+/* Tutta la scheda è cliccabile: il pulsante si stende sopra con un
+   ::after, senza annidare ancore. */
+.course .btn::after { content: ""; position: absolute; inset: 0; }
+
+.course--featured { grid-column: 1 / -1; flex-direction: row; }
+.course--featured .course-cover { flex: 0 0 50%; }
+.course--featured .course-body { justify-content: center; padding: 2rem; }
+.course--featured h3 { font-size: 1.5rem; }
+.course--featured .btn { margin-top: .5rem; }
 
 .new {
   display: inline-block;
@@ -443,70 +468,34 @@ section[id] { scroll-margin-top: var(--nav-h); }
   text-transform: uppercase;
 }
 
-@media (max-width: 679.98px) {
-  .course { grid-template-columns: 1fr; }
-  .course-body { padding: 1rem 1.25rem 1.25rem; }
+@media (max-width: 899.98px) {
+  .course--featured { flex-direction: column; }
+  .course--featured .course-cover { flex: none; }
+  .course--featured .course-body { padding: 1.25rem 1.5rem 1.5rem; }
+  .course--featured h3 { font-size: 1.25rem; }
 }
 
-/* ============================================================
-   Progetti: elenco a due colonne, non schede
-   ============================================================ */
+@media (max-width: 639.98px) {
+  .courses { grid-template-columns: 1fr; }
+}
 
-.projects {
+/* --- Progetti e sostieni: riquadri con icona --- */
+
+.tiles {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0 3rem;
-  margin: 0;
-  padding: 0;
-  list-style: none;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.25rem;
 }
 
-.projects li {
-  display: grid;
-  grid-template-columns: 36px minmax(0, 1fr);
-  gap: 1rem;
-  padding: 1.1rem 0;
-  border-bottom: 1px solid var(--hairline);
-}
-
-.projects img { width: 36px; height: 36px; filter: var(--icon-filter); }
-.projects h4 { font-size: 1.05rem; margin: 0 0 .2rem; }
-.projects h4 a { color: var(--ink); text-decoration: none; }
-.projects h4 a:hover { color: var(--link); text-decoration: underline; }
-.projects p { margin: 0; color: var(--ink-muted); font-size: .97rem; }
-
-@media (max-width: 719.98px) {
-  .projects { grid-template-columns: 1fr; }
-}
-
-/* ============================================================
-   Sostieni: quattro colonne di testo
-   ============================================================ */
-
-.support {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 2rem;
-}
-
-.support > div { display: flex; flex-direction: column; align-items: flex-start; }
-
-.support h3 {
-  display: flex;
-  align-items: center;
-  gap: .6rem;
-  font-size: 1.1rem;
-  margin-bottom: .75rem;
-}
-
-.support h3 img { width: 26px; height: 26px; filter: var(--icon-filter); }
-.support p, .support li { color: var(--ink-muted); font-size: .97rem; }
-.support .btn { margin-top: auto; }
-
-@media (max-width: 899.98px) { .support { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (max-width: 539.98px) { .support { grid-template-columns: 1fr; } }
+.tile { padding: 1.25rem 1.35rem 1.4rem; }
+.tile img { width: 36px; height: 36px; margin-bottom: .9rem; filter: var(--icon-filter); }
+.tile h4 { font-size: 1.08rem; margin-bottom: .35rem; }
+.tile p, .tile li { color: var(--ink-muted); font-size: .97rem; }
+.tile p:last-child { margin-bottom: 0; }
+.tile .btn { margin-top: auto; align-self: flex-start; }
 
 .bullet-list { margin: 0 0 1em; padding-left: 1.1rem; }
+.bullet-list:last-child { margin-bottom: 0; }
 .bullet-list li { margin-bottom: .3rem; }
 .bullet-list li::marker { color: var(--accent); }
 

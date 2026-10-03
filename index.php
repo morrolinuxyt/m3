@@ -52,14 +52,17 @@ AUTHOR: Riccardo Carissimi
         </div>
 
         <?php if ($show_promo) { ?>
-        <a id="promo" class="banner banner--promo" href="#corsi">
-          <b>Offerta a tempo limitato!</b> Tutti i corsi in offerta speciale al 93% di sconto. <u>Clicca qui</u>
+        <a id="promo" class="callout callout--promo" href="#corsi">
+          <span class="callout-icon"><?= icon('ticket', 26) ?></span>
+          <span class="callout-text"><strong>Offerta a tempo limitato!</strong>Tutti i corsi in offerta speciale al 93% di sconto.</span>
+          <span class="callout-arrow"><?= icon('arrow') ?></span>
         </a>
         <?php } ?>
 
-        <a id="coupon" class="banner" href="https://requests.morrolinux.it/form/lpi-coupon" data-umami-event="lpi_coupon">
-          <b>Mi segui su YouTube? Grazie per il supporto!</b>
-          <u>Reclama il tuo coupon</u> per ricevere uno sconto sul prezzo di tutti gli esami LPI.
+        <a id="coupon" class="callout" href="https://requests.morrolinux.it/form/lpi-coupon" data-umami-event="lpi_coupon">
+          <span class="callout-icon"><?= icon('ticket', 26) ?></span>
+          <span class="callout-text"><strong>Mi segui su YouTube? Grazie per il supporto!</strong>Reclama il tuo coupon per ricevere uno sconto sul prezzo di tutti gli esami LPI.</span>
+          <span class="callout-arrow"><?= icon('arrow') ?></span>
         </a>
       </div>
     </section>
@@ -73,9 +76,9 @@ AUTHOR: Riccardo Carissimi
         </p>
 
         <?php
-          /* Le righe non sono avvolte in un <a>: l'HTML non ammette ancore
-             annidate. A rendere cliccabile tutta la riga ci pensa il ::after
-             del link (vedi .course-link). Gli eventi Umami restano quelli di
+          /* Le schede non sono avvolte in un <a>: l'HTML non ammette ancore
+             annidate. A rendere cliccabile tutta la scheda ci pensa il ::after
+             del pulsante (vedi .course .btn). Gli eventi Umami restano quelli di
              prima, così le serie già raccolte non si spezzano. */
           $courses = [
             ['Kubernetes', 'img/kubernetes-per-comuni-mortali-notext.webp', 'Kubernetes Per Comuni Mortali',
@@ -97,14 +100,14 @@ AUTHOR: Riccardo Carissimi
         ?>
         <div class="courses">
           <?php foreach ($courses as [$name, $img, $alt, $text, $url, $event, $cta, $new]) { ?>
-          <article class="course">
+          <article class="card course<?= $new ? ' course--featured' : '' ?>">
             <div class="course-cover">
               <img src="<?= $img ?>" alt="Copertina: <?= $alt ?>" width="960" height="540" loading="lazy">
             </div>
             <div class="course-body">
               <h3><?= $name ?><?php if ($new) { ?> <span class="new">Novità</span><?php } ?></h3>
               <p><?= $text ?></p>
-              <a class="course-link" href="<?= $url ?>" data-umami-event="<?= $event ?>"><?= $cta ?></a>
+              <a class="btn btn-primary" href="<?= $url ?>" data-umami-event="<?= $event ?>"><?= $cta ?></a>
             </div>
           </article>
           <?php } ?>
@@ -131,13 +134,13 @@ AUTHOR: Riccardo Carissimi
           ];
 
           function projects($items) {
-            echo '<ul class="projects">';
+            echo '<div class="tiles">';
             foreach ($items as [$icon, $title, $text, $url]) {
-              echo '<li><img src="img/fluid/'.$icon.'.svg" alt="" width="36" height="36" loading="lazy">';
-              echo '<div><h4><a href="'.htmlspecialchars($url).'" target="_blank" rel="noopener">'.$title.'</a></h4>';
-              echo '<p>'.$text.'</p></div></li>';
+              echo '<a class="card tile" href="'.htmlspecialchars($url).'" target="_blank" rel="noopener">';
+              echo '<img src="img/fluid/'.$icon.'.svg" alt="" width="36" height="36" loading="lazy">';
+              echo '<h4>'.$title.'</h4><p>'.$text.'</p></a>';
             }
-            echo '</ul>';
+            echo '</div>';
           }
         ?>
 
@@ -165,9 +168,10 @@ AUTHOR: Riccardo Carissimi
           Ecco alcuni modi con cui puoi <strong>realmente</strong> contribuire al progetto:
         </p>
 
-        <div class="support">
-          <div>
-            <h3><img src="img/fluid/youtube.svg" alt="" width="26" height="26" loading="lazy"> Su YouTube</h3>
+        <div class="tiles">
+          <div class="card tile">
+            <img src="img/fluid/youtube.svg" alt="" width="36" height="36" loading="lazy">
+            <h4>Su YouTube</h4>
             <ul class="bullet-list">
               <li>Iscrivendoti al canale</li>
               <li>Disattivando eventuali <strong>AdBlock</strong> sul mio canale</li>
@@ -176,8 +180,9 @@ AUTHOR: Riccardo Carissimi
             </ul>
           </div>
 
-          <div>
-            <h3><img src="img/fluid/amazon.svg" alt="" width="26" height="26" loading="lazy"> Su Amazon</h3>
+          <div class="card tile">
+            <img src="img/fluid/amazon.svg" alt="" width="36" height="36" loading="lazy">
+            <h4>Su Amazon</h4>
             <p>Accedendo al sito tramite <a href="http://amzn.to/2AC0a6Q" target="_blank" rel="noopener">il mio link</a>:</p>
             <ul class="bullet-list">
               <li>Amazon mi devolve il 5% del suo ricavato</li>
@@ -187,8 +192,9 @@ AUTHOR: Riccardo Carissimi
             <p><a href="https://programma-affiliazione.amazon.it" target="_blank" rel="noopener">Come funziona l'affiliazione</a></p>
           </div>
 
-          <div>
-            <h3><img src="img/fluid/share.svg" alt="" width="26" height="26" loading="lazy"> Sui social</h3>
+          <div class="card tile">
+            <img src="img/fluid/share.svg" alt="" width="36" height="36" loading="lazy">
+            <h4>Sui social</h4>
             <ul class="bullet-list">
               <li>Citandomi su <a href="https://www.linkedin.com/in/morenorazzoli" target="_blank" rel="noopener">LinkedIn</a></li>
               <li>Seguendomi su <a href="https://mastodon.uno/@morrolinux" target="_blank" rel="me noopener">Mastodon</a> e <a href="https://x.com/morrolinux" target="_blank" rel="noopener">X</a></li>
@@ -196,8 +202,9 @@ AUTHOR: Riccardo Carissimi
             </ul>
           </div>
 
-          <div>
-            <h3><img src="img/fluid/patreon.png" alt="" width="26" height="26" loading="lazy"> Su Patreon</h3>
+          <div class="card tile">
+            <img src="img/fluid/patreon.png" alt="" width="36" height="36" loading="lazy">
+            <h4>Su Patreon</h4>
             <p>
               Curiosa <b>dietro le quinte</b> con i video in anteprima, partecipa alle <b>votazioni</b> sui prossimi contenuti,
               vedi <b>il tuo nome nella sigla</b> e accedi a <b>contenuti esclusivi</b> non pubblicabili su YouTube.
