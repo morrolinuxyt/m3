@@ -1,45 +1,24 @@
 <!DOCTYPE html>
-<!--
-NAME: Morrolinux.it Website
-AUTHOR: Moreno Razzoli
--->
-
+<?php
+  $page_title = 'Privacy Policy — Morrolinux';
+  $page_description = 'Informativa estesa su cookie e privacy di morrolinux.it.';
+?>
 <html lang="it" class="theme-auto">
-
 <head>
-
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  <link rel="icon" href="favicon.ico" />
-
-  <!-- Bootstrap core CSS -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- Custom styles for this template -->
-  <link href="css/style.css" rel="stylesheet">
-
-  <!-- <meta name="description" content=""> -->
-
-  <title>Morrolinux.it</title>
-
-<?php include 'snippets/theme-init.php';?>
+<?php include 'snippets/head.php'; ?>
 </head>
 
-<body id="page-top">
+<body id="top">
 
-<?php include 'snippets/theme-toggle.php';?>
+<?php include 'snippets/nav.php'; ?>
 
-  <div class="container">
-    <div class="divider"></div>
-  </div>
+  <main id="main">
+    <header class="page-head wrap">
+      <p class="eyebrow">Note legali</p>
+      <h1>Informativa estesa su cookie e privacy</h1>
+    </header>
 
-  <!-- #PRIVACY -->
-  <section id="privacy">
-    <div class="container">
-      <h2 class="my-5 text-center">INFORMATIVA ESTESA SU COOKIE E PRIVACY</h2>
-      <p class="mb-5 text-justify">
-
+    <article class="prose">
 	<h3>PRIVACY - GESTIONE DEI DATI PERSONALI</h3>
 	
 	<p>Moreno Razzoli effettua il trattamento dei tuoi dati in ottemperanza al Regolamento europeo (UE) <sup>2016</sup>&frasl;<sub>679</sub> relativo alla protezione delle persone fisiche con riguardo al trattamento dei dati personali.</p>
@@ -101,14 +80,10 @@ AUTHOR: Moreno Razzoli
 	  Mediante modifica delle impostazioni nell’uso dei servizi di terze parti
 	  Entrambe queste soluzioni potrebbero impedire all’utente di utilizzare o visualizzare parti del sito.</p>
 	</p>
+    </article>
+  </main>
 
-      </p>
-    </div>
-  </section>
-
-  <!-- Custom JavaScript -->
-  <script src="js/theme.js"></script>
+<?php include 'snippets/footer.php'; ?>
 
 </body>
-
 </html>

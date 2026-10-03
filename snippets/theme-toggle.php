@@ -1,7 +1,7 @@
-  <!-- Fuori dal flusso: la posizione nel DOM non conta, il CSS lo àncora
-       in basso a destra. In alto coprirebbe la navbar, che è fixed-top. -->
+  <!-- Fuori dal flusso: il CSS lo àncora in basso a destra. Contiene tutte e
+       tre le icone, il CSS mostra quella del tema attivo. -->
   <button id="theme-toggle" class="theme-toggle" type="button"
           data-umami-event="theme_toggle"
           title="Tema: automatico" aria-label="Tema: automatico">
-    <i class="fa fa-adjust" aria-hidden="true"></i>
+    <?= icon('auto') ?><?= icon('sun') ?><?= icon('moon') ?>
   </button>
