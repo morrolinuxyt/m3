@@ -34,7 +34,7 @@ AUTHOR: Riccardo Carissimi
       <div class="wrap">
         <div class="hero-grid">
           <div>
-            <h1>Video e corsi su GNU/Linux e Software Libero</h1>
+            <h1>GNU/Linux e Software Libero, <span class="marker">spiegati bene</span>.</h1>
             <p>
               Pubblico video su GNU/Linux ed il panorama del Free Software dal 2008.
               Negli ultimi <?= $years ?> anni ho realizzato <b>oltre 500 contenuti video</b> a tema didattico
@@ -68,7 +68,7 @@ AUTHOR: Riccardo Carissimi
     </section>
 
     <!-- #CORSI -->
-    <section id="corsi" class="section">
+    <section id="corsi" class="section section--alt">
       <div class="wrap">
         <h2>Corsi</h2>
         <p class="lead">
@@ -136,9 +136,12 @@ AUTHOR: Riccardo Carissimi
           function projects($items) {
             echo '<div class="tiles">';
             foreach ($items as [$icon, $title, $text, $url]) {
-              echo '<a class="card tile" href="'.htmlspecialchars($url).'" target="_blank" rel="noopener">';
-              echo '<img src="img/fluid/'.$icon.'.svg" alt="" width="36" height="36" loading="lazy">';
-              echo '<h4>'.$title.'</h4><p>'.$text.'</p></a>';
+              // in fondo alla scheda si legge dove porta: codice o video
+              $github = strpos($url, 'github.com') !== false;
+              echo '<a class="card project" href="'.htmlspecialchars($url).'" target="_blank" rel="noopener">';
+              echo '<div class="project-head"><img src="img/fluid/'.$icon.'.svg" alt="" width="40" height="40" loading="lazy">';
+              echo '<h4>'.$title.'</h4></div><p>'.$text.'</p>';
+              echo '<span class="project-dest">'.($github ? icon('github', 16).' Codice su GitHub' : icon('youtube', 16).' Guarda il video').icon('arrow', 16).'</span></a>';
             }
             echo '</div>';
           }
@@ -158,7 +161,7 @@ AUTHOR: Riccardo Carissimi
     </section>
 
     <!-- #SOSTIENI -->
-    <section id="sostieni" class="section">
+    <section id="sostieni" class="section section--alt">
       <div class="wrap">
         <h2>Sostieni</h2>
         <p class="lead">
@@ -168,48 +171,63 @@ AUTHOR: Riccardo Carissimi
           Ecco alcuni modi con cui puoi <strong>realmente</strong> contribuire al progetto:
         </p>
 
-        <div class="tiles">
-          <div class="card tile">
-            <img src="img/fluid/youtube.svg" alt="" width="36" height="36" loading="lazy">
-            <h4>Su YouTube</h4>
-            <ul class="bullet-list">
-              <li>Iscrivendoti al canale</li>
-              <li>Disattivando eventuali <strong>AdBlock</strong> sul mio canale</li>
-              <li>Lasciando like e commenti ai video</li>
-              <li>Condividendo i contenuti</li>
-            </ul>
+        <div class="support">
+          <div class="card way way--youtube">
+            <div class="way-body">
+              <div class="way-head"><img src="img/fluid/youtube.svg" alt="" width="32" height="32" loading="lazy"><h4>Su YouTube</h4></div>
+              <ul class="bullet-list">
+                <li>Iscrivendoti al canale</li>
+                <li>Disattivando eventuali <strong>AdBlock</strong> sul mio canale</li>
+                <li>Lasciando like e commenti ai video</li>
+                <li>Condividendo i contenuti</li>
+              </ul>
+              <div class="way-action">
+                <a class="btn btn-ghost" href="https://www.youtube.com/user/morrolinux/?sub_confirmation=1" target="_blank" rel="noopener">Vai al canale</a>
+              </div>
+            </div>
           </div>
 
-          <div class="card tile">
-            <img src="img/fluid/amazon.svg" alt="" width="36" height="36" loading="lazy">
-            <h4>Su Amazon</h4>
-            <p>Accedendo al sito tramite <a href="http://amzn.to/2AC0a6Q" target="_blank" rel="noopener">il mio link</a>:</p>
-            <ul class="bullet-list">
-              <li>Amazon mi devolve il 5% del suo ricavato</li>
-              <li>Zero costi aggiuntivi per te</li>
-              <li>Stessa sicurezza e tutela negli acquisti</li>
-            </ul>
-            <p><a href="https://programma-affiliazione.amazon.it" target="_blank" rel="noopener">Come funziona l'affiliazione</a></p>
+          <div class="card way way--amazon">
+            <div class="way-body">
+              <div class="way-head"><img src="img/fluid/amazon.svg" alt="" width="32" height="32" loading="lazy"><h4>Su Amazon</h4></div>
+              <p>Accedendo al sito tramite il mio link:</p>
+              <ul class="bullet-list">
+                <li>Amazon mi devolve il 5% del suo ricavato</li>
+                <li>Zero costi aggiuntivi per te</li>
+                <li>Stessa sicurezza e tutela negli acquisti</li>
+              </ul>
+              <p><a href="https://programma-affiliazione.amazon.it" target="_blank" rel="noopener">Come funziona l'affiliazione</a></p>
+              <div class="way-action">
+                <a class="btn btn-ghost" href="http://amzn.to/2AC0a6Q" target="_blank" rel="noopener" data-umami-event="amazon">Apri Amazon</a>
+              </div>
+            </div>
           </div>
 
-          <div class="card tile">
-            <img src="img/fluid/share.svg" alt="" width="36" height="36" loading="lazy">
-            <h4>Sui social</h4>
-            <ul class="bullet-list">
-              <li>Citandomi su <a href="https://www.linkedin.com/in/morenorazzoli" target="_blank" rel="noopener">LinkedIn</a></li>
-              <li>Seguendomi su <a href="https://mastodon.uno/@morrolinux" target="_blank" rel="me noopener">Mastodon</a> e <a href="https://x.com/morrolinux" target="_blank" rel="noopener">X</a></li>
-              <li>Stellandomi su <a href="https://github.com/morrolinux" target="_blank" rel="noopener">GitHub</a></li>
-            </ul>
+          <div class="card way way--social">
+            <div class="way-body">
+              <div class="way-head"><img src="img/fluid/share.svg" alt="" width="32" height="32" loading="lazy"><h4>Sui social</h4></div>
+              <ul class="bullet-list">
+                <li>Citandomi su LinkedIn</li>
+                <li>Seguendomi su Mastodon e X</li>
+                <li>Stellandomi su GitHub</li>
+              </ul>
+              <div class="way-action">
+                <?= socials(array_filter($SOCIALS, fn($s) => in_array($s[0], ['linkedin', 'mastodon', 'x', 'github']))) ?>
+              </div>
+            </div>
           </div>
 
-          <div class="card tile">
-            <img src="img/fluid/patreon.png" alt="" width="36" height="36" loading="lazy">
-            <h4>Su Patreon</h4>
-            <p>
-              Curiosa <b>dietro le quinte</b> con i video in anteprima, partecipa alle <b>votazioni</b> sui prossimi contenuti,
-              vedi <b>il tuo nome nella sigla</b> e accedi a <b>contenuti esclusivi</b> non pubblicabili su YouTube.
-            </p>
-            <a class="btn btn-primary" href="https://www.patreon.com/Morrolinux" target="_blank" rel="noopener" data-umami-event="patreon">Sostieni</a>
+          <div class="card way way--patreon">
+            <div class="way-body">
+              <div class="way-head"><img src="img/fluid/patreon.png" alt="" width="32" height="32" loading="lazy"><h4>Su Patreon</h4></div>
+              <p>
+                Curiosa <b>dietro le quinte</b> con i video in anteprima, partecipa alle <b>votazioni</b> sui prossimi contenuti,
+                vedi <b>il tuo nome nella sigla</b> e accedi a <b>contenuti esclusivi</b> non pubblicabili su YouTube.
+              </p>
+              <div class="way-action">
+                <a class="btn btn-primary" href="https://www.patreon.com/Morrolinux" target="_blank" rel="noopener" data-umami-event="patreon">Sostieni</a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -228,7 +246,6 @@ AUTHOR: Riccardo Carissimi
             contribuito allo sviluppo di nuove funzionalità in altrettanti progetti già avviati e
             realizzo <b>video didattici dal 2008</b> su <a href="https://www.youtube.com/user/morrolinux/" target="_blank" rel="noopener">YouTube</a>.
           </p>
-          <?= socials($SOCIALS) ?>
         </div>
       </div>
     </section>

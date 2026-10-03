@@ -41,7 +41,10 @@
 
 
   /* le icone dei progetti sono disegni scuri: in tema scuro vanno schiarite */
-  --shadow: 0 6px 16px -8px rgba(16, 24, 40, .18);
+  --shadow: 0 12px 24px -12px rgba(16, 24, 40, .25);
+  --alt-bg: #fdf7e6;
+  --footer-bg: #1c2126;
+  --footer-ink: #aab3bb;
   --icon-filter: none;
 
   --radius: 8px;
@@ -66,7 +69,9 @@
     --hairline: #2a333d;
     --link: #7fb0ff;
     --link-hover: #a9caff;
-    --shadow: 0 6px 16px -8px rgba(0, 0, 0, .6);
+    --shadow: 0 12px 24px -12px rgba(0, 0, 0, .7);
+    --alt-bg: #15181a;
+    --footer-bg: #07090b;
     --icon-filter: invert(1) hue-rotate(180deg) brightness(1.1);
   }
 }
@@ -82,7 +87,9 @@
   --hairline: #2a333d;
   --link: #7fb0ff;
   --link-hover: #a9caff;
-  --shadow: 0 6px 16px -8px rgba(0, 0, 0, .6);
+  --shadow: 0 12px 24px -12px rgba(0, 0, 0, .7);
+  --alt-bg: #15181a;
+  --footer-bg: #07090b;
   --icon-filter: invert(1) hue-rotate(180deg) brightness(1.1);
 }
 
@@ -277,7 +284,7 @@ section[id] { scroll-margin-top: var(--nav-h); }
   gap: 3rem;
 }
 
-.hero h1 { font-size: clamp(1.9rem, 3.4vw, 2.6rem); margin-bottom: 1rem; }
+.hero h1 { font-size: clamp(2.1rem, 4vw, 3.1rem); line-height: 1.12; margin-bottom: 1.1rem; }
 .hero p { color: var(--ink-muted); }
 .hero p b { color: var(--ink); }
 
@@ -373,13 +380,32 @@ section[id] { scroll-margin-top: var(--nav-h); }
    Sezioni
    ============================================================ */
 
-.section { padding: 3.5rem 0 4rem; }
+.section { position: relative; padding: 4.5rem 0 5rem; }
 
-.section > .wrap::before {
+/* Sezioni alterne: un fondo caldo, appena tinto del giallo del canale, con
+   i bordi irregolari come il tratto dell'evidenziatore. Il bordo è una
+   maschera SVG riempita col colore di fondo, quindi segue il tema. */
+.section--alt { background: var(--alt-bg); }
+
+.section--alt::before,
+.section--alt::after,
+.site-footer::before {
   content: "";
-  display: block;
-  margin-bottom: 3rem;
-  border-top: 1px solid var(--hairline);
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 22px;
+  background: inherit;
+  -webkit-mask: var(--edge) center / 100% 100% no-repeat;
+  mask: var(--edge) center / 100% 100% no-repeat;
+  pointer-events: none;
+}
+
+.section--alt::before, .site-footer::before { bottom: calc(100% - 1px); }
+.section--alt::after { top: calc(100% - 1px); transform: scale(-1, -1); }
+
+:root {
+  --edge: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 18' preserveAspectRatio='none'%3E%3Cpath d='M0 18V9c55-3 105 2 170 1s95-7 160-5 120 7 190 5 110-7 180-6 130 6 200 4 90-5 150-4 60 2 150 3V18z'/%3E%3C/svg%3E");
 }
 
 .section h2 { font-size: clamp(1.6rem, 2.6vw, 2rem); }
@@ -404,7 +430,6 @@ section[id] { scroll-margin-top: var(--nav-h); }
 
 /* ============================================================
    Schede: un'unica famiglia per corsi, progetti e modi di sostenere.
-   Al passaggio cambia solo il bordo, niente salti né zoom.
    ============================================================ */
 
 .card {
@@ -415,11 +440,15 @@ section[id] { scroll-margin-top: var(--nav-h); }
   border-radius: var(--radius);
   background: var(--panel);
   overflow: hidden;
-  transition: border-color .15s, box-shadow .15s;
+  transition: transform .2s, border-color .2s, box-shadow .2s;
 }
 
 a.card { color: var(--ink); text-decoration: none; }
-a.card:hover, .card:focus-within, .course:hover { border-color: var(--accent); box-shadow: var(--shadow); }
+a.card:hover, .card:focus-within, .course:hover, .tile:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent);
+  box-shadow: var(--shadow);
+}
 
 /* --- Corsi: due colonne, la novità a tutta riga in orizzontale --- */
 
@@ -430,7 +459,9 @@ a.card:hover, .card:focus-within, .course:hover { border-color: var(--accent); b
 }
 
 .course-cover { aspect-ratio: 16 / 9; background: var(--surface); }
-.course-cover img { width: 100%; height: 100%; object-fit: cover; }
+.course-cover { overflow: hidden; }
+.course-cover img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s ease; }
+.course:hover .course-cover img { transform: scale(1.03); }
 
 .course-body {
   flex: 1;
@@ -479,7 +510,7 @@ a.card:hover, .card:focus-within, .course:hover { border-color: var(--accent); b
   .courses { grid-template-columns: 1fr; }
 }
 
-/* --- Progetti e sostieni: riquadri con icona --- */
+/* --- Progetti: icona e titolo in riga, in fondo dove porta il link --- */
 
 .tiles {
   display: grid;
@@ -487,12 +518,72 @@ a.card:hover, .card:focus-within, .course:hover { border-color: var(--accent); b
   gap: 1.25rem;
 }
 
-.tile { padding: 1.25rem 1.35rem 1.4rem; }
-.tile img { width: 36px; height: 36px; margin-bottom: .9rem; filter: var(--icon-filter); }
-.tile h4 { font-size: 1.08rem; margin-bottom: .35rem; }
-.tile p, .tile li { color: var(--ink-muted); font-size: .97rem; }
-.tile p:last-child { margin-bottom: 0; }
-.tile .btn { margin-top: auto; align-self: flex-start; }
+.project { padding: 1.25rem 1.35rem 0; }
+
+.project-head {
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+  margin-bottom: .7rem;
+}
+
+.project-head img { flex: none; width: 40px; height: 40px; filter: var(--icon-filter); }
+.project h4 { font-size: 1.08rem; margin: 0; }
+.project p { flex: 1; color: var(--ink-muted); font-size: .97rem; margin-bottom: 1.1rem; }
+
+/* Dove porta la scheda: codice o video. Al passaggio diventa un invito. */
+.project-dest {
+  display: flex;
+  align-items: center;
+  gap: .45rem;
+  margin: 0 -1.35rem;
+  padding: .7rem 1.35rem;
+  border-top: 1px dashed var(--hairline);
+  color: var(--ink-muted);
+  font-size: .88rem;
+  font-weight: 500;
+  transition: color .2s, background-color .2s;
+}
+
+.project-dest svg { width: 16px; height: 16px; }
+.project-dest .ico-arrow { margin-left: auto; opacity: 0; transform: translateX(-4px); transition: opacity .2s, transform .2s; }
+a.project:hover .project-dest { color: var(--ink); background: var(--surface); }
+a.project:hover .project-dest .ico-arrow { opacity: 1; transform: none; }
+
+/* --- Sostieni: ogni modo ha il colore del suo servizio, in una fascia in
+   cima; in fondo l'azione, sempre alla stessa altezza. --- */
+
+.support {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.way { padding: 0; border-top: 0; }
+.way::before { content: ""; height: 5px; background: var(--brand, var(--accent)); }
+
+.way-body { flex: 1; display: flex; flex-direction: column; padding: 1.25rem 1.35rem 1.35rem; }
+
+.way-head { display: flex; align-items: center; gap: .7rem; margin-bottom: .8rem; }
+.way-head img { width: 32px; height: 32px; filter: var(--icon-filter); }
+.way h4 { font-size: 1.08rem; margin: 0; }
+.way p, .way li { color: var(--ink-muted); font-size: .97rem; }
+
+.way-action {
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px dashed var(--hairline);
+}
+
+.way-action .socials { gap: .1rem; margin-left: -.4rem; }
+
+.way--youtube { --brand: #e62117; }
+.way--amazon  { --brand: #ff9900; }
+.way--social  { --brand: #6364ff; }
+.way--patreon { --brand: #ff424d; }
+
+@media (max-width: 959.98px) { .support { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 559.98px) { .support { grid-template-columns: 1fr; } }
 
 .bullet-list { margin: 0 0 1em; padding-left: 1.1rem; }
 .bullet-list:last-child { margin-bottom: 0; }
@@ -541,23 +632,58 @@ a.card:hover, .card:focus-within, .course:hover { border-color: var(--accent); b
    ============================================================ */
 
 .site-footer {
-  padding: 2rem 0;
-  border-top: 1px solid var(--hairline);
-  color: var(--ink-muted);
-  font-size: .9rem;
+  position: relative;
+  margin-top: 2rem;
+  padding: 3.5rem 0 1.75rem;
+  background: var(--footer-bg);
+  color: var(--footer-ink);
+  font-size: .93rem;
 }
 
-.site-footer .wrap {
+.site-footer a { color: inherit; text-decoration: none; }
+.site-footer a:hover { color: #fff; }
+
+.footer-main {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) repeat(2, minmax(0, 1fr));
+  gap: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
+.footer-main .brand { color: #fff; font-size: 1.2rem; font-weight: 700; margin-bottom: .75rem; }
+.footer-main .brand img { filter: invert(1); }
+.footer-main p { max-width: 24rem; margin-bottom: 1.25rem; }
+
+.footer-main h5 {
+  margin: .35rem 0 .9rem;
+  color: #fff;
+  font-size: .95rem;
+}
+
+.footer-main ul { margin: 0; padding: 0; list-style: none; }
+.footer-main li { margin-bottom: .45rem; }
+
+/* le pastiglie social in tinta col footer */
+.site-footer .socials a { color: var(--footer-ink); background: rgba(255, 255, 255, .06); }
+.site-footer .socials a:hover { color: var(--accent-ink); background: var(--accent); }
+
+.footer-legal {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
   justify-content: space-between;
-  gap: 1rem 2rem;
+  gap: .5rem 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, .1);
+  font-size: .85rem;
 }
 
-.site-footer p { margin: 0; }
-.site-footer a { color: inherit; }
-.site-footer a:hover { color: var(--ink); }
+.footer-legal p { margin: 0; }
+.footer-legal a { text-decoration: underline; text-underline-offset: .15em; }
+
+@media (max-width: 719.98px) {
+  .footer-main { grid-template-columns: 1fr 1fr; }
+  .footer-main > :first-child { grid-column: 1 / -1; }
+}
 
 /* ============================================================
    Pagine di testo (privacy, coupon LPI)
