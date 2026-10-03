@@ -179,7 +179,7 @@ AUTHOR: Riccardo Carissimi
       <div class="wrap">
         <h2>Sostieni</h2>
         <p class="claim">
-          "Morrolinux" è un progetto di <span class="marker">divulgazione del software libero</span> da oltre <?= $years ?> anni.
+          "Morrolinux" è un progetto di <span class="key">divulgazione del software libero</span> da oltre <?= $years ?> anni.
         </p>
         <p class="note">
           Realizzare contenuti didattici di qualità richiede un impegno costante e continuativo.
@@ -192,7 +192,7 @@ AUTHOR: Riccardo Carissimi
             <div class="way-body">
               <div class="way-head"><img src="img/fluid/patreon.png" alt="" width="44" height="44" loading="lazy"><h4>Su Patreon</h4></div>
               <p>
-                Curiosa <b>dietro le quinte</b> con i video in anteprima, partecipa alle <b>votazioni</b> sui prossimi contenuti,
+                Curiosa <b>dietro le quinte</b> con i video in anteprima,
                 vedi <b>il tuo nome nella sigla</b> e accedi a <b>contenuti esclusivi</b> non pubblicabili su YouTube.
               </p>
               <div class="way-action">
@@ -203,7 +203,7 @@ AUTHOR: Riccardo Carissimi
 
           <div class="card way">
             <div class="way-body">
-              <div class="way-head"><img src="img/fluid/youtube.svg" alt="" width="32" height="32" loading="lazy"><h4>Su YouTube</h4></div>
+              <div class="way-head"><span class="way-icon"><?= icon('play') ?></span><h4>Su YouTube</h4></div>
               <ul class="bullet-list">
                 <li>Iscrivendoti al canale</li>
                 <li>Disattivando eventuali <strong>AdBlock</strong> sul mio canale</li>
@@ -218,7 +218,7 @@ AUTHOR: Riccardo Carissimi
 
           <div class="card way">
             <div class="way-body">
-              <div class="way-head"><img src="img/fluid/amazon.svg" alt="" width="32" height="32" loading="lazy"><h4>Su Amazon</h4></div>
+              <div class="way-head"><span class="way-icon"><?= icon('cart') ?></span><h4>Su Amazon</h4></div>
               <p>Accedendo al sito tramite il mio link:</p>
               <ul class="bullet-list">
                 <li>Amazon mi devolve il 5% del suo ricavato</li>
@@ -234,7 +234,7 @@ AUTHOR: Riccardo Carissimi
 
           <div class="card way">
             <div class="way-body">
-              <div class="way-head"><img src="img/fluid/share.svg" alt="" width="32" height="32" loading="lazy"><h4>Sui social</h4></div>
+              <div class="way-head"><span class="way-icon"><?= icon('share') ?></span><h4>Sui social</h4></div>
               <ul class="bullet-list">
                 <li>Citandomi su LinkedIn</li>
                 <li>Seguendomi su Mastodon e X</li>

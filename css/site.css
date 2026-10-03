@@ -233,7 +233,7 @@ section[id] { scroll-margin-top: var(--nav-h); }
 .nav-toggle svg { margin: auto; }
 
 @media (max-width: 767.98px) {
-  .nav-toggle { display: grid; }
+  .nav-toggle { display: grid; margin-left: auto; }
 
   .nav-links {
     position: absolute;
@@ -367,9 +367,11 @@ section[id] { scroll-margin-top: var(--nav-h); }
   :root.theme-auto .marker::before { top: .12em; bottom: -.14em; }
 }
 
-/* nel titolo d'apertura la parola resta allineata alle righe sopra:
-   sborda solo il tratto */
-.hero .marker { margin-left: 0; }
+/* Nel titolo d'apertura il tratto sborda meno: quando "spiegati bene" va a
+   capo dopo "Libero," coprirebbe la virgola. La parola resta allineata
+   alle righe sopra. */
+.hero .marker { margin-left: .12em; }
+.hero .marker::before { left: -.14em; right: -.2em; }
 
 .marker.is-inview::before { animation: marker-in .8s cubic-bezier(.2, .75, .3, 1) both; }
 
@@ -461,6 +463,18 @@ section[id] { scroll-margin-top: var(--nav-h); }
   color: var(--ink-muted);
   text-align: justify;
   hyphens: auto;
+}
+
+/* sottolineatura arancio per la parola chiave della frase: l'evidenziatore
+   resta un segno dell'apertura */
+.claim .key {
+  color: var(--ink);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: var(--accent-2);
+  text-decoration-thickness: .14em;
+  text-underline-offset: .28em;
+  text-decoration-skip-ink: none;
 }
 
 .claim b, .claim strong, .note b, .note strong { color: var(--ink); font-weight: 600; }
@@ -674,7 +688,22 @@ a.project:hover .project-dest .ico-arrow { opacity: 1; transform: none; }
 .way-body { flex: 1; display: flex; flex-direction: column; padding: 1.25rem 1.35rem 1.35rem; }
 
 .way-head { display: flex; align-items: center; gap: .7rem; margin-bottom: .8rem; }
-.way-head img { width: 32px; height: 32px; filter: var(--icon-filter); }
+.way-head img { width: 32px; height: 32px; }
+
+/* Icone in una pastiglia tonda velata d'arancio, come le voci di
+   corsolinux.com (.feature-item) */
+.way-icon {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--accent-2) 14%, transparent);
+  color: var(--accent-2);
+}
+
+.way-icon svg { width: 21px; height: 21px; }
 .way h4 { font-size: 1.08rem; margin: 0; }
 .way p, .way li { color: var(--ink-muted); font-size: .97rem; }
 
