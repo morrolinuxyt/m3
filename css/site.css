@@ -861,7 +861,7 @@ a.project:hover .project-dest .ico-arrow { opacity: 1; transform: none; }
   padding-bottom: 2.5rem;
 }
 
-.footer-main .brand { color: #fff; font-size: 1.2rem; font-weight: 700; margin-bottom: .75rem; }
+.footer-main .brand { color: #fff; font-size: 1.2rem; font-weight: 700; margin-bottom: 1.25rem; }
 .footer-main .brand img { filter: invert(1); }
 .footer-main p { max-width: 24rem; margin-bottom: 1.25rem; }
 

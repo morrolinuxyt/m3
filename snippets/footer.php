@@ -4,7 +4,6 @@
       <div class="footer-main">
         <div>
           <a class="brand" href="<?= $home ?>#top"><img src="img/logo.svg" alt="" width="32" height="32">Morrolinux</a>
-          <p>Divulgazione di GNU/Linux e del Software Libero dal 2008: video, corsi e progetti Open Source.</p>
           <?= socials($SOCIALS) ?>
         </div>
 
@@ -32,7 +31,6 @@
       <div class="footer-legal">
         <p>Moreno Razzoli · P.IVA IT04063670360 · <a href="/privacy_policy">Privacy Policy</a></p>
         <p>
-          Made with ❤️ by <a href="https://github.com/r-carissimi" target="_blank" rel="noopener">Riccardo Carissimi</a> ·
           Icone di <a href="https://www.freepik.com/" target="_blank" rel="noopener">Freepik</a> da <a href="https://www.flaticon.com/" target="_blank" rel="noopener">Flaticon</a>
         </p>
       </div>
