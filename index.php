@@ -71,8 +71,9 @@ AUTHOR: Riccardo Carissimi
     <section id="corsi" class="section section--alt">
       <div class="wrap">
         <h2>Corsi</h2>
-        <p class="lead">
-          Dal 2018 realizzo anche <b>corsi online</b> consultabili <i>on-demand</i>, per diversi livelli ed aree di competenza:
+        <p class="claim">
+          Dal 2018 realizzo anche <b>corsi online</b> consultabili <i>on-demand</i>,<br>
+          per diversi livelli ed aree di competenza.
         </p>
 
         <?php
@@ -177,8 +178,10 @@ AUTHOR: Riccardo Carissimi
     <section id="sostieni" class="section section--alt">
       <div class="wrap">
         <h2>Sostieni</h2>
-        <p class="lead">
-          "Morrolinux" è un progetto di <strong>divulgazione del software libero</strong> da oltre <?= $years ?> anni.
+        <p class="claim">
+          "Morrolinux" è un progetto di <span class="marker">divulgazione del software libero</span> da oltre <?= $years ?> anni.
+        </p>
+        <p class="note">
           Realizzare contenuti didattici di qualità richiede un impegno costante e continuativo.
           Per mantenere il progetto attivo e la divulgazione dei contenuti gratuita, servono aiuti e fondi.
           Ecco alcuni modi con cui puoi <strong>realmente</strong> contribuire al progetto:

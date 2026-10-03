@@ -23,6 +23,12 @@
   --accent: #FEC224;
   --accent-ink: #1a1d20;
 
+  /* Arancio CorsoLinux: è l'accento di corsolinux.com e qui fa da secondo
+     colore del marchio. Segna l'interfaccia (bordi al passaggio, fasce,
+     elenchi, voce attiva); il giallo resta per i segni del canale
+     (evidenziatore, banner, ritratto, Patreon). */
+  --accent-2: #ff651c;
+
   --cta: #326ce5;
   --cta-hover: #2757b8;
   --cta-ink: #ffffff;
@@ -210,7 +216,7 @@ section[id] { scroll-margin-top: var(--nav-h); }
 }
 
 .nav-links a:hover { color: var(--ink); }
-.nav-links a.is-active { color: var(--ink); border-bottom-color: var(--accent); }
+.nav-links a.is-active { color: var(--ink); border-bottom-color: var(--accent-2); }
 
 .nav-toggle {
   display: none;
@@ -352,11 +358,18 @@ section[id] { scroll-margin-top: var(--nav-h); }
 
 /* Il tratto si disegna quando la frase entra in campo. Senza JS il segno è
    già disegnato: lo stato di riposo è quello finito. */
-/* Nel titolo dell'apertura il tratto copre anche le discendenti (p, g):
-   il testo sul tratto è scuro, e in tema scuro le parti fuori dal giallo
-   sparirebbero sul fondo. */
+/* Il testo sul tratto è scuro: in tema scuro le parti delle lettere fuori
+   dal giallo (le discendenti di p e g) sparirebbero sul fondo, quindi lì il
+   tratto scende a coprirle. In tema chiaro restano i valori di CorsoLinux. */
+:root.theme-dark .marker::before { top: .12em; bottom: -.14em; }
+
+@media (prefers-color-scheme: dark) {
+  :root.theme-auto .marker::before { top: .12em; bottom: -.14em; }
+}
+
+/* nel titolo d'apertura la parola resta allineata alle righe sopra:
+   sborda solo il tratto */
 .hero .marker { margin-left: 0; }
-.hero .marker::before { top: .12em; bottom: -.14em; }
 
 .marker.is-inview::before { animation: marker-in .8s cubic-bezier(.2, .75, .3, 1) both; }
 
@@ -425,24 +438,52 @@ section[id] { scroll-margin-top: var(--nav-h); }
   --edge: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 18' preserveAspectRatio='none'%3E%3Cpath d='M0 18V9c55-3 105 2 170 1s95-7 160-5 120 7 190 5 110-7 180-6 130 6 200 4 90-5 150-4 60 2 150 3V18z'/%3E%3C/svg%3E");
 }
 
-.section h2 { font-size: clamp(1.6rem, 2.6vw, 2rem); }
-
-.lead {
-  max-width: var(--measure);
-  color: var(--ink-muted);
-  margin-bottom: 2rem;
+.section h2 {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  text-align: center;
+  margin-bottom: 1.25rem;
 }
 
-.lead b, .lead strong { color: var(--ink); }
+/* Come su CorsoLinux: sotto il titolo una frase breve, centrata, a
+   inchiostro pieno; se serve spiegare di più, una nota giustificata nella
+   stessa colonna di lettura. */
+.claim {
+  max-width: var(--measure);
+  margin: 0 auto 1rem;
+  color: var(--ink);
+  font-size: 1.12rem;
+  text-align: center;
+}
+
+.note {
+  max-width: var(--measure);
+  margin: 0 auto;
+  color: var(--ink-muted);
+  text-align: justify;
+  hyphens: auto;
+}
+
+.claim b, .claim strong, .note b, .note strong { color: var(--ink); font-weight: 600; }
+
+.claim + .courses, h2 + .projects,
+.note + .support, .claim + .support { margin-top: 2.75rem; }
 
 .section h3.sub {
-  margin: 3rem 0 1rem;
-  font-size: 1.2rem;
+  margin: 3.5rem 0 1.25rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  text-align: center;
 }
 
 .more {
-  margin: 2rem 0 0;
+  margin: 2.5rem 0 0;
   color: var(--ink-muted);
+  text-align: center;
+}
+
+@media (max-width: 559.98px) {
+  .note { text-align: left; }
+  .claim br { display: none; }
 }
 
 /* ============================================================
@@ -463,7 +504,7 @@ section[id] { scroll-margin-top: var(--nav-h); }
 a.card { color: var(--ink); text-decoration: none; }
 a.card:hover, .card:focus-within, .course:hover {
   transform: translateY(-3px);
-  border-color: var(--accent);
+  border-color: var(--accent-2);
   box-shadow: var(--shadow);
 }
 
@@ -628,7 +669,7 @@ a.project:hover .project-dest .ico-arrow { opacity: 1; transform: none; }
 }
 
 .way { padding: 0; }
-.way::before { content: ""; height: 5px; background: var(--accent); }
+.way::before { content: ""; height: 4px; background: var(--accent-2); }
 
 .way-body { flex: 1; display: flex; flex-direction: column; padding: 1.25rem 1.35rem 1.35rem; }
 
@@ -656,7 +697,7 @@ a.project:hover .project-dest .ico-arrow { opacity: 1; transform: none; }
   color: var(--feature-ink);
 }
 
-.way--featured::before { width: 6px; height: auto; }
+.way--featured::before { width: 6px; height: auto; background: var(--accent); }
 
 .way--featured .way-body {
   flex-direction: row;
@@ -688,7 +729,7 @@ a.project:hover .project-dest .ico-arrow { opacity: 1; transform: none; }
 .bullet-list { margin: 0 0 1em; padding-left: 1.1rem; }
 .bullet-list:last-child { margin-bottom: 0; }
 .bullet-list li { margin-bottom: .3rem; }
-.bullet-list li::marker { color: var(--accent); }
+.bullet-list li::marker { color: var(--accent-2); }
 
 /* ============================================================
    About
@@ -711,7 +752,7 @@ a.project:hover .project-dest .ico-arrow { opacity: 1; transform: none; }
   box-shadow: 0 0 0 6px var(--page-bg), 0 0 0 8px var(--accent), var(--shadow);
 }
 
-.about h2 { font-size: clamp(1.9rem, 3.2vw, 2.4rem); }
+.about h2 { font-size: clamp(1.9rem, 3.2vw, 2.4rem); text-align: left; }
 .about p { color: var(--ink-muted); font-size: 1.1rem; }
 .about p b { color: var(--ink); font-weight: 600; }
 
@@ -743,6 +784,7 @@ a.project:hover .project-dest .ico-arrow { opacity: 1; transform: none; }
 
 @media (max-width: 719.98px) {
   .about { grid-template-columns: 1fr; text-align: center; gap: 2rem; }
+  .about h2 { text-align: center; }
   .avatar { margin: 0 auto; width: 170px; height: 170px; }
   .about .chips, .about .socials { justify-content: center; }
 }
