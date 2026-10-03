@@ -45,6 +45,8 @@
   --alt-bg: #fdf7e6;
   --footer-bg: #1c2126;
   --footer-ink: #aab3bb;
+  --feature-bg: #1c2126;
+  --feature-ink: #c3cad0;
   --icon-filter: none;
 
   --radius: 8px;
@@ -72,6 +74,7 @@
     --shadow: 0 12px 24px -12px rgba(0, 0, 0, .7);
     --alt-bg: #15181a;
     --footer-bg: #07090b;
+    --feature-bg: #222a32;
     --icon-filter: invert(1) hue-rotate(180deg) brightness(1.1);
   }
 }
@@ -90,6 +93,7 @@
   --shadow: 0 12px 24px -12px rgba(0, 0, 0, .7);
   --alt-bg: #15181a;
   --footer-bg: #07090b;
+  --feature-bg: #222a32;
   --icon-filter: invert(1) hue-rotate(180deg) brightness(1.1);
 }
 
@@ -348,6 +352,12 @@ section[id] { scroll-margin-top: var(--nav-h); }
 
 /* Il tratto si disegna quando la frase entra in campo. Senza JS il segno è
    già disegnato: lo stato di riposo è quello finito. */
+/* Nel titolo dell'apertura il tratto copre anche le discendenti (p, g):
+   il testo sul tratto è scuro, e in tema scuro le parti fuori dal giallo
+   sparirebbero sul fondo. */
+.hero .marker { margin-left: 0; }
+.hero .marker::before { top: .12em; bottom: -.14em; }
+
 .marker.is-inview::before { animation: marker-in .8s cubic-bezier(.2, .75, .3, 1) both; }
 
 @keyframes marker-in {
@@ -618,7 +628,7 @@ a.project:hover .project-dest .ico-arrow { opacity: 1; transform: none; }
 }
 
 .way { padding: 0; }
-.way::before { content: ""; height: 5px; background: var(--brand, var(--accent)); }
+.way::before { content: ""; height: 5px; background: var(--accent); }
 
 .way-body { flex: 1; display: flex; flex-direction: column; padding: 1.25rem 1.35rem 1.35rem; }
 
@@ -635,18 +645,15 @@ a.project:hover .project-dest .ico-arrow { opacity: 1; transform: none; }
 
 .way-action .socials { gap: .1rem; margin-left: -.4rem; }
 
-.way--youtube { --brand: #e62117; }
-.way--amazon  { --brand: #ff9900; }
-.way--social  { --brand: #6364ff; }
-.way--patreon { --brand: #ff424d; }
-
-/* Patreon: la fascia diventa un lato intero, il testo è più grande e
-   l'azione sta a destra invece che in fondo. */
+/* Patreon: in evidenza su una scheda scura (l'inchiostro del sito) con
+   il giallo del canale come segno e come pulsante. Gli altri tre modi
+   hanno la fascia gialla: niente colori dei singoli servizi. */
 .way--featured {
   grid-column: 1 / -1;
   flex-direction: row;
-  border-color: color-mix(in srgb, var(--brand) 45%, var(--hairline));
-  background: color-mix(in srgb, var(--brand) 5%, var(--panel));
+  border-color: var(--feature-bg);
+  background: var(--feature-bg);
+  color: var(--feature-ink);
 }
 
 .way--featured::before { width: 6px; height: auto; }
@@ -659,17 +666,21 @@ a.project:hover .project-dest .ico-arrow { opacity: 1; transform: none; }
 }
 
 .way--featured .way-head { flex: none; margin: 0; white-space: nowrap; }
-.way--featured .way-head img { width: 44px; height: 44px; }
-.way--featured h4 { font-size: 1.4rem; }
-.way--featured p { color: var(--ink); font-size: 1.05rem; margin: 0; max-width: 46rem; }
+.way--featured .way-head img { width: 44px; height: 44px; filter: none; }
+.way--featured h4 { font-size: 1.4rem; color: #fff; }
+.way--featured p { color: var(--feature-ink); font-size: 1.05rem; margin: 0; max-width: 46rem; }
+.way--featured p b { color: #fff; }
 .way--featured .way-action { margin: 0 0 0 auto; padding: 0; border: 0; flex: none; }
 .way--featured .btn { padding: .75rem 1.4rem; font-size: 1.02rem; }
 
-.btn-patreon { background: #ff424d; color: #fff; }
-.btn-patreon:hover { background: #e3343f; color: #fff; }
+.btn-accent { background: var(--accent); color: var(--accent-ink); font-weight: 600; }
+.btn-accent:hover { background: color-mix(in srgb, var(--accent) 88%, #fff); color: var(--accent-ink); }
+
+@media (max-width: 719.98px) {
+  .support { grid-template-columns: 1fr; }
+}
 
 @media (max-width: 899.98px) {
-  .support { grid-template-columns: 1fr; }
   .way--featured .way-body { flex-direction: column; align-items: flex-start; gap: 1rem; padding: 1.5rem; }
   .way--featured .way-action { margin: 0; }
 }
@@ -680,66 +691,60 @@ a.project:hover .project-dest .ico-arrow { opacity: 1; transform: none; }
 .bullet-list li::marker { color: var(--accent); }
 
 /* ============================================================
-   About: foto grande con dietro un foglio giallo storto (lo stesso gesto
-   dell'evidenziatore), il racconto e una scheda di fatti.
+   About
    ============================================================ */
 
 .about {
   display: grid;
-  grid-template-columns: 280px minmax(0, 1fr);
-  gap: 3.5rem;
-  align-items: start;
+  grid-template-columns: 220px minmax(0, 1fr);
+  gap: 3rem;
+  align-items: center;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
-.portrait { position: relative; margin: .5rem 0 0; }
-
-.portrait::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background: var(--accent);
-  border-radius: .5em .8em .45em .7em / .7em .45em .8em .5em;
-  transform: rotate(-3.5deg) translate(-10px, 8px);
-}
-
-.portrait img {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 1;
+.avatar {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
   object-fit: cover;
-  border-radius: var(--radius);
-  transform: rotate(1.2deg);
+  box-shadow: 0 0 0 6px var(--page-bg), 0 0 0 8px var(--accent), var(--shadow);
 }
 
-.about h2 { margin-bottom: .75rem; }
-.about-text { max-width: var(--measure); color: var(--ink-muted); font-size: 1.08rem; }
-.about-text b { color: var(--ink); }
+.about h2 { font-size: clamp(1.9rem, 3.2vw, 2.4rem); }
+.about p { color: var(--ink-muted); font-size: 1.1rem; }
+.about p b { color: var(--ink); font-weight: 600; }
 
-.facts {
-  display: grid;
-  grid-template-columns: max-content minmax(0, 1fr);
-  gap: .55rem 1.5rem;
-  margin: 1.5rem 0 1.75rem;
-  padding: 1.1rem 1.35rem;
-  border-left: 4px solid var(--accent);
-  background: var(--surface);
-  border-radius: 0 var(--radius) var(--radius) 0;
+.chips { display: flex; flex-wrap: wrap; gap: .5rem; margin: 0 0 1.5rem; padding: 0; list-style: none; }
+
+.chips li {
+  padding: .3rem .8rem;
+  border: 1px solid var(--hairline);
+  border-radius: 999px;
+  background: var(--panel);
+  font-size: .85rem;
+  font-weight: 600;
 }
 
-.facts dt { color: var(--ink-muted); font-size: .9rem; padding-top: .1rem; }
-.facts dd { margin: 0; font-weight: 500; }
+/* nell'About le icone social sono pastiglie tonde, come nella prima versione */
+.about .socials { gap: .5rem; }
 
-.about-links { display: flex; flex-wrap: wrap; gap: .6rem; }
-
-@media (max-width: 799.98px) {
-  .about { grid-template-columns: 1fr; gap: 2.5rem; }
-  .portrait { max-width: 220px; margin-left: 10px; }
+.about .socials a {
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--hairline);
+  border-radius: 50%;
+  background: var(--panel);
+  transition: color .15s, border-color .15s, transform .15s, background-color .15s;
 }
 
-@media (max-width: 479.98px) {
-  .facts { grid-template-columns: 1fr; gap: .1rem; }
-  .facts dd + dt { margin-top: .6rem; }
+.about .socials a:hover { color: var(--accent-ink); background: var(--accent); border-color: var(--accent); transform: translateY(-2px); }
+.about .socials svg { width: 19px; height: 19px; }
+
+@media (max-width: 719.98px) {
+  .about { grid-template-columns: 1fr; text-align: center; gap: 2rem; }
+  .avatar { margin: 0 auto; width: 170px; height: 170px; }
+  .about .chips, .about .socials { justify-content: center; }
 }
 
 .socials { display: flex; flex-wrap: wrap; gap: .25rem; margin: 0; padding: 0; list-style: none; }

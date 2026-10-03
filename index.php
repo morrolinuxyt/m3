@@ -185,7 +185,7 @@ AUTHOR: Riccardo Carissimi
         </p>
 
         <div class="support">
-          <div class="card way way--patreon way--featured">
+          <div class="card way way--featured">
             <div class="way-body">
               <div class="way-head"><img src="img/fluid/patreon.png" alt="" width="44" height="44" loading="lazy"><h4>Su Patreon</h4></div>
               <p>
@@ -193,12 +193,12 @@ AUTHOR: Riccardo Carissimi
                 vedi <b>il tuo nome nella sigla</b> e accedi a <b>contenuti esclusivi</b> non pubblicabili su YouTube.
               </p>
               <div class="way-action">
-                <a class="btn btn-patreon" href="https://www.patreon.com/Morrolinux" target="_blank" rel="noopener" data-umami-event="patreon"><?= icon('heart', 18) ?> Sostienimi su Patreon</a>
+                <a class="btn btn-accent" href="https://www.patreon.com/Morrolinux" target="_blank" rel="noopener" data-umami-event="patreon"><?= icon('heart', 18) ?> Sostienimi su Patreon</a>
               </div>
             </div>
           </div>
 
-          <div class="card way way--youtube">
+          <div class="card way">
             <div class="way-body">
               <div class="way-head"><img src="img/fluid/youtube.svg" alt="" width="32" height="32" loading="lazy"><h4>Su YouTube</h4></div>
               <ul class="bullet-list">
@@ -213,7 +213,7 @@ AUTHOR: Riccardo Carissimi
             </div>
           </div>
 
-          <div class="card way way--amazon">
+          <div class="card way">
             <div class="way-body">
               <div class="way-head"><img src="img/fluid/amazon.svg" alt="" width="32" height="32" loading="lazy"><h4>Su Amazon</h4></div>
               <p>Accedendo al sito tramite il mio link:</p>
@@ -229,7 +229,7 @@ AUTHOR: Riccardo Carissimi
             </div>
           </div>
 
-          <div class="card way way--social">
+          <div class="card way">
             <div class="way-body">
               <div class="way-head"><img src="img/fluid/share.svg" alt="" width="32" height="32" loading="lazy"><h4>Sui social</h4></div>
               <ul class="bullet-list">
@@ -251,34 +251,21 @@ AUTHOR: Riccardo Carissimi
     <section id="about" class="section">
       <div class="wrap">
         <div class="about">
-          <figure class="portrait">
-            <img src="img/moreno.webp" alt="Moreno Razzoli" width="280" height="280" loading="lazy">
-          </figure>
-
+          <img class="avatar" src="img/moreno.webp" alt="Moreno Razzoli" width="220" height="220" loading="lazy">
           <div>
-            <h2>About me</h2>
-            <p class="about-text">
-              Mi chiamo <b>Moreno Razzoli</b>. Ho realizzato diversi <a href="#progetti">progetti Open Source</a>,
-              contribuito allo sviluppo di nuove funzionalità in altrettanti progetti già avviati e
-              realizzo <b>video didattici dal 2008</b> su <a href="https://www.youtube.com/user/morrolinux/" target="_blank" rel="noopener">YouTube</a>.
+            <h2>Moreno Razzoli</h2>
+            <p>
+              Sono laureato in Scienze Informatiche e realizzo <b>video didattici dal 2008</b> su
+              <a href="https://www.youtube.com/user/morrolinux/" target="_blank" rel="noopener">YouTube</a>.
+              Ho sviluppato diversi <a href="#progetti">progetti Open Source</a> e contribuito con nuove
+              funzionalità ad altrettanti progetti già avviati.
             </p>
-
-            <dl class="facts">
-              <dt>Studi</dt>
-              <dd>Laurea in Scienze Informatiche</dd>
-              <dt>Certificazioni</dt>
-              <dd>LPI · CompTIA Linux+ · SUSE CLA</dd>
-              <dt>Su YouTube</dt>
-              <dd>dal 2008, oltre 500 video didattici</dd>
-              <dt>Formazione</dt>
-              <dd>corsi on-demand dal 2018 e corsi professionali</dd>
-            </dl>
-
-            <div class="about-links">
-              <a class="btn btn-ghost" href="https://www.youtube.com/user/morrolinux/" target="_blank" rel="noopener"><?= icon('youtube', 18) ?> YouTube</a>
-              <a class="btn btn-ghost" href="https://github.com/morrolinux" target="_blank" rel="noopener"><?= icon('github', 18) ?> GitHub</a>
-              <a class="btn btn-ghost" href="https://www.linkedin.com/in/morenorazzoli" target="_blank" rel="noopener"><?= icon('linkedin', 18) ?> LinkedIn</a>
-            </div>
+            <ul class="chips" aria-label="Certificazioni">
+              <li>LPI</li>
+              <li>CompTIA Linux+</li>
+              <li>SUSE CLA</li>
+            </ul>
+            <?= socials($SOCIALS) ?>
           </div>
         </div>
       </div>
