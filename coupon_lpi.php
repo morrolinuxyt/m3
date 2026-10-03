@@ -14,15 +14,14 @@
 
   <main id="main">
     <header class="page-head wrap">
-      <p class="eyebrow">Certificazioni LPI</p>
       <h1>Richiedi il tuo coupon LPI</h1>
       <p>
         Come <b>Training Partner Autorizzato</b> del Linux Professional Institute (LPI) posso generare
         per i miei iscritti uno speciale <b>coupon sconto</b> per la prenotazione di <b>tutti gli esami LPI</b>.
         Compila il modulo e ricevi il tuo coupon entro 48 ore.
       </p>
-      <p style="margin-top: 1.75rem">
-        <a class="btn btn-primary" href="https://requests.morrolinux.it/form/lpi-coupon" target="_blank" rel="noopener" data-umami-event="lpi_coupon">Richiedi il tuo coupon <?= icon('arrow', 18) ?></a>
+      <p>
+        <a class="btn btn-primary" href="https://requests.morrolinux.it/form/lpi-coupon" target="_blank" rel="noopener" data-umami-event="lpi_coupon">Richiedi il tuo coupon</a>
       </p>
     </header>
 

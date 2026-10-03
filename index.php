@@ -29,26 +29,21 @@ AUTHOR: Riccardo Carissimi
 
   <main id="main">
 
-    <!-- #HERO -->
+    <!-- #HOME -->
     <section class="hero">
       <div class="wrap">
         <div class="hero-grid">
           <div>
-            <p class="eyebrow">Divulgazione Open Source dal 2008</p>
-            <h1>GNU/Linux e Software Libero, <span class="marker">spiegati bene</span>.</h1>
-            <p class="hero-lead">
-              Ciao, sono <b>Moreno</b>. Da oltre <?= $years ?> anni realizzo video, corsi e progetti
-              Open Source per chi vuole capire davvero come funzionano le cose.
+            <h1>Video e corsi su GNU/Linux e Software Libero</h1>
+            <p>
+              Pubblico video su GNU/Linux ed il panorama del Free Software dal 2008.
+              Negli ultimi <?= $years ?> anni ho realizzato <b>oltre 500 contenuti video</b> a tema didattico
+              ed erogato numerosi corsi di formazione professionale.
             </p>
             <div class="hero-actions">
-              <a class="btn btn-primary" href="#corsi">Scopri i corsi <?= icon('arrow', 18) ?></a>
-              <a class="btn btn-ghost" href="https://www.youtube.com/user/morrolinux/" target="_blank" rel="noopener" data-umami-event="hero_youtube"><?= icon('youtube', 18) ?> Canale YouTube</a>
+              <a class="btn btn-primary" href="https://www.youtube.com/user/morrolinux/?sub_confirmation=1" target="_blank" rel="noopener" data-umami-event="hero_youtube"><?= icon('youtube', 18) ?> Iscriviti al canale</a>
+              <a href="#corsi">Oppure guarda i corsi</a>
             </div>
-            <dl class="stats">
-              <div><dt>video didattici</dt><dd>500+</dd></div>
-              <div><dt>anni su YouTube</dt><dd><?= $years ?></dd></div>
-              <div><dt>corsi on-demand</dt><dd>5</dd></div>
-            </dl>
           </div>
 
           <div class="video">
@@ -57,39 +52,31 @@ AUTHOR: Riccardo Carissimi
         </div>
 
         <?php if ($show_promo) { ?>
-        <a id="promo" class="callout callout--promo" href="#corsi">
-          <span class="callout-icon"><?= icon('ticket', 24) ?></span>
-          <span class="callout-text"><strong>Offerta a tempo limitato!</strong>Tutti i corsi in offerta speciale al 93% di sconto.</span>
-          <span class="callout-arrow"><?= icon('arrow') ?></span>
+        <a id="promo" class="banner banner--promo" href="#corsi">
+          <b>Offerta a tempo limitato!</b> Tutti i corsi in offerta speciale al 93% di sconto. <u>Clicca qui</u>
         </a>
         <?php } ?>
 
-        <a id="coupon" class="callout" href="https://requests.morrolinux.it/form/lpi-coupon" data-umami-event="lpi_coupon">
-          <span class="callout-icon"><?= icon('ticket', 24) ?></span>
-          <span class="callout-text"><strong>Mi segui su YouTube? Reclama il tuo coupon LPI</strong>Uno sconto sul prezzo di tutti gli esami di certificazione LPI, grazie per il supporto!</span>
-          <span class="callout-arrow"><?= icon('arrow') ?></span>
+        <a id="coupon" class="banner" href="https://requests.morrolinux.it/form/lpi-coupon" data-umami-event="lpi_coupon">
+          <b>Mi segui su YouTube? Grazie per il supporto!</b>
+          <u>Reclama il tuo coupon</u> per ricevere uno sconto sul prezzo di tutti gli esami LPI.
         </a>
       </div>
     </section>
 
     <!-- #CORSI -->
-    <section id="corsi" class="section section--alt">
+    <section id="corsi" class="section">
       <div class="wrap">
-        <div class="section-head">
-          <p class="eyebrow">Corsi</p>
-          <h2>Impara al tuo ritmo</h2>
-          <p>
-            Oltre ai video gratuiti, dal 2018 realizzo <b>corsi online on-demand</b> per diversi livelli
-            e aree di competenza: dalle basi di Linux all'orchestrazione dei container.
-          </p>
-        </div>
+        <h2>Corsi</h2>
+        <p class="lead">
+          Dal 2018 realizzo anche <b>corsi online</b> consultabili <i>on-demand</i>, per diversi livelli ed aree di competenza:
+        </p>
 
         <?php
-          /* Le schede non sono avvolte in un <a>: contengono già il pulsante e
-             l'HTML non ammette ancore annidate. A rendere cliccabile tutta la
-             scheda ci pensa il ::after del pulsante (vedi .course .btn).
-             Gli eventi Umami restano quelli di prima, così le serie già
-             raccolte non si spezzano. */
+          /* Le righe non sono avvolte in un <a>: l'HTML non ammette ancore
+             annidate. A rendere cliccabile tutta la riga ci pensa il ::after
+             del link (vedi .course-link). Gli eventi Umami restano quelli di
+             prima, così le serie già raccolte non si spezzano. */
           $courses = [
             ['Kubernetes', 'img/kubernetes-per-comuni-mortali-notext.webp', 'Kubernetes Per Comuni Mortali',
              'Per chi conosce già <b>Docker</b> e vuole fare il salto all\'<b>orchestrazione</b>: dal primo <i>Pod</i> al cluster <i>k3s</i>, un <b>mini progetto funzionante</b> alla volta.',
@@ -110,15 +97,14 @@ AUTHOR: Riccardo Carissimi
         ?>
         <div class="courses">
           <?php foreach ($courses as [$name, $img, $alt, $text, $url, $event, $cta, $new]) { ?>
-          <article class="course<?= $new ? ' course--featured' : '' ?>">
-            <?php if ($new) { ?><span class="badge">Novità</span><?php } ?>
+          <article class="course">
             <div class="course-cover">
               <img src="<?= $img ?>" alt="Copertina: <?= $alt ?>" width="960" height="540" loading="lazy">
             </div>
             <div class="course-body">
-              <h3><?= $name ?></h3>
+              <h3><?= $name ?><?php if ($new) { ?> <span class="new">Novità</span><?php } ?></h3>
               <p><?= $text ?></p>
-              <a class="btn btn-primary btn-sm" href="<?= $url ?>" data-umami-event="<?= $event ?>"><?= $cta ?> <?= icon('arrow', 16) ?></a>
+              <a class="course-link" href="<?= $url ?>" data-umami-event="<?= $event ?>"><?= $cta ?></a>
             </div>
           </article>
           <?php } ?>
@@ -129,11 +115,7 @@ AUTHOR: Riccardo Carissimi
     <!-- #PROGETTI -->
     <section id="progetti" class="section">
       <div class="wrap">
-        <div class="section-head">
-          <p class="eyebrow">Progetti</p>
-          <h2>Codice libero, problemi reali</h2>
-          <p>Strumenti nati per risolvere un problema concreto, e rilasciati perché possano servire anche ad altri.</p>
-        </div>
+        <h2>Progetti Open Source</h2>
 
         <?php
           $projects = [
@@ -148,60 +130,44 @@ AUTHOR: Riccardo Carissimi
             ['dash2', 'i3expo-ng', 'L\'effetto Exposé di macOS su i3 WM: questo fork introduce numerose funzionalità in più.', 'https://youtu.be/qJVSuxNIfI4?t=763'],
           ];
 
-          function tiles($items) {
-            echo '<div class="tiles">';
+          function projects($items) {
+            echo '<ul class="projects">';
             foreach ($items as [$icon, $title, $text, $url]) {
-              echo '<a class="tile" href="'.htmlspecialchars($url).'" target="_blank" rel="noopener">';
-              echo '<img class="tile-icon" src="img/fluid/'.$icon.'.svg" alt="" width="52" height="52" loading="lazy">';
-              echo '<span class="tile-ext">'.icon('external', 18).'</span>';
-              echo '<h4>'.$title.'</h4><p>'.$text.'</p></a>';
+              echo '<li><img src="img/fluid/'.$icon.'.svg" alt="" width="36" height="36" loading="lazy">';
+              echo '<div><h4><a href="'.htmlspecialchars($url).'" target="_blank" rel="noopener">'.$title.'</a></h4>';
+              echo '<p>'.$text.'</p></div></li>';
             }
-            echo '</div>';
+            echo '</ul>';
           }
         ?>
 
-        <?php tiles($projects); ?>
+        <?php projects($projects); ?>
 
-        <div class="subhead">
-          <h3>Contributi ad altri progetti</h3>
-        </div>
+        <h3 class="sub">Contributi a progetti Open Source</h3>
 
-        <?php tiles($contributions); ?>
+        <?php projects($contributions); ?>
 
-        <div class="more-links">
-          <a class="btn btn-ghost" href="https://www.youtube.com/watch?v=K1szAL6MKWc&list=PL4L8OWDC99_cgzlY5-vcWbC2LIqNmMbOo" target="_blank" rel="noopener"><?= icon('youtube', 18) ?> La playlist dei progetti</a>
-          <a class="btn btn-ghost" href="https://github.com/morrolinux?tab=repositories" target="_blank" rel="noopener"><?= icon('github', 18) ?> Tutto il codice su GitHub</a>
-        </div>
+        <p class="more">
+          Scopri tutti i progetti sulla <a href="https://www.youtube.com/watch?v=K1szAL6MKWc&list=PL4L8OWDC99_cgzlY5-vcWbC2LIqNmMbOo" target="_blank" rel="noopener">playlist di YouTube</a>
+          ed esplora il codice sul mio <a href="https://github.com/morrolinux?tab=repositories" target="_blank" rel="noopener">profilo GitHub</a>.
+        </p>
       </div>
     </section>
 
     <!-- #SOSTIENI -->
-    <section id="sostieni" class="section section--alt">
+    <section id="sostieni" class="section">
       <div class="wrap">
-        <div class="section-head">
-          <p class="eyebrow">Sostieni</p>
-          <h2>Aiutami a mantenere la divulgazione gratuita</h2>
-          <p>
-            Morrolinux è un progetto di <strong>divulgazione del software libero</strong> da oltre <?= $years ?> anni.
-            Contenuti didattici di qualità richiedono un impegno costante: ecco come puoi
-            <strong>davvero</strong> dare una mano.
-          </p>
-        </div>
+        <h2>Sostieni</h2>
+        <p class="lead">
+          "Morrolinux" è un progetto di <strong>divulgazione del software libero</strong> da oltre <?= $years ?> anni.
+          Realizzare contenuti didattici di qualità richiede un impegno costante e continuativo.
+          Per mantenere il progetto attivo e la divulgazione dei contenuti gratuita, servono aiuti e fondi.
+          Ecco alcuni modi con cui puoi <strong>realmente</strong> contribuire al progetto:
+        </p>
 
-        <div class="tiles">
-          <div class="tile tile--featured">
-            <img class="tile-icon" src="img/fluid/patreon.png" alt="" width="52" height="52" loading="lazy">
-            <h4>Su Patreon</h4>
-            <p>
-              Curiosa <b>dietro le quinte</b> con i video in anteprima, partecipa alle <b>votazioni</b> sui prossimi
-              contenuti, vedi <b>il tuo nome nella sigla</b> e accedi a <b>contenuti esclusivi</b>.
-            </p>
-            <a class="btn btn-primary btn-sm" href="https://www.patreon.com/Morrolinux" target="_blank" rel="noopener" data-umami-event="patreon"><?= icon('heart', 16) ?> Diventa sostenitore</a>
-          </div>
-
-          <div class="tile">
-            <img class="tile-icon" src="img/fluid/youtube.svg" alt="" width="52" height="52" loading="lazy">
-            <h4>Su YouTube</h4>
+        <div class="support">
+          <div>
+            <h3><img src="img/fluid/youtube.svg" alt="" width="26" height="26" loading="lazy"> Su YouTube</h3>
             <ul class="bullet-list">
               <li>Iscrivendoti al canale</li>
               <li>Disattivando eventuali <strong>AdBlock</strong> sul mio canale</li>
@@ -210,9 +176,8 @@ AUTHOR: Riccardo Carissimi
             </ul>
           </div>
 
-          <div class="tile">
-            <img class="tile-icon" src="img/fluid/amazon.svg" alt="" width="52" height="52" loading="lazy">
-            <h4>Su Amazon</h4>
+          <div>
+            <h3><img src="img/fluid/amazon.svg" alt="" width="26" height="26" loading="lazy"> Su Amazon</h3>
             <p>Accedendo al sito tramite <a href="http://amzn.to/2AC0a6Q" target="_blank" rel="noopener">il mio link</a>:</p>
             <ul class="bullet-list">
               <li>Amazon mi devolve il 5% del suo ricavato</li>
@@ -222,14 +187,22 @@ AUTHOR: Riccardo Carissimi
             <p><a href="https://programma-affiliazione.amazon.it" target="_blank" rel="noopener">Come funziona l'affiliazione</a></p>
           </div>
 
-          <div class="tile">
-            <img class="tile-icon" src="img/fluid/share.svg" alt="" width="52" height="52" loading="lazy">
-            <h4>Sui social</h4>
+          <div>
+            <h3><img src="img/fluid/share.svg" alt="" width="26" height="26" loading="lazy"> Sui social</h3>
             <ul class="bullet-list">
               <li>Citandomi su <a href="https://www.linkedin.com/in/morenorazzoli" target="_blank" rel="noopener">LinkedIn</a></li>
               <li>Seguendomi su <a href="https://mastodon.uno/@morrolinux" target="_blank" rel="me noopener">Mastodon</a> e <a href="https://x.com/morrolinux" target="_blank" rel="noopener">X</a></li>
-              <li>Mettendo una stella ai progetti su <a href="https://github.com/morrolinux" target="_blank" rel="noopener">GitHub</a></li>
+              <li>Stellandomi su <a href="https://github.com/morrolinux" target="_blank" rel="noopener">GitHub</a></li>
             </ul>
+          </div>
+
+          <div>
+            <h3><img src="img/fluid/patreon.png" alt="" width="26" height="26" loading="lazy"> Su Patreon</h3>
+            <p>
+              Curiosa <b>dietro le quinte</b> con i video in anteprima, partecipa alle <b>votazioni</b> sui prossimi contenuti,
+              vedi <b>il tuo nome nella sigla</b> e accedi a <b>contenuti esclusivi</b> non pubblicabili su YouTube.
+            </p>
+            <a class="btn btn-primary" href="https://www.patreon.com/Morrolinux" target="_blank" rel="noopener" data-umami-event="patreon">Sostieni</a>
           </div>
         </div>
       </div>
@@ -238,24 +211,17 @@ AUTHOR: Riccardo Carissimi
     <!-- #ABOUT -->
     <section id="about" class="section">
       <div class="wrap">
+        <h2>About me</h2>
         <div class="about">
-          <img class="avatar" src="img/moreno.webp" alt="Moreno Razzoli" width="220" height="220" loading="lazy">
-          <div>
-            <p class="eyebrow">Chi sono</p>
-            <h2>Moreno Razzoli</h2>
-            <p>
-              Sono laureato in Scienze Informatiche e realizzo <b>video didattici dal 2008</b> su
-              <a href="https://www.youtube.com/user/morrolinux/" target="_blank" rel="noopener">YouTube</a>.
-              Ho sviluppato diversi <a href="#progetti">progetti Open Source</a> e contribuito con nuove
-              funzionalità ad altrettanti progetti già avviati.
-            </p>
-            <ul class="chips" aria-label="Certificazioni">
-              <li>LPI</li>
-              <li>CompTIA Linux+</li>
-              <li>SUSE CLA</li>
-            </ul>
-            <?= socials($SOCIALS) ?>
-          </div>
+          <img class="avatar" src="img/moreno.webp" alt="Moreno Razzoli" width="140" height="140" loading="lazy">
+          <p>
+            Mi chiamo <b>Moreno Razzoli</b>.
+            Sono laureato in Scienze Informatiche, ho conseguito le certificazioni Linux <b>LPI</b>, <b>CompTIA Linux+</b> e <b>Suse CLA</b>,
+            ho realizzato diversi <a href="#progetti">progetti Open Source</a>,
+            contribuito allo sviluppo di nuove funzionalità in altrettanti progetti già avviati e
+            realizzo <b>video didattici dal 2008</b> su <a href="https://www.youtube.com/user/morrolinux/" target="_blank" rel="noopener">YouTube</a>.
+          </p>
+          <?= socials($SOCIALS) ?>
         </div>
       </div>
     </section>

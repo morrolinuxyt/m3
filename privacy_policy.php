@@ -14,7 +14,6 @@
 
   <main id="main">
     <header class="page-head wrap">
-      <p class="eyebrow">Note legali</p>
       <h1>Informativa estesa su cookie e privacy</h1>
     </header>
 

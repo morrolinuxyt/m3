@@ -1,16 +1,12 @@
 /* Morrolinux.it — tutto il JS del sito, senza jQuery.
    Lo scroll morbido e l'offset delle ancore li fa il CSS (scroll-behavior,
-   scroll-margin-top): qui restano menu mobile, ombra della navbar, voce
+   scroll-margin-top): qui restano menu mobile, voce
    attiva, selettore del tema ed evidenziatore. */
 
-/* --- Navbar: ombra allo scroll e menu mobile --- */
+/* --- Navbar: menu mobile --- */
 (function() {
   var nav = document.getElementById('site-nav');
   if (!nav) return;
-
-  function onScroll() { nav.classList.toggle('is-scrolled', window.scrollY > 4); }
-  onScroll();
-  window.addEventListener('scroll', onScroll, { passive: true });
 
   var toggle = nav.querySelector('.nav-toggle');
   function setOpen(open) {
@@ -42,7 +38,7 @@
 
   var observer = new IntersectionObserver(function(entries) {
     entries.forEach(function(entry) {
-      if (!entry.isIntersecting) return;
+      if (!entry.isIntersecting || window.scrollY < 200) return;
       ids.forEach(function(id) { links[id].classList.toggle('is-active', id === entry.target.id); });
     });
   }, { rootMargin: '-30% 0px -65% 0px' });
@@ -50,9 +46,10 @@
   ids.forEach(function(id) { observer.observe(document.getElementById(id)); });
 
   // In cima alla pagina nessuna voce è attiva
-  window.addEventListener('scroll', function() {
+  function clearAtTop() {
     if (window.scrollY < 200) ids.forEach(function(id) { links[id].classList.remove('is-active'); });
-  }, { passive: true });
+  }
+  window.addEventListener('scroll', clearAtTop, { passive: true });
 })();
 
 /* --- Selettore del tema: automatico -> chiaro -> scuro -> automatico.
