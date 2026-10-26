@@ -1,0 +1,14 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:recommended"],
+  "enabledManagers": ["dockerfile"],
+  "prHourlyLimit": 0,
+  "packageRules": [
+    {
+      "description": "Patch di PHP (fix di sicurezza) subito; salti di minor/major solo su approvazione dalla Dependency Dashboard",
+      "matchPackageNames": ["php"],
+      "matchUpdateTypes": ["major", "minor"],
+      "dependencyDashboardApproval": true
+    }
+  ]
+}
